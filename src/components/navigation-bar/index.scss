@@ -1,0 +1,37 @@
+.czt-navbar-title {
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	color: #222222;
+	font-size: 34px;
+	font-weight: 700;
+}
+
+.czt-navbar-back {
+	display: flex;
+	align-items: center;
+	z-index: 100;
+	position: fixed;
+
+	image {
+		width: 40px;
+		height: 40px;
+		border: 40px solid transparent;
+	}
+}
+
+.czt-navbar {
+	z-index: 100;
+	width: 100vw;
+	// transition: opacity 0.3s;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: transparent;
+
+	&-drop {
+		backdrop-filter: blur(15px);
+	}
+}

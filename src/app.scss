@@ -1,0 +1,38 @@
+page {
+	background: #f4f5f7;
+}
+
+.bg-main {
+	background: #f4f5f7 !important;
+}
+
+page,
+view,
+text,
+image,
+button,
+video,
+map,
+scroll-view,
+swiper,
+input,
+textarea,
+navigator {
+	position: relative;
+	box-sizing: border-box;
+	background-origin: border-box;
+	isolation: isolate;
+}
+
+navigator text,
+text text,
+text navigator {
+	display: inline;
+}
+
+.time {
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #7a869a;
+}

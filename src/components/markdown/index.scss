@@ -1,0 +1,20 @@
+.markdown_body {
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 48px;
+	color: #172b4d;
+	background: #deebff;
+	padding: 20px;
+	border-radius: 20px;
+	word-break: break-all;
+}
+
+.language-shell,
+.hljs {
+	overflow-x: auto;
+	display: block;
+}
+
+.embedded_image {
+	max-width: 100%;
+}

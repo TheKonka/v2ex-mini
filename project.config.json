@@ -1,0 +1,32 @@
+{
+  "miniprogramRoot": "dist/weapp/",
+  "srcMiniprogramRoot": "dist/weapp/",
+  "projectname": "v2ex-minip",
+  "description": "",
+  "appid": "wx38e9a9b93593c565",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "compileHotReLoad": false,
+    "postcss": true,
+    "minified": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "condition": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "latest",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
+}

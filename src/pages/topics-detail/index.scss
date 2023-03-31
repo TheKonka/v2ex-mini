@@ -1,0 +1,78 @@
+page {
+	padding-bottom: env(safe-area-inset-bottom);
+	background: #fff;
+}
+
+.avatar {
+	width: 64px;
+	height: 64px;
+	border-radius: 16px;
+	overflow: hidden;
+	margin-right: 24px;
+}
+
+.author {
+	display: flex;
+	align-items: center;
+	margin: 26px 0;
+
+	&-username {
+		font-size: 32px;
+		font-weight: 500;
+		line-height: 40px;
+		color: #172b4d;
+	}
+}
+
+.top {
+	padding: 40px 40px;
+	box-sizing: border-box;
+
+	.title {
+		font-size: 36px;
+		font-weight: bold;
+		line-height: 48px;
+		color: #222;
+	}
+
+	.node {
+		padding: 20px 30px;
+		box-sizing: border-box;
+		border-radius: 32px;
+		background: #deebff;
+		margin-left: auto;
+		display: grid;
+		place-content: center;
+
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 24px;
+		color: #0052cc;
+	}
+
+	.supplements {
+		display: flex;
+		align-items: center;
+		color: #7a869a;
+		margin: 20px 0;
+
+		&-index {
+			font-size: 28px;
+			font-weight: 400;
+			margin-right: 20px;
+		}
+	}
+}
+
+.replies-item {
+	width: stretch;
+	margin: 0 20px;
+
+	text {
+		font-size: 26px;
+		font-weight: 400;
+		line-height: 26px;
+		color: #7a869a;
+		margin-right: 16px;
+	}
+}

@@ -1,0 +1,63 @@
+{
+	"name": "v2ex-minip",
+	"version": "1.0.0",
+	"private": true,
+	"description": "",
+	"templateInfo": {
+		"name": "default",
+		"typescript": true,
+		"css": "sass"
+	},
+	"scripts": {
+		"build:weapp": "taro build --type weapp",
+		"build:alipay": "taro build --type alipay",
+		"dev:weapp": "npm run build:weapp -- --watch",
+		"dev:alipay": "npm run build:alipay -- --watch",
+		"lint": "npx eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
+		"lint:style": "npx stylelint --fix \"src/**/*.scss\" --syntax scss",
+		"format": "npx prettier --write src"
+	},
+	"browserslist": [
+		"last 3 versions",
+		"Android >= 4.1",
+		"ios >= 8"
+	],
+	"author": "konka",
+	"license": "MIT",
+	"dependencies": {
+		"@babel/runtime": "^7.21.0",
+		"@tarojs/components": "3.6.2-canary.2",
+		"@tarojs/helper": "3.6.2-canary.2",
+		"@tarojs/plugin-framework-react": "3.6.2-canary.2",
+		"@tarojs/plugin-platform-weapp": "3.6.2-canary.2",
+		"@tarojs/react": "3.6.2-canary.2",
+		"@tarojs/runtime": "3.6.2-canary.2",
+		"@tarojs/shared": "3.6.2-canary.2",
+		"@tarojs/taro": "3.6.2-canary.2",
+		"classnames": "^2.3.2",
+		"dayjs": "^1.11.7",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"use-debounce": "^9.0.3"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.21.3",
+		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
+		"@tarojs/webpack5-runner": "3.6.2-canary.2",
+		"@trivago/prettier-plugin-sort-imports": "^4.1.1",
+		"@types/react": "^18.0.31",
+		"@types/webpack-env": "^1.18.0",
+		"@typescript-eslint/eslint-plugin": "^5.57.0",
+		"@typescript-eslint/parser": "^5.57.0",
+		"babel-preset-taro": "3.6.2-canary.2",
+		"eslint": "^8.37.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-react": "^7.32.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"prettier": "^2.8.7",
+		"react-refresh": "^0.11.0",
+		"stylelint": "^14.16.1",
+		"typescript": "^5.0.2",
+		"webpack": "5.69.0"
+	}
+}
