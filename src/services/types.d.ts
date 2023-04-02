@@ -89,4 +89,24 @@ declare namespace Api {
 		};
 		supplements: Supplement[];
 	}
+
+	interface TopicsOfNode {
+		id: number;
+		title: string;
+		content: string;
+		content_rendered: string;
+		syntax: number;
+		url: string;
+		replies: number;
+		last_reply_by: string;
+		created: number;
+		last_modified: number;
+		last_touched: number;
+	}
+
+	type NodeInfo = Pick<Node, 'id' | 'url' | 'name' | 'title' | 'header' | 'footer' | 'topics'> & {
+		avatar: string;
+		created: string;
+		last_modified: string;
+	};
 }

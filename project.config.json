@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "dist/weapp/",
   "srcMiniprogramRoot": "dist/weapp/",
-  "projectname": "v2ex-minip",
+  "projectname": "v2ex-mini",
   "description": "",
   "appid": "wx38e9a9b93593c565",
   "setting": {

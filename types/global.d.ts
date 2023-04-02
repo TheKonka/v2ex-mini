@@ -17,5 +17,9 @@ declare namespace NodeJS {
 	}
 }
 
+interface Window {
+	__taroAppConfig: Taro.AppConfig;
+}
+
 declare const __API_URL__: string;
 declare const __PERSONAL_ACCESS_TOKEN__: string;

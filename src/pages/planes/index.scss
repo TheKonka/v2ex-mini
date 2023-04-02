@@ -1,0 +1,125 @@
+.search {
+	background: #fff;
+	padding-top: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	// position: sticky;
+	// top: 0;
+
+	&-input {
+		width: 610px;
+		height: 88px;
+		border-radius: 30px;
+		background: #f4f5f7;
+		padding: 20px 24px;
+		display: flex;
+		align-items: center;
+
+		image {
+			width: 40px;
+			height: 40px;
+			margin-right: 28px;
+		}
+
+		input {
+			flex: 1;
+		}
+	}
+
+	&-hot {
+		display: flex;
+		height: 160px;
+
+		&-item-wrapper {
+			height: inherit;
+			display: grid;
+			place-content: center;
+			padding: 0 20px;
+		}
+
+		&-item {
+			word-break: keep-all;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-size: 28px;
+			font-weight: 500;
+			line-height: 40px;
+			color: #172b4d;
+
+			&-img {
+				width: 64px;
+				height: 64px;
+				overflow: hidden;
+				border-radius: 16px;
+				margin-bottom: 8px;
+			}
+		}
+	}
+}
+
+.planes-tab {
+	display: flex;
+	height: 200px;
+
+	&-item-wrapper {
+		height: inherit;
+		display: grid;
+		place-content: center;
+
+		&:nth-child(1) > view {
+			background-color: #3d637f;
+			color: #8bd3ff;
+		}
+		&:nth-child(2) > view {
+			background-color: #323030;
+			color: #ffcb89;
+		}
+		&:nth-child(3) > view {
+			background-color: #cbcbcb;
+			color: #858585;
+		}
+		&:nth-child(4) > view {
+			background-color: #ffeca6;
+			color: #ee837d;
+		}
+		&:nth-child(5) > view {
+			background-color: #5b8865;
+			color: #7de594;
+		}
+	}
+
+	&-item {
+		margin: 0 20px;
+		padding: 20px 30px;
+		border-radius: 40px;
+		word-break: keep-all;
+		white-space: nowrap;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.nodes {
+	height: calc(100vh - 480px);
+	display: flex;
+	flex-wrap: wrap;
+	width: stretch;
+	border-radius: 30px;
+	background: #ffffff;
+	margin: 0 20px;
+	padding: 0 10px;
+
+	&-item {
+		margin: 10px;
+		padding: 10px 12px;
+		display: grid;
+		place-content: center;
+		border-radius: 32px;
+		background: #deebff;
+		overflow: hidden;
+	}
+}

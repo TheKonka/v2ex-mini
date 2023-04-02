@@ -1,5 +1,5 @@
 export default definePageConfig({
-	navigationBarTitleText: ''
+	navigationBarTitleText: '会员信息'
 	// disableScroll: true,
 	// navigationStyle: 'custom'
 });

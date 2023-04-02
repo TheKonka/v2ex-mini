@@ -1,7 +1,7 @@
 import path from 'path';
 
 const config = {
-	projectName: 'v2ex-minip',
+	projectName: 'v2ex-mini',
 	designWidth: 750,
 	deviceRatio: {
 		640: 2.34 / 2,
@@ -12,8 +12,8 @@ const config = {
 	outputRoot: `dist/${process.env.TARO_ENV}`,
 	plugins: [],
 	defineConstants: {
-		__API_URL__: JSON.stringify('https://v2ex.com/api/'),
-		__PERSONAL_ACCESS_TOKEN__: JSON.stringify('')
+		__API_URL__: JSON.stringify('https://v2ex.com/'),
+		__PERSONAL_ACCESS_TOKEN__: JSON.stringify('6c35d4a6-XXXXXXX')
 	},
 	copy: {
 		patterns: [],

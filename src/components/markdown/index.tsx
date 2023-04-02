@@ -13,6 +13,12 @@ const MarkDown: React.FC<Props> = ({ nodes, className }) => {
 		//	nodes = nodes.replace(/(?<=(img[^>]*src="))[^"]*/g, ($1) => getProxyImage($1));
 		nodes = nodes.replace(/<img[^>]*src=['"]([^'"]+)[^>]*>/g, ($1, $2) => $1.replace($2, getProxyImage($2)));
 	}
+	if (nodes.includes('<code>')) {
+		nodes = nodes.replace(/<code>/g, '<code class="hljs">');
+	}
+	if (nodes.includes('<pre>')) {
+		nodes = nodes.replace(/<pre>/g, '<pre class="pre">');
+	}
 
 	return (
 		<>

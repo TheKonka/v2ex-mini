@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { View, Image, Text } from '@tarojs/components';
-import Taro, { useLoad, useReachBottom, useRouter } from '@tarojs/taro';
+import Taro, { useLoad, useReachBottom, useRouter, useShareAppMessage } from '@tarojs/taro';
 import Loading from '@/components/loading';
 import MarkDown from '@/components/markdown';
 import { getProxyImage } from '@/helpers/img';
@@ -17,6 +17,8 @@ const Index: React.FC = () => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [replies, setReplies] = useState<Api.Replies[]>([]);
 
+	const isFetching = useRef(false);
+
 	useLoad(() => {
 		if (id) {
 			getTpoicsById(id).then((res) => {
@@ -26,20 +28,28 @@ const Index: React.FC = () => {
 					title: 't/' + res.result.id
 				});
 			});
+
+			getTpoicsRepliesById(id, 1).then((res) => {
+				setReplies(res.result);
+			});
 		}
 	});
 
-	useEffect(() => {
-		if (id) {
-			getTpoicsRepliesById(id, currentPage).then((res) => {
-				setReplies((p) => [...p, ...res.result]);
-			});
-		}
-	}, [currentPage, id]);
+	useShareAppMessage(() => {
+		return {
+			title: topics?.title || '主题详情',
+			path: `/pages/topics-detail/index?id=${id}`
+		};
+	});
 
 	useReachBottom(() => {
-		if (currentPage < pageCount) {
-			setCurrentPage(currentPage + 1);
+		if (currentPage < pageCount && id && !isFetching.current) {
+			isFetching.current = true;
+			getTpoicsRepliesById(id, currentPage + 1).then((res) => {
+				setReplies((p) => [...p, ...res.result]);
+				setCurrentPage((p) => p + 1);
+				isFetching.current = false;
+			});
 		}
 	});
 
@@ -50,7 +60,17 @@ const Index: React.FC = () => {
 					<View className="top">
 						<View className="title">{topics.title}</View>
 						<View className="author">
-							<Image src={getProxyImage(topics.member.avatar)} className="avatar" />
+							<Image
+								src={getProxyImage(topics.member.avatar)}
+								className="avatar"
+								mode="aspectFit"
+								onClick={(e) => {
+									e.stopPropagation();
+									Taro.navigateTo({
+										url: `/pages/member/index?username=${topics.member.username}`
+									});
+								}}
+							/>
 							<View>
 								<View className="author-username">{topics.member.username}</View>
 								<View className="time">
@@ -59,7 +79,16 @@ const Index: React.FC = () => {
 									<Text>{`${topics.replies}条回复`}</Text>
 								</View>
 							</View>
-							<View className="node">{topics.node.title}</View>
+							<View
+								className="node"
+								onClick={() => {
+									Taro.navigateTo({
+										url: `/pages/topics-of-node/index?node=${topics.node.name}`
+									});
+								}}
+							>
+								{topics.node.title}
+							</View>
 						</View>
 						<MarkDown nodes={topics.content_rendered} />
 
@@ -82,17 +111,33 @@ const Index: React.FC = () => {
 							<View key={item.id} className="replies-item">
 								<View className="author">
 									<Text>#{index + 1}</Text>
-									<Image src={getProxyImage(item.member.avatar)} className="avatar" lazyLoad />
+									<Image
+										src={getProxyImage(item.member.avatar)}
+										className="avatar"
+										lazyLoad
+										onClick={(e) => {
+											e.stopPropagation();
+											Taro.navigateTo({
+												url: `/pages/member/index?username=${item.member.username}`
+											});
+										}}
+									/>
 									<View>
 										<View className="author-username">{item.member.username}</View>
 										<View className="time">{getTimeFromNow(item.created * 1000)}</View>
 									</View>
 								</View>
 
-								<MarkDown nodes={item.content_rendered} className="bg-main" />
+								<MarkDown nodes={item.content_rendered} className={item.member.id === topics.member.id ? '' : 'bg-main'} />
 							</View>
 						);
 					})}
+
+					{replies.length > 0 && currentPage >= pageCount ? (
+						<View className="no-more">
+							<Text>—— 没有更多回复了 ——</Text>
+						</View>
+					) : null}
 				</>
 			) : (
 				<Loading />
