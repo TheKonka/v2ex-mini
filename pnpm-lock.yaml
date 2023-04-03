@@ -5,29 +5,29 @@ dependencies:
     specifier: ^7.21.0
     version: 7.21.0
   '@tarojs/components':
-    specifier: 3.6.2-canary.2
-    version: 3.6.2-canary.2(@types/react@18.0.31)(react@18.2.0)
+    specifier: 3.6.3
+    version: 3.6.3(@types/react@18.0.31)(react@18.2.0)
   '@tarojs/helper':
-    specifier: 3.6.2-canary.2
-    version: 3.6.2-canary.2
+    specifier: 3.6.3
+    version: 3.6.3
   '@tarojs/plugin-framework-react':
-    specifier: 3.6.2-canary.2
-    version: 3.6.2-canary.2(@pmmmwh/react-refresh-webpack-plugin@0.5.10)(@types/react@18.0.31)(react-refresh@0.11.0)(react@18.2.0)
+    specifier: 3.6.3
+    version: 3.6.3(@pmmmwh/react-refresh-webpack-plugin@0.5.10)(@types/react@18.0.31)(react-refresh@0.11.0)(react@18.2.0)
   '@tarojs/plugin-platform-weapp':
-    specifier: 3.6.2-canary.2
-    version: 3.6.2-canary.2(@types/react@18.0.31)(react@18.2.0)
+    specifier: 3.6.3
+    version: 3.6.3(@types/react@18.0.31)
   '@tarojs/react':
-    specifier: 3.6.2-canary.2
-    version: 3.6.2-canary.2(react@18.2.0)
+    specifier: 3.6.3
+    version: 3.6.3(react@18.2.0)
   '@tarojs/runtime':
-    specifier: 3.6.2-canary.2
-    version: 3.6.2-canary.2
+    specifier: 3.6.3
+    version: 3.6.3
   '@tarojs/shared':
-    specifier: 3.6.2-canary.2
-    version: 3.6.2-canary.2
+    specifier: 3.6.3
+    version: 3.6.3
   '@tarojs/taro':
-    specifier: 3.6.2-canary.2
-    version: 3.6.2-canary.2(@types/react@18.0.31)
+    specifier: 3.6.3
+    version: 3.6.3(@types/react@18.0.31)
   classnames:
     specifier: ^2.3.2
     version: 2.3.2
@@ -52,8 +52,8 @@ devDependencies:
     specifier: ^0.5.10
     version: 0.5.10(react-refresh@0.11.0)(webpack@5.69.0)
   '@tarojs/webpack5-runner':
-    specifier: 3.6.2-canary.2
-    version: 3.6.2-canary.2(@babel/core@7.21.3)(@swc/core@1.3.42)(@types/react@18.0.31)(postcss@8.4.21)(react@18.2.0)(webpack@5.69.0)
+    specifier: 3.6.3
+    version: 3.6.3(@babel/core@7.21.3)(@swc/core@1.3.42)(@types/react@18.0.31)(postcss@8.4.21)(react@18.2.0)(webpack@5.69.0)
   '@trivago/prettier-plugin-sort-imports':
     specifier: ^4.1.1
     version: 4.1.1(prettier@2.8.7)
@@ -70,8 +70,8 @@ devDependencies:
     specifier: ^5.57.0
     version: 5.57.0(eslint@8.37.0)(typescript@5.0.2)
   babel-preset-taro:
-    specifier: 3.6.2-canary.2
-    version: 3.6.2-canary.2(@babel/core@7.21.3)
+    specifier: 3.6.3
+    version: 3.6.3(@babel/core@7.21.3)
   eslint:
     specifier: ^8.37.0
     version: 8.37.0
@@ -1729,15 +1729,15 @@ packages:
       pirates: 4.0.5
       source-map-support: 0.5.21
 
-  /@tarojs/api@3.6.2-canary.2:
-    resolution: {integrity: sha512-g3dgXSezzaBf7HtNU9rHBJCJSbtKKlwhRl2zYHM6efaqzMePzh2uSaTiR+ZF8BvcRpuCfipAwa4ZiFyGc9O6BQ==}
+  /@tarojs/api@3.6.3:
+    resolution: {integrity: sha512-hlbFY5QRGLbm6jw0i1psd25RfCrxWFAZl7mPVlDdct78JSgF+NyiCOZ6RVYOnebsJzfStHgFmCJGFUbzoYzTiQ==}
     dependencies:
       '@babel/runtime': 7.21.0
-      '@tarojs/runtime': 3.6.2-canary.2
-      '@tarojs/shared': 3.6.2-canary.2
+      '@tarojs/runtime': 3.6.3
+      '@tarojs/shared': 3.6.3
 
-  /@tarojs/components-advanced@3.6.2-canary.2(@types/react@18.0.31)(react@18.2.0):
-    resolution: {integrity: sha512-dqwwwZGUftVrUZ0Ng3l8fVW40gvyzakux9rMhiAKFGNZ+NAV/jus+F3ieqFfK5OVrzjbPyen6jPnWXm3WG/+rw==}
+  /@tarojs/components-advanced@3.6.3(@types/react@18.0.31)(react@18.2.0):
+    resolution: {integrity: sha512-IvJld4TT/2b00mcwG6WsIP8hjBGGLNqLWZaoQopLK6Dgky3/dLO02caTMBFXxQj7GIA9iWo1i5FkWCVMXLnomw==}
     peerDependencies:
       react: '>=17'
       vue: '*'
@@ -1747,8 +1747,8 @@ packages:
       vue:
         optional: true
     dependencies:
-      '@tarojs/components': 3.6.2-canary.2(@types/react@18.0.31)(react@18.2.0)
-      '@tarojs/shared': 3.6.2-canary.2
+      '@tarojs/components': 3.6.3(@types/react@18.0.31)(react@18.2.0)
+      '@tarojs/shared': 3.6.3
       memoize-one: 6.0.0
       postcss: 8.4.21
       react: 18.2.0
@@ -1758,8 +1758,8 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
 
-  /@tarojs/components@3.6.2-canary.2(@types/react@18.0.31)(react@18.2.0):
-    resolution: {integrity: sha512-IHDN8ujJrNARaoakTx+IYYE0o7NcpB0Cehd3JgorkFzLGfePXqZk7KO3efT4uFb7Y+fAsxcPuouJt3F/pjO/Qg==}
+  /@tarojs/components@3.6.3(@types/react@18.0.31)(react@18.2.0):
+    resolution: {integrity: sha512-GdEIanhXJL3M8MLfmaeamPFAtpQ6UgygeaioCBJV3kw10PWRtZ2KbKGB6E6JjUD2snBiy+X/UQKtvVXbD0ddGg==}
     peerDependencies:
       '@types/react': '*'
       '@types/react-native': '*'
@@ -1773,9 +1773,9 @@ packages:
         optional: true
     dependencies:
       '@stencil/core': 2.22.3
-      '@tarojs/components-advanced': 3.6.2-canary.2(@types/react@18.0.31)(react@18.2.0)
-      '@tarojs/router': 3.6.2-canary.2(@types/react@18.0.31)
-      '@tarojs/taro': 3.6.2-canary.2(@types/react@18.0.31)
+      '@tarojs/components-advanced': 3.6.3(@types/react@18.0.31)(react@18.2.0)
+      '@tarojs/router': 3.6.3(@types/react@18.0.31)
+      '@tarojs/taro': 3.6.3(@types/react@18.0.31)
       '@types/react': 18.0.31
       classnames: 2.3.2
       hls.js: 1.3.5
@@ -1788,8 +1788,8 @@ packages:
       - '@types/webpack-dev-server'
       - react
 
-  /@tarojs/helper@3.6.2-canary.2:
-    resolution: {integrity: sha512-djWOnKS6UqYaLpYcSPrZuAFtYjghfgLIbzm4wqmDMOK8pEYNJCjsWlHbUjAsmfRAt/fGdbVgut02qCL9eumb9Q==}
+  /@tarojs/helper@3.6.3:
+    resolution: {integrity: sha512-E4db8F+iysEHrD85i0CbkGh3tKX+zHx7wYF8QZzz3aZKd9emt5ZH5OhPUlPrCNPx217xsRBZ7ixQ4D6nOL0nIw==}
     dependencies:
       '@babel/core': 7.21.3
       '@babel/parser': 7.21.3
@@ -1817,8 +1817,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@tarojs/plugin-framework-react@3.6.2-canary.2(@pmmmwh/react-refresh-webpack-plugin@0.5.10)(@types/react@18.0.31)(react-refresh@0.11.0)(react@18.2.0):
-    resolution: {integrity: sha512-gecc9llLKUma6TG1MDqSgfSfbDKHRlMdw4kK9jdkqeHwu4VS5z6p/RKR6eMkVREWPmjyOmVC75SGcdkPev/Xow==}
+  /@tarojs/plugin-framework-react@3.6.3(@pmmmwh/react-refresh-webpack-plugin@0.5.10)(@types/react@18.0.31)(react-refresh@0.11.0)(react@18.2.0):
+    resolution: {integrity: sha512-PFDY1hAZyiMXk21cCK9ji4iwvnf0L2dhUp2m4T96gidwzUzriO9F7BdOf7tTeQHT8bL8utKgykYd/gZkqdxr/w==}
     peerDependencies:
       '@pmmmwh/react-refresh-webpack-plugin': '*'
       '@prefresh/webpack': '*'
@@ -1838,10 +1838,10 @@ packages:
         optional: true
     dependencies:
       '@pmmmwh/react-refresh-webpack-plugin': 0.5.10(react-refresh@0.11.0)(webpack@5.69.0)
-      '@tarojs/helper': 3.6.2-canary.2
-      '@tarojs/runtime': 3.6.2-canary.2
-      '@tarojs/service': 3.6.2-canary.2(@types/react@18.0.31)
-      '@tarojs/shared': 3.6.2-canary.2
+      '@tarojs/helper': 3.6.3
+      '@tarojs/runtime': 3.6.3
+      '@tarojs/service': 3.6.3(@types/react@18.0.31)
+      '@tarojs/shared': 3.6.3
       acorn: 8.8.2
       acorn-walk: 8.2.0
       lodash: 4.17.21
@@ -1855,40 +1855,12 @@ packages:
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-alipay@3.6.2-canary.2(@types/react@18.0.31):
-    resolution: {integrity: sha512-WltKpF/0C6vesthQ23IdFvaE0ZUzk0RhswSVxiUdAX/aDEYmNYgHM7MRQrDum8OM0OEp6ylECY1zcKrvxKwyiw==}
+  /@tarojs/plugin-platform-alipay@3.6.3(@types/react@18.0.31)(react@18.2.0):
+    resolution: {integrity: sha512-afsgecvzQLNVrJ/qjLDjT5JmSPw69/cxqo9hwV3k8VeYabc4LVaNw7MwGsPb6PT21Ph4zMeW+uUQIgMHJrhlnQ==}
     dependencies:
-      '@tarojs/components': 3.6.2-canary.2(@types/react@18.0.31)(react@18.2.0)
-      '@tarojs/service': 3.6.2-canary.2(@types/react@18.0.31)
-      '@tarojs/shared': 3.6.2-canary.2
-    transitivePeerDependencies:
-      - '@types/react'
-      - '@types/react-native'
-      - '@types/webpack'
-      - '@types/webpack-dev-server'
-      - supports-color
-      - vue
-    dev: true
-
-  /@tarojs/plugin-platform-jd@3.6.2-canary.2(@types/react@18.0.31):
-    resolution: {integrity: sha512-tIl+93UuHBzywr4N2JEhd3NXyds48Yb1fbo3hw/MeAd0PFHbfGi7lFwaWmYKd14gCn4pOFzKaY6ZNRHld9xblA==}
-    dependencies:
-      '@tarojs/service': 3.6.2-canary.2(@types/react@18.0.31)
-      '@tarojs/shared': 3.6.2-canary.2
-    transitivePeerDependencies:
-      - '@types/react'
-      - '@types/webpack'
-      - '@types/webpack-dev-server'
-      - supports-color
-      - vue
-    dev: true
-
-  /@tarojs/plugin-platform-qq@3.6.2-canary.2(@types/react@18.0.31)(react@18.2.0):
-    resolution: {integrity: sha512-IoUMaUA2pOPDOt+TPi7peBIDkAMPgv7h692OoPKP8/vysSEggUX4znZC9oF0Y7+5LejLsKWyw4Ncdp8YmJ6S2A==}
-    dependencies:
-      '@tarojs/plugin-platform-weapp': 3.6.2-canary.2(@types/react@18.0.31)(react@18.2.0)
-      '@tarojs/service': 3.6.2-canary.2(@types/react@18.0.31)
-      '@tarojs/shared': 3.6.2-canary.2
+      '@tarojs/components': 3.6.3(@types/react@18.0.31)(react@18.2.0)
+      '@tarojs/service': 3.6.3(@types/react@18.0.31)
+      '@tarojs/shared': 3.6.3
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-native'
@@ -1899,12 +1871,25 @@ packages:
       - vue
     dev: true
 
-  /@tarojs/plugin-platform-swan@3.6.2-canary.2(@types/react@18.0.31):
-    resolution: {integrity: sha512-V1MdKxiZpkuOKFFloLTCqovuagqyxEUinustYKLyO7PgcVYKOH//DxWqd/l94Kkl0vh2azK68ZEx7Syr1QjsxA==}
+  /@tarojs/plugin-platform-jd@3.6.3(@types/react@18.0.31):
+    resolution: {integrity: sha512-jYgC4eIlJ6q++NQ1dfLefi0CcvauFAON22qWcuQ3PuJxbWwuKdZQOWaCzjTh+lLsMW4c/z2yi4Ua3+AAGUpl+g==}
     dependencies:
-      '@tarojs/components': 3.6.2-canary.2(@types/react@18.0.31)(react@18.2.0)
-      '@tarojs/service': 3.6.2-canary.2(@types/react@18.0.31)
-      '@tarojs/shared': 3.6.2-canary.2
+      '@tarojs/service': 3.6.3(@types/react@18.0.31)
+      '@tarojs/shared': 3.6.3
+    transitivePeerDependencies:
+      - '@types/react'
+      - '@types/webpack'
+      - '@types/webpack-dev-server'
+      - supports-color
+      - vue
+    dev: true
+
+  /@tarojs/plugin-platform-qq@3.6.3(@types/react@18.0.31):
+    resolution: {integrity: sha512-bagRgFO9KjqojKoyTJb55QbbZwVdzMy7ADRhk5GmBwzzVcc/IvflpJqA/f/6dfQNoN3njIKr8CGUx6O6YygcEw==}
+    dependencies:
+      '@tarojs/plugin-platform-weapp': 3.6.3(@types/react@18.0.31)
+      '@tarojs/service': 3.6.3(@types/react@18.0.31)
+      '@tarojs/shared': 3.6.3
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-native'
@@ -1914,12 +1899,12 @@ packages:
       - vue
     dev: true
 
-  /@tarojs/plugin-platform-tt@3.6.2-canary.2(@types/react@18.0.31):
-    resolution: {integrity: sha512-5DTywG5emOC3RDqQq96RvuZJvwuEdoZKnvjr5pIGa1vt0Bw+2HJCGA3HXhfvutNjYyI3l7USxfF7tcedKy75OA==}
+  /@tarojs/plugin-platform-swan@3.6.3(@types/react@18.0.31):
+    resolution: {integrity: sha512-f4FZAlcYmUConZ09RBU4e88gZ7vYOa6nV1lao4Qb5w52P6gEH+515OQ34t/tOhGJmXzP9cLaoKzoQX4xkJMJqw==}
     dependencies:
-      '@tarojs/components': 3.6.2-canary.2(@types/react@18.0.31)(react@18.2.0)
-      '@tarojs/service': 3.6.2-canary.2(@types/react@18.0.31)
-      '@tarojs/shared': 3.6.2-canary.2
+      '@tarojs/components': 3.6.3(@types/react@18.0.31)(react@18.2.0)
+      '@tarojs/service': 3.6.3(@types/react@18.0.31)
+      '@tarojs/shared': 3.6.3
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-native'
@@ -1929,36 +1914,50 @@ packages:
       - vue
     dev: true
 
-  /@tarojs/plugin-platform-weapp@3.6.2-canary.2(@types/react@18.0.31)(react@18.2.0):
-    resolution: {integrity: sha512-wK8QWypfoII3DxiWwrakIIvY2VQaOZTHRVCmjYSGFKdBT4ZjVnn1IPFlds18fEgGe+DnS8ih1TXzOW+urdmXPw==}
+  /@tarojs/plugin-platform-tt@3.6.3(@types/react@18.0.31):
+    resolution: {integrity: sha512-7VcNG1pM84HvEWP8bpKmOcIREVy7zmEGTTqVAKironVG3qYkU9RDHPG33yuUCvJMYa6OtASTP1BmCBgdAsXveA==}
     dependencies:
-      '@tarojs/components': 3.6.2-canary.2(@types/react@18.0.31)(react@18.2.0)
-      '@tarojs/service': 3.6.2-canary.2(@types/react@18.0.31)
-      '@tarojs/shared': 3.6.2-canary.2
+      '@tarojs/components': 3.6.3(@types/react@18.0.31)(react@18.2.0)
+      '@tarojs/service': 3.6.3(@types/react@18.0.31)
+      '@tarojs/shared': 3.6.3
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-native'
       - '@types/webpack'
       - '@types/webpack-dev-server'
-      - react
+      - supports-color
+      - vue
+    dev: true
+
+  /@tarojs/plugin-platform-weapp@3.6.3(@types/react@18.0.31):
+    resolution: {integrity: sha512-0ouoYXZGOLal42yO0rS8OovTdci7JvO/pA0w9ifczQVafZlaLcG24g9LS4Wp8FuwI+xsufnwBu4Za4a+7/9Apg==}
+    dependencies:
+      '@tarojs/components': 3.6.3(@types/react@18.0.31)(react@18.2.0)
+      '@tarojs/service': 3.6.3(@types/react@18.0.31)
+      '@tarojs/shared': 3.6.3
+    transitivePeerDependencies:
+      - '@types/react'
+      - '@types/react-native'
+      - '@types/webpack'
+      - '@types/webpack-dev-server'
       - supports-color
       - vue
 
-  /@tarojs/react@3.6.2-canary.2(react@18.2.0):
-    resolution: {integrity: sha512-4IL5Zx7D15vsVPvR9HQ9GgBjnmO1XHcjEEjJzNjrg31R7FcukJKAPKRlJpT31/vwK+dilnvkNG7SIIl6oVHS/Q==}
+  /@tarojs/react@3.6.3(react@18.2.0):
+    resolution: {integrity: sha512-zt1LiQW4sFXaMmvp14Yu17kurTpEuXPdh+gUTJqTVAzseiRiZNgorlqOR1fFWKlJpYkmPaM6fvKiRXClF5Yvvw==}
     dependencies:
-      '@tarojs/runtime': 3.6.2-canary.2
-      '@tarojs/shared': 3.6.2-canary.2
+      '@tarojs/runtime': 3.6.3
+      '@tarojs/shared': 3.6.3
       react-reconciler: 0.27.0(react@18.2.0)
     transitivePeerDependencies:
       - react
     dev: false
 
-  /@tarojs/router@3.6.2-canary.2(@types/react@18.0.31):
-    resolution: {integrity: sha512-FKejB26HpqpmGPs1L61WWbJuxXilsWEJuq8QbYrPevE63SvG1iiSeOMuHH7pZwXrolnizrdD/vP5mUNDcIB1sQ==}
+  /@tarojs/router@3.6.3(@types/react@18.0.31):
+    resolution: {integrity: sha512-e5TWBX0t8wP2PclIUSlg5+/f8wiAzcGiHNorAJrDUkPyzp0mrAvdFNf/KdhMUUjekKvqcuNfBhNLtxJoslG7Ow==}
     dependencies:
-      '@tarojs/runtime': 3.6.2-canary.2
-      '@tarojs/taro': 3.6.2-canary.2(@types/react@18.0.31)
+      '@tarojs/runtime': 3.6.3
+      '@tarojs/taro': 3.6.3(@types/react@18.0.31)
       dingtalk-jsapi: 2.15.4
       history: 5.3.0
       mobile-detect: 1.4.5
@@ -1970,27 +1969,27 @@ packages:
       - '@types/webpack-dev-server'
       - vue
 
-  /@tarojs/runner-utils@3.6.2-canary.2:
-    resolution: {integrity: sha512-dTJKbskT1VKX9baKAWHHYEcX5gHGS8uVKeclRe044fdwow6o6k23roMRVjZIIc52sRVCq68Ebr6z6kWR1MCbbg==}
+  /@tarojs/runner-utils@3.6.3:
+    resolution: {integrity: sha512-6Z9lHA0dz8jeGTOKKzgXs9mAgTx5TaGFqnhElyGi4lJ0kHKBoxHz/uIHIFVBQx+nEWqwTxBlY2HkBwqnEOUhaQ==}
     dependencies:
-      '@tarojs/helper': 3.6.2-canary.2
+      '@tarojs/helper': 3.6.3
       scss-bundle: 3.1.2
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@tarojs/runtime@3.6.2-canary.2:
-    resolution: {integrity: sha512-+mn4KpHxC2HHed0JI/y7kpSsCFARzTPRR5dUnCd3Nt8ueVY4JYHmt8m5KX5+97mwaSOH+VVPnABytf9si//Gog==}
+  /@tarojs/runtime@3.6.3:
+    resolution: {integrity: sha512-4N+1vmpH89M3l7ihfP+CaDi7iz3hvCN+GI1jZn4ZeK2+/DN/GMdVG69vQQKILluZsZj8xMtp4AEEtvS5ivHeEA==}
     dependencies:
-      '@tarojs/shared': 3.6.2-canary.2
+      '@tarojs/shared': 3.6.3
       lodash-es: 4.17.21
 
-  /@tarojs/service@3.6.2-canary.2(@types/react@18.0.31):
-    resolution: {integrity: sha512-5wtbKDGEN4/Z4lodkvXsJWX7SmajWKN8qrktYUUj7M3PiYoFCtqvvlfC89pBFkNI3QkAh4+GlASC0E2w7sKBkA==}
+  /@tarojs/service@3.6.3(@types/react@18.0.31):
+    resolution: {integrity: sha512-B0Q/YjIfYsshXuK896pzMc8rbzDPgBbjT7G5dJSdAl2TaRNrBf5GI/7Slu3bySORZksMFrhK1gXuw3tIsx/WMg==}
     dependencies:
-      '@tarojs/helper': 3.6.2-canary.2
-      '@tarojs/shared': 3.6.2-canary.2
-      '@tarojs/taro': 3.6.2-canary.2(@types/react@18.0.31)
+      '@tarojs/helper': 3.6.3
+      '@tarojs/shared': 3.6.3
+      '@tarojs/taro': 3.6.3(@types/react@18.0.31)
       fs-extra: 8.1.0
       joi: 17.9.1
       lodash: 4.17.21
@@ -2004,14 +2003,14 @@ packages:
       - supports-color
       - vue
 
-  /@tarojs/shared@3.6.2-canary.2:
-    resolution: {integrity: sha512-vC9gHajUu0vx4ztz2Z+h8P8wg17vOjazVP6z1SrLX9QJF3xHq84OMvUdbp6hs2TUSUibMnS1CS3YFqRZ6QLLTg==}
+  /@tarojs/shared@3.6.3:
+    resolution: {integrity: sha512-7NrCnZA86uni1FfWC7a2VWKBu0SapgilPi5EZDnVMaMxIMnrNbDseRecr84jt975NPOJ50cxu1ED/YEMY2VSHA==}
 
-  /@tarojs/taro-loader@3.6.2-canary.2(@types/react@18.0.31):
-    resolution: {integrity: sha512-+II1Ua2wXnnZjupI6pkHhYtXWMMBtHZt1BRgiew+ZwKhs4q+ameFMtb+5umeN3vKTfwVx1vqD9c77IFHb4Z96A==}
+  /@tarojs/taro-loader@3.6.3(@types/react@18.0.31):
+    resolution: {integrity: sha512-z/N6XdLUVZQHb8SMmExTyVgWmEwdVemLHTv/pm07uiOPCB1HCPbYv+ldrRazJRFfuL4IS9DOh4xg4K+vQ1Qt6w==}
     dependencies:
-      '@tarojs/helper': 3.6.2-canary.2
-      '@tarojs/taro': 3.6.2-canary.2(@types/react@18.0.31)
+      '@tarojs/helper': 3.6.3
+      '@tarojs/taro': 3.6.3(@types/react@18.0.31)
       loader-utils: 1.4.2
     transitivePeerDependencies:
       - '@types/react'
@@ -2021,8 +2020,8 @@ packages:
       - vue
     dev: true
 
-  /@tarojs/taro@3.6.2-canary.2(@types/react@18.0.31):
-    resolution: {integrity: sha512-sJsPkbs1vMwehsqtMS3MAI0gV7NUzDd9Y0i5OpGkZAWGyKSLuZsmBuV91Ogzd7wuLIO9a82VL1hTL7AEW0oItw==}
+  /@tarojs/taro@3.6.3(@types/react@18.0.31):
+    resolution: {integrity: sha512-SDr/pb8oiH8j7IBvpNR2iZNipos5YxlpLxFIUepiAxJvl7aiKGjK049US6gpQTC2TjyIFjsSZxHjfqckY/vCbw==}
     peerDependencies:
       '@types/react': '*'
       '@types/webpack': '*'
@@ -2038,18 +2037,18 @@ packages:
       vue:
         optional: true
     dependencies:
-      '@tarojs/api': 3.6.2-canary.2
-      '@tarojs/runtime': 3.6.2-canary.2
+      '@tarojs/api': 3.6.3
+      '@tarojs/runtime': 3.6.3
       '@types/react': 18.0.31
 
-  /@tarojs/webpack5-prebundle@3.6.2-canary.2(@types/react@18.0.31)(webpack@5.69.0):
-    resolution: {integrity: sha512-JdCersjE0LpxVXUrB4oWgWhQUAj/F8u5py/+BbyKgwOe0KXF/2vEQZ+7KtnjGA/ihUpUHfgZlD39mfT41U6NNw==}
+  /@tarojs/webpack5-prebundle@3.6.3(@types/react@18.0.31)(webpack@5.69.0):
+    resolution: {integrity: sha512-6yFMg45gVQZ4RTbLGJKN9xFmojqkqZ+Rt9EfjJhoOb2gbqKb0ZX++YiU0JozWQLEMgmWSgR7D/OsahI+tLo+BQ==}
     peerDependencies:
       webpack: ^5.69.0
     dependencies:
       '@swc/core': 1.3.42
-      '@tarojs/helper': 3.6.2-canary.2
-      '@tarojs/taro': 3.6.2-canary.2(@types/react@18.0.31)
+      '@tarojs/helper': 3.6.3
+      '@tarojs/taro': 3.6.3(@types/react@18.0.31)
       enhanced-resolve: 5.12.0
       es-module-lexer: 0.10.5
       esbuild: 0.14.54
@@ -2057,7 +2056,7 @@ packages:
       lodash: 4.17.21
       webpack: 5.69.0(@swc/core@1.3.42)
       webpack-chain: 6.5.1
-      webpack-virtual-modules: 0.4.6
+      webpack-virtual-modules: 0.5.0
     transitivePeerDependencies:
       - '@types/react'
       - '@types/webpack'
@@ -2066,26 +2065,26 @@ packages:
       - vue
     dev: true
 
-  /@tarojs/webpack5-runner@3.6.2-canary.2(@babel/core@7.21.3)(@swc/core@1.3.42)(@types/react@18.0.31)(postcss@8.4.21)(react@18.2.0)(webpack@5.69.0):
-    resolution: {integrity: sha512-HowxC66LA5DXahf6dRSicAS/9SmbCH7bN2LxYQj62wVyAuwgsktOsU1rgUuF4LogWmpO0Yv259rw4VI98Xbmng==}
+  /@tarojs/webpack5-runner@3.6.3(@babel/core@7.21.3)(@swc/core@1.3.42)(@types/react@18.0.31)(postcss@8.4.21)(react@18.2.0)(webpack@5.69.0):
+    resolution: {integrity: sha512-QiLQzd2RfTY9YnYKVSWh1Egwwo+kZVkjv4eqdDvIzT5BtVJEUhHhx7gKTXroI2Ln1N3gqDkXJxlOpM5agHJXFg==}
     peerDependencies:
       postcss: ^8.4.18
       webpack: ^5.69.0
     dependencies:
       '@parcel/css': 1.14.0
-      '@tarojs/helper': 3.6.2-canary.2
-      '@tarojs/plugin-platform-alipay': 3.6.2-canary.2(@types/react@18.0.31)
-      '@tarojs/plugin-platform-jd': 3.6.2-canary.2(@types/react@18.0.31)
-      '@tarojs/plugin-platform-qq': 3.6.2-canary.2(@types/react@18.0.31)(react@18.2.0)
-      '@tarojs/plugin-platform-swan': 3.6.2-canary.2(@types/react@18.0.31)
-      '@tarojs/plugin-platform-tt': 3.6.2-canary.2(@types/react@18.0.31)
-      '@tarojs/plugin-platform-weapp': 3.6.2-canary.2(@types/react@18.0.31)(react@18.2.0)
-      '@tarojs/runner-utils': 3.6.2-canary.2
-      '@tarojs/runtime': 3.6.2-canary.2
-      '@tarojs/shared': 3.6.2-canary.2
-      '@tarojs/taro': 3.6.2-canary.2(@types/react@18.0.31)
-      '@tarojs/taro-loader': 3.6.2-canary.2(@types/react@18.0.31)
-      '@tarojs/webpack5-prebundle': 3.6.2-canary.2(@types/react@18.0.31)(webpack@5.69.0)
+      '@tarojs/helper': 3.6.3
+      '@tarojs/plugin-platform-alipay': 3.6.3(@types/react@18.0.31)(react@18.2.0)
+      '@tarojs/plugin-platform-jd': 3.6.3(@types/react@18.0.31)
+      '@tarojs/plugin-platform-qq': 3.6.3(@types/react@18.0.31)
+      '@tarojs/plugin-platform-swan': 3.6.3(@types/react@18.0.31)
+      '@tarojs/plugin-platform-tt': 3.6.3(@types/react@18.0.31)
+      '@tarojs/plugin-platform-weapp': 3.6.3(@types/react@18.0.31)
+      '@tarojs/runner-utils': 3.6.3
+      '@tarojs/runtime': 3.6.3
+      '@tarojs/shared': 3.6.3
+      '@tarojs/taro': 3.6.3(@types/react@18.0.31)
+      '@tarojs/taro-loader': 3.6.3(@types/react@18.0.31)
+      '@tarojs/webpack5-prebundle': 3.6.3(@types/react@18.0.31)(webpack@5.69.0)
       acorn-walk: 8.2.0
       autoprefixer: 9.8.8
       babel-loader: 8.2.1(@babel/core@7.21.3)(webpack@5.69.0)
@@ -2112,15 +2111,15 @@ packages:
       mkdirp: 1.0.4
       ora: 5.4.1
       postcss: 8.4.21
-      postcss-html-transform: 3.6.2-canary.2(postcss@8.4.21)
+      postcss-html-transform: 3.6.3(postcss@8.4.21)
       postcss-import: 14.1.0(postcss@8.4.21)
       postcss-loader: 7.1.0(postcss@8.4.21)(webpack@5.69.0)
-      postcss-plugin-constparse: 3.6.2-canary.2(postcss@8.4.21)
-      postcss-pxtransform: 3.6.2-canary.2(postcss@8.4.21)
+      postcss-plugin-constparse: 3.6.3(postcss@8.4.21)
+      postcss-pxtransform: 3.6.3(postcss@8.4.21)
       postcss-url: 10.1.3(postcss@8.4.21)
       regenerator-runtime: 0.11.1
       resolve: 1.22.1
-      resolve-url-loader: 4.0.0
+      resolve-url-loader: 5.0.0
       sass: 1.50.0
       sass-loader: 12.4.0(sass@1.50.0)(webpack@5.69.0)
       sax: 1.2.4
@@ -2150,8 +2149,6 @@ packages:
       - fibers
       - node-sass
       - react
-      - rework
-      - rework-visit
       - supports-color
       - uglify-js
       - utf-8-validate
@@ -2968,20 +2965,20 @@ packages:
       is-invalid-path: 1.0.2
     dev: true
 
-  /babel-plugin-transform-react-jsx-to-rn-stylesheet@3.6.2-canary.2:
-    resolution: {integrity: sha512-r5ge3BPKVCg5aSaYitvLGGSHFnttsHALGRp+a3bHloLiitDc1OFMm/taEOq/n2h3Um/fO0xTbTn4W4SShU3KDg==}
+  /babel-plugin-transform-react-jsx-to-rn-stylesheet@3.6.3:
+    resolution: {integrity: sha512-qbitvZybZi2ImsA7DytU6Z8Q8GjG5SkkQx76L2ubH6Ia3lUaL60ruUvXVExwrtjC5I4ZgodoDZlUiQS3HWdEDA==}
     engines: {node: '>=12.0.0', npm: '>=6.0.0'}
     dependencies:
       camelize: 1.0.1
-      taro-css-to-react-native: 3.6.2-canary.2
+      taro-css-to-react-native: 3.6.3
     dev: true
 
-  /babel-plugin-transform-taroapi@3.6.2-canary.2:
-    resolution: {integrity: sha512-+RtejR7Ooz5HUoha3KUNguQe+07yEV0jBGz+hW4sznoPwSAjKwXHX+sZ4pLDftNHaIdAwEj+Raia7xKFKQASkQ==}
+  /babel-plugin-transform-taroapi@3.6.3:
+    resolution: {integrity: sha512-vV0O0aaCeWG2dPnJ9HVwuc2HXIAcYlIqyy9M/te6TYYvnOtCFgrtznC3uip913C1MtooN33ePQ3llR8EXOPTtg==}
     dev: true
 
-  /babel-preset-taro@3.6.2-canary.2(@babel/core@7.21.3):
-    resolution: {integrity: sha512-b7ABm7P7/7IA+wcDcLRm4Dp8656amNd2DURoiiKww4LAiycyrgQYTBmKMp2AZZcKovWpdmuzH2x0ex6Fx+CGzQ==}
+  /babel-preset-taro@3.6.3(@babel/core@7.21.3):
+    resolution: {integrity: sha512-LFWa5hhWhV5w3wkl8OCP4UKMT9gIB8JlLlQgjsEIQTlc5kVGA4NeRdWl/uS+yWxA/5mvxPTkEn5hmEiDWD4sOA==}
     peerDependencies:
       '@babel/core': '*'
     dependencies:
@@ -2995,15 +2992,15 @@ packages:
       '@babel/preset-typescript': 7.21.0(@babel/core@7.21.3)
       '@babel/runtime': 7.21.0
       '@babel/runtime-corejs3': 7.21.0
-      '@tarojs/helper': 3.6.2-canary.2
-      '@tarojs/shared': 3.6.2-canary.2
+      '@tarojs/helper': 3.6.3
+      '@tarojs/shared': 3.6.3
       babel-plugin-dynamic-import-node: 2.3.3
       babel-plugin-global-define: 1.0.3
       babel-plugin-jsx-attributes-array-to-object: 0.3.0
       babel-plugin-minify-dead-code-elimination: 0.5.2
       babel-plugin-transform-imports-api: 1.0.0
-      babel-plugin-transform-react-jsx-to-rn-stylesheet: 3.6.2-canary.2
-      babel-plugin-transform-taroapi: 3.6.2-canary.2
+      babel-plugin-transform-react-jsx-to-rn-stylesheet: 3.6.3
+      babel-plugin-transform-taroapi: 3.6.3
       core-js: 3.29.1
       metro-react-native-babel-preset: 0.72.3(@babel/core@7.21.3)
       react-refresh: 0.11.0
@@ -6682,8 +6679,8 @@ packages:
       postcss: 8.4.21
     dev: true
 
-  /postcss-html-transform@3.6.2-canary.2(postcss@8.4.21):
-    resolution: {integrity: sha512-XZi4VN6WRcGEZ1NZ2IFJ8cVD1RzS8ZT0uthBEkfP9JY79k3FyOq46wQdRk0lJjN0aYGw+9Q0l9mUbxKkDcOBdQ==}
+  /postcss-html-transform@3.6.3(postcss@8.4.21):
+    resolution: {integrity: sha512-iSZ/O+py6dYHViGjLMRXQ1c0nKBu3FC5pZ0oMzP6T9d26BDVrWjVeOqnuzRLScbuJGrJlX4pICc5+RuBTIxRJA==}
     peerDependencies:
       postcss: ^8.4.18
     dependencies:
@@ -6931,16 +6928,16 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /postcss-plugin-constparse@3.6.2-canary.2(postcss@8.4.21):
-    resolution: {integrity: sha512-QtSJ1oX0AULm8CIJoaPm0TdcSj6nT5BlRbmbs/6g1S8GFGd2brEqhGNLBzdpRm5UYq4zOIgj6xurov5mPvWcyw==}
+  /postcss-plugin-constparse@3.6.3(postcss@8.4.21):
+    resolution: {integrity: sha512-8zocAxWgRUuNBVIDNi9lOHZYnNV7jn7aA1sFo2cOMg511cF/rjr7tkAmI7zI7Y6UQLEQLS7LehEGPtBFI7fbAw==}
     peerDependencies:
       postcss: ^8.4.18
     dependencies:
       postcss: 8.4.21
     dev: true
 
-  /postcss-pxtransform@3.6.2-canary.2(postcss@8.4.21):
-    resolution: {integrity: sha512-XlkbQ/tt8yPpefUoMTiFx4pfhgT2WTb4g9t/EGBZXNyQ1o5nz/zpNYhn0TQg+hToQ80KFaCwgJQRUjvB67WNOg==}
+  /postcss-pxtransform@3.6.3(postcss@8.4.21):
+    resolution: {integrity: sha512-EVwwtLNCv+WyVj/guuwjId9x020yvbGgUeWoMzhnsn6MP/25t+RgG6nNjXS38ExFrlLFGHWAfwJ89HUH9rW/dA==}
     peerDependencies:
       postcss: ^8.4.18
     dependencies:
@@ -7353,22 +7350,14 @@ packages:
   /resolve-pathname@3.0.0:
     resolution: {integrity: sha512-C7rARubxI8bXFNB/hqcp/4iUeIXJhJZvFPFPiSPRnhU5UPxzMFIl+2E6yY6c4k9giDJAhtV+enfA+G89N6Csng==}
 
-  /resolve-url-loader@4.0.0:
-    resolution: {integrity: sha512-05VEMczVREcbtT7Bz+C+96eUO5HDNvdthIiMB34t7FcF8ehcu4wC0sSgPUubs3XW2Q3CNLJk/BJrCU9wVRymiA==}
-    engines: {node: '>=8.9'}
-    peerDependencies:
-      rework: 1.0.1
-      rework-visit: 1.0.0
-    peerDependenciesMeta:
-      rework:
-        optional: true
-      rework-visit:
-        optional: true
+  /resolve-url-loader@5.0.0:
+    resolution: {integrity: sha512-uZtduh8/8srhBoMx//5bwqjQ+rfYOUq8zC9NrMUGtjBiGTtFJM42s58/36+hTqeqINcnYe08Nj3LkK9lW4N8Xg==}
+    engines: {node: '>=12'}
     dependencies:
       adjust-sourcemap-loader: 4.0.0
       convert-source-map: 1.9.0
       loader-utils: 2.0.4
-      postcss: 7.0.39
+      postcss: 8.4.21
       source-map: 0.6.1
     dev: true
 
@@ -8081,8 +8070,8 @@ packages:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
 
-  /taro-css-to-react-native@3.6.2-canary.2:
-    resolution: {integrity: sha512-7JsfMg2T6e5JoXzka83dAurCV3eGZPP3O3b5zsjJK3JNDtM3vkp8qg6ccCFmSNdI/OlOf9XwlfKI5GntiuxcAA==}
+  /taro-css-to-react-native@3.6.3:
+    resolution: {integrity: sha512-90ey9SM3qmqAm0uRCM59y1ScA5pb9BHTI9hjasRtix7csfJMQy0rXpILORzvSidWM4muf2RcAGlpWrSTf/xs4Q==}
     dependencies:
       camelize: 1.0.1
       css: 3.0.0
@@ -8529,8 +8518,8 @@ packages:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
     engines: {node: '>=10.13.0'}
 
-  /webpack-virtual-modules@0.4.6:
-    resolution: {integrity: sha512-5tyDlKLqPfMqjT3Q9TAqf2YqjwmnUleZwzJi1A5qXnlBCdj2AtOJ6wAWdglTIDOPgOiOrXeBeFcsQ8+aGQ6QbA==}
+  /webpack-virtual-modules@0.5.0:
+    resolution: {integrity: sha512-kyDivFZ7ZM0BVOUteVbDFhlRt7Ah/CSPwJdi8hBpkK7QLumUqdLtVfm/PX/hkcnrvr0i77fO5+TjZ94Pe+C9iw==}
     dev: true
 
   /webpack@5.69.0(@swc/core@1.3.42):

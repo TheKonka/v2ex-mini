@@ -39,12 +39,12 @@ const Index: React.FC = () => {
 			{memberInfo && (
 				<View className="node">
 					<Image
-						src={getProxyImage(memberInfo.avatar_large)}
+						src={getProxyImage(memberInfo.avatar_xlarge || memberInfo.avatar_large)}
 						mode="aspectFit"
 						className="node-avatar"
 						onClick={() => {
 							Taro.previewImage({
-								urls: [getProxyImage(memberInfo.avatar_large)],
+								urls: [getProxyImage(memberInfo.avatar_xlarge || memberInfo.avatar_large)],
 								showmenu: true
 							});
 						}}

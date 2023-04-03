@@ -89,7 +89,7 @@ const Index: React.FC = () => {
 						onInput={(e) => {
 							const value = e.detail.value;
 							setSearchValue(value);
-							setSearchResult(nodeList.filter((i) => i.title.includes(value)));
+							setSearchResult(nodeList.filter((i) => i.title.toLocaleLowerCase().includes(value.toLocaleLowerCase())));
 						}}
 					/>
 				</View>

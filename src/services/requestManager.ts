@@ -5,13 +5,16 @@ interceptors.forEach((interceptorItem) => Taro.addInterceptor(interceptorItem));
 
 export default class RequestManager {
 	private static _requset(url: string, method: keyof Taro.request.Method = 'GET'): Promise<any> {
+		const header = {
+			'content-type': 'application/json'
+		};
+		if (url.startsWith('api/v2/')) {
+			Reflect.set(header, 'authorization', `Bearer ${__PERSONAL_ACCESS_TOKEN__}`);
+		}
 		return Taro.request({
 			url: url.startsWith('http') ? url : __API_URL__ + url,
 			method,
-			header: {
-				'content-type': 'application/json',
-				'authorization': `Bearer ${__PERSONAL_ACCESS_TOKEN__}`
-			}
+			header
 		});
 	}
 
