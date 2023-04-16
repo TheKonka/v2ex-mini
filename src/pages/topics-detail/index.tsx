@@ -21,17 +21,28 @@ const Index: React.FC = () => {
 
 	useLoad(() => {
 		if (id) {
-			getTpoicsById(id).then((res) => {
-				setTopics(res.result);
-				setPageCount(Math.ceil(res.result.replies / 20));
-				Taro.setNavigationBarTitle({
-					title: 't/' + res.result.id
+			getTpoicsById(id)
+				.then((res) => {
+					setTopics(res.result);
+					setPageCount(Math.ceil(res.result.replies / 20));
+					Taro.setNavigationBarTitle({
+						title: 't/' + res.result.id
+					});
+				})
+				.catch(() => {
+					Taro.showModal({
+						content: '获取主题详情失败',
+						showCancel: false
+					}).then(() => {
+						Taro.navigateBack();
+					});
 				});
-			});
 
-			getTpoicsRepliesById(id, 1).then((res) => {
-				setReplies(res.result);
-			});
+			getTpoicsRepliesById(id, 1)
+				.then((res) => {
+					setReplies(res.result);
+				})
+				.catch(() => {});
 		}
 	});
 

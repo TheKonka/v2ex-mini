@@ -18,12 +18,23 @@ const Index: React.FC = () => {
 			Taro.setNavigationBarTitle({
 				title: username
 			});
-			getMemberByUsername(username).then((res) => {
-				setMemberInfo(res);
-			});
-			getTpoicsByUsername(username).then((res) => {
-				setTopics(res);
-			});
+			getMemberByUsername(username)
+				.then((res) => {
+					setMemberInfo(res);
+				})
+				.catch(() => {
+					Taro.showModal({
+						title: '获取会员信息失败',
+						showCancel: false
+					}).then(() => {
+						Taro.navigateBack();
+					});
+				});
+			getTpoicsByUsername(username)
+				.then((res) => {
+					setTopics(res);
+				})
+				.catch(() => {});
 		}
 	});
 

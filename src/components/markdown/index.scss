@@ -20,9 +20,22 @@
 }
 
 .pre {
-	background: #f5f5f5;
-	padding: 20px;
+	background: #f6f8fa;
+	padding: 32px;
 	overflow: auto;
 	white-space: pre;
 	word-break: normal;
+	word-wrap: normal;
+}
+.code {
+	white-space: pre;
+}
+.link {
+	color: #0969da;
+	text-decoration: underline;
+}
+.ul-li {
+	list-style-type: disc;
+	display: list-item;
+	transform: translateX(20px);
 }

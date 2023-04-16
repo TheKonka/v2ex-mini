@@ -3,7 +3,7 @@
   "projectname": "v2ex-mini",
   "setting": {
     "compileHotReLoad": false,
-    "urlCheck": true,
+    "urlCheck": false,
     "bigPackageSizeSupport": true,
     "lazyloadPlaceholderEnable": false,
     "preloadBackgroundData": false
@@ -37,6 +37,13 @@
           "name": "会员信息",
           "pathName": "pages/member/index",
           "query": "username=rzdCG",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/my/index",
+          "query": "",
           "launchMode": "default",
           "scene": null
         }

@@ -11,11 +11,11 @@ const customInterceptor = (chain: Taro.Chain) => {
 				return Promise.reject(res);
 			}
 		})
-		.catch((e) => {
-			Taro.showToast({
-				title: e.errMsg || '请求失败',
-				icon: 'none'
-			});
+		.catch((e: any) => {
+			// Taro.showToast({
+			// 	title: e.errMsg || '请求失败',
+			// 	icon: 'none'
+			// });
 			return Promise.reject(e);
 		});
 };

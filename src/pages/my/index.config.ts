@@ -1,5 +1,5 @@
 export default definePageConfig({
-	navigationBarTitleText: '今日热议主题'
+	navigationBarTitleText: ''
 	// disableScroll: true,
 	// navigationStyle: 'custom'
 });
