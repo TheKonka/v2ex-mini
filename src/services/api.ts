@@ -70,3 +70,10 @@ export function getTpoicsByUsername(username: string) {
 export function getMemberByUsername(username: string) {
 	return RequestManager.get(`api/members/show.json?username=${username}`);
 }
+
+/**
+ * https://www.v2ex.com/?tab=tech
+ */
+export function getTechTab(id) {
+	return RequestManager.get(`?tab=${id}`);
+}

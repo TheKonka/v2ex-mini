@@ -12,7 +12,8 @@ export default defineAppConfig({
 		'pages/topics-detail/index',
 		'pages/topics-of-node/index',
 		'pages/member/index',
-		'pages/my/index'
+		'pages/my/index',
+		'pages/hot/index'
 	],
 	tabBar: {
 		color: '#fff',
@@ -24,6 +25,12 @@ export default defineAppConfig({
 				text: '',
 				iconPath: './assets/logo.png',
 				selectedIconPath: './assets/logo.png'
+			},
+			{
+				pagePath: 'pages/hot/index',
+				text: '',
+				iconPath: './assets/hot.png',
+				selectedIconPath: './assets/hot.png'
 			},
 			{
 				pagePath: 'pages/planes/index',

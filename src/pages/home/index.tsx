@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
-import { View, Image, Text } from '@tarojs/components';
+import { View, Image, Text, Swiper, SwiperItem } from '@tarojs/components';
 import Taro, { useLoad, useShareAppMessage } from '@tarojs/taro';
-import { getProxyImage } from '@/helpers/img';
-import { getTimeFromNow } from '@/helpers/time';
-import { getTodayHotTopics } from '@/services/api';
+import TabsItem from './components/TabsItem';
 import './index.scss';
 
 const Index: React.FC = () => {
-	const [todayHotTopics, setTodayHotTopics] = useState<Api.TodayHotTopics[]>([]);
+	const [currentTab, setCurrentTab] = useState(0);
 
-	useLoad(() => {
-		getTodayHotTopics().then((res) => {
-			setTodayHotTopics(res);
-		});
-	});
+	const tabs = [
+		{ name: '技术', id: 'tech' },
+		{ name: '创意', id: 'creative' },
+		{ name: '好玩', id: 'play' },
+		{ name: 'Apple', id: 'apple' },
+		{ name: '酷工作', id: 'jobs' },
+		{ name: '交易', id: 'deals' },
+		{ name: '城市', id: 'city' },
+		{ name: '问与答', id: 'qna' },
+		{ name: '最热', id: 'hot' },
+		{ name: '全部', id: 'all' },
+		{ name: 'R2', id: 'r2' }
+	];
 
 	useShareAppMessage(() => {
 		return {
@@ -24,57 +30,23 @@ const Index: React.FC = () => {
 
 	return (
 		<>
-			{todayHotTopics.map((item) => {
-				return (
-					<>
-						<View
-							key={item.id}
-							className="topics-item"
-							onClick={() => {
-								Taro.navigateTo({
-									url: `/pages/topics-detail/index?id=${item.id}`
-								});
-							}}
-						>
-							<View className="topics-item-meta">
-								<Image
-									src={getProxyImage(item.member.avatar_large)}
-									mode="aspectFit"
-									className="topics-item-meta-avatar"
-									lazyLoad
-									onClick={(e) => {
-										e.stopPropagation();
-										Taro.navigateTo({
-											url: `/pages/member/index?username=${item.member.username}`
-										});
-									}}
-								/>
-								<View>
-									<View className="topics-item-meta-username">{item.member.username}</View>
-									<View className="time">
-										<Text>{getTimeFromNow(item.created * 1000)}</Text>
-										<Text> · </Text>
-										<Text>{`${item.replies}条回复`}</Text>
-									</View>
-								</View>
-								<View
-									className="topics-item-meta-node"
-									onClick={(e) => {
-										e.stopPropagation();
-										Taro.navigateTo({
-											url: `/pages/topics-of-node/index?node=${item.node.name}`
-										});
-									}}
-								>
-									{item.node.title}
-								</View>
-							</View>
-
-							<View className="topics-item-title">{item.title}</View>
-						</View>
-					</>
-				);
-			})}
+			<Swiper
+				current={currentTab}
+				autoplay={false}
+				onChange={(e) => {
+					if (e.detail.source === 'touch') {
+						setCurrentTab(e.detail.current);
+					}
+				}}
+			>
+				{tabs.slice(Math.max(currentTab - 2, 0), currentTab + 2).map((i) => {
+					return (
+						<SwiperItem key={i.id}>
+							<TabsItem id={i.id} />
+						</SwiperItem>
+					);
+				})}
+			</Swiper>
 		</>
 	);
 };
