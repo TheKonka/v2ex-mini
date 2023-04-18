@@ -8,7 +8,8 @@ import './index.scss';
 
 const Index: React.FC = () => {
 	const router = useRouter();
-	const { node } = router.params;
+	const { node, node_title } = router.params;
+
 	const [topics, setTopics] = useState<Api.TopicsOfNode[]>([]);
 	const [nodeInfo, setNodeInfo] = useState<Api.NodeInfo>();
 	const [pageCount, setPageCount] = useState(1);
@@ -17,6 +18,11 @@ const Index: React.FC = () => {
 	const isFetching = useRef(false);
 
 	useLoad(() => {
+		if (node_title) {
+			Taro.setNavigationBarTitle({
+				title: node_title
+			});
+		}
 		if (node) {
 			getNodeByName(node).then((res) => {
 				setNodeInfo(res.result);

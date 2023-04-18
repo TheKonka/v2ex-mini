@@ -1,6 +1,6 @@
 export default defineAppConfig({
 	// renderer: 'skyline',
-	// lazyCodeLoading: 'requiredComponents',
+	lazyCodeLoading: 'requiredComponents',
 	darkmode: false,
 	style: 'v2',
 	debug: process.env.NODE_ENV !== 'production',

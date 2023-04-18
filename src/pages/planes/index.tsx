@@ -22,8 +22,8 @@ interface IPlanes {
 type NodeList = Pick<Api.Node, 'avatar_normal' | 'name' | 'title'>;
 
 const Index: React.FC = () => {
-	const [planes, setPlanes] = useState<IPlanes[]>([]);
-	const [nodeList, setNodeList] = useState<NodeList[]>([]);
+	const [planes, setPlanes] = useState<IPlanes[]>(() => Taro.getStorageSync('planes') || []);
+	const [nodeList, setNodeList] = useState<NodeList[]>(() => Taro.getStorageSync('nodes_list') || []);
 	const [searchResult, setSearchResult] = useState<NodeList[]>([]);
 	const [searchValue, setSearchValue] = useState<string>('');
 	const [scrollIntoViewId, setScrollIntoViewId] = useState<string>('tab0');
@@ -35,7 +35,7 @@ const Index: React.FC = () => {
 				.match(/<div class="header">.*<\/div>/g)
 				.map((i: string) => i.match(/<div[^>]+>([\s\S]+)<span[^>]+>([\s\S]+)<span[^>]+>([\s\S]+)<\/span><\/div>/))
 				.filter(Boolean)
-				.map((i) => {
+				.map((i: any) => {
 					return {
 						name: i[1],
 						name_en: i[2].substring(0, i[2].length - 2).trim(),
@@ -57,10 +57,18 @@ const Index: React.FC = () => {
 				}
 			}
 			setPlanes(categoryArr);
+			Taro.setStorage({
+				key: 'planes',
+				data: categoryArr
+			});
 		});
 
 		getNodesList().then((res) => {
 			setNodeList(res);
+			Taro.setStorage({
+				key: 'nodes_list',
+				data: res
+			});
 		});
 	});
 

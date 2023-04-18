@@ -1,5 +1,5 @@
 export default definePageConfig({
-	navigationBarTitleText: '节点主题'
+	navigationBarTitleText: ''
 	// disableScroll: true,
 	// navigationStyle: 'custom'
 });

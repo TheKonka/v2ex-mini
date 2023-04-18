@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Image, Text } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import { getProxyImage } from '@/helpers/img';
-import { getTimeFromNow } from '@/helpers/time';
+import './index.scss';
 
 const TopicItem: React.FC<TabTopic> = (item) => {
 	return (
@@ -42,7 +42,7 @@ const TopicItem: React.FC<TabTopic> = (item) => {
 						onClick={(e) => {
 							e.stopPropagation();
 							Taro.navigateTo({
-								url: `/pages/topics-of-node/index?node=${item.node_id}`
+								url: `/pages/topics-of-node/index?node=${item.node_id}&node_title=${item.node_name}`
 							});
 						}}
 					>

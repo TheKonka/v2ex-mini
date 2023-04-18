@@ -7,18 +7,22 @@ import { getTodayHotTopics } from '@/services/api';
 import './index.scss';
 
 const Index: React.FC = () => {
-	const [todayHotTopics, setTodayHotTopics] = useState<Api.TodayHotTopics[]>([]);
+	const [todayHotTopics, setTodayHotTopics] = useState<Api.TodayHotTopics[]>(() => Taro.getStorageSync('hot_list') || []);
 
 	useLoad(() => {
 		getTodayHotTopics().then((res) => {
 			setTodayHotTopics(res);
+			Taro.setStorage({
+				key: 'hot_list',
+				data: res
+			});
 		});
 	});
 
 	useShareAppMessage(() => {
 		return {
 			title: '今日热议主题',
-			path: '/pages/home/index'
+			path: '/pages/hot/index'
 		};
 	});
 
@@ -52,7 +56,7 @@ const Index: React.FC = () => {
 								<View>
 									<View className="topics-item-meta-username">{item.member.username}</View>
 									<View className="time">
-										<Text>{getTimeFromNow(item.created * 1000)}</Text>
+										<Text>{'发布于 ' + getTimeFromNow(item.created * 1000)}</Text>
 										<Text> · </Text>
 										<Text>{`${item.replies}条回复`}</Text>
 									</View>
@@ -62,7 +66,7 @@ const Index: React.FC = () => {
 									onClick={(e) => {
 										e.stopPropagation();
 										Taro.navigateTo({
-											url: `/pages/topics-of-node/index?node=${item.node.name}`
+											url: `/pages/topics-of-node/index?node=${item.node.name}&node_title=${item.node.title}`
 										});
 									}}
 								>
@@ -75,6 +79,11 @@ const Index: React.FC = () => {
 					</>
 				);
 			})}
+			{todayHotTopics.length > 0 && (
+				<View className="no-more">
+					<Text>—— 我是有底线的 ——</Text>
+				</View>
+			)}
 		</>
 	);
 };

@@ -94,7 +94,7 @@ const Index: React.FC = () => {
 								className="node"
 								onClick={() => {
 									Taro.navigateTo({
-										url: `/pages/topics-of-node/index?node=${topics.node.name}`
+										url: `/pages/topics-of-node/index?node=${topics.node.name}&node_name=${topics.node.title}`
 									});
 								}}
 							>
