@@ -23,11 +23,16 @@ navigator {
 	background-origin: border-box;
 	isolation: isolate;
 }
-
+page {
+	height: 100%;
+}
 navigator text,
 text text,
 text navigator {
 	display: inline;
+}
+custom-wrapper {
+	height: 100%;
 }
 
 .time {
@@ -35,14 +40,17 @@ text navigator {
 	font-weight: 400;
 	line-height: 24px;
 	color: #7a869a;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 .no-more {
 	text-align: center;
 	font-size: 28px;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: 28px;
 	color: #7a869a;
-	padding: 40px 0;
+	padding: 30px 0;
 }
 
 button {

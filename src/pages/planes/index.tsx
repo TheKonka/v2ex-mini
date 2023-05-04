@@ -142,26 +142,28 @@ const Index: React.FC = () => {
 				})}
 			</ScrollView>
 
-			<ScrollView scrollY enableFlex enhanced className="nodes" scrollWithAnimation>
+			<View className="nodes">
 				{currentPlanes ? (
-					currentPlanes.nodes.map((item) => {
-						return (
-							<Button
-								size="mini"
-								className="nodes-item"
-								key={item.name}
-								onClick={() => {
-									handleNodeDetail(item.name);
-								}}
-							>
-								<View>{item.title}</View>
-							</Button>
-						);
-					})
+					<ScrollView scrollY enableFlex enhanced scrollWithAnimation type="custom">
+						{currentPlanes.nodes.map((item) => {
+							return (
+								<Button
+									size="mini"
+									className="nodes-item"
+									key={item.name}
+									onClick={() => {
+										handleNodeDetail(item.name);
+									}}
+								>
+									{item.title}
+								</Button>
+							);
+						})}
+					</ScrollView>
 				) : (
 					<Loading />
 				)}
-			</ScrollView>
+			</View>
 		</>
 	);
 };

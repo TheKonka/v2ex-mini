@@ -1,6 +1,10 @@
 export default defineAppConfig({
-	// renderer: 'skyline',
+	renderer: 'skyline',
 	lazyCodeLoading: 'requiredComponents',
+	// componentFramework: 'glass-easel',
+	rendererOptions: {
+		defaultDisplayBlock: true
+	},
 	darkmode: false,
 	style: 'v2',
 	debug: process.env.NODE_ENV !== 'production',

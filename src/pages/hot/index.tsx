@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, Text } from '@tarojs/components';
+import { View, Image, Text, ScrollView } from '@tarojs/components';
 import Taro, { useLoad, useShareAppMessage } from '@tarojs/taro';
 import { getProxyImage } from '@/helpers/img';
 import { getTimeFromNow } from '@/helpers/time';
@@ -27,7 +27,7 @@ const Index: React.FC = () => {
 	});
 
 	return (
-		<>
+		<ScrollView scrollY enableFlex enhanced scrollWithAnimation type="list" className="scrollview-hot">
 			{todayHotTopics.map((item) => {
 				return (
 					<>
@@ -84,7 +84,7 @@ const Index: React.FC = () => {
 					<Text>—— 我是有底线的 ——</Text>
 				</View>
 			)}
-		</>
+		</ScrollView>
 	);
 };
 

@@ -8,7 +8,7 @@
     "lazyloadPlaceholderEnable": false,
     "preloadBackgroundData": false
   },
-  "libVersion": "2.30.0",
+  "libVersion": "2.31.0",
   "condition": {
     "miniprogram": {
       "list": [
@@ -43,6 +43,13 @@
         {
           "name": "我的",
           "pathName": "pages/my/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "今日热议主题",
+          "pathName": "pages/hot/index",
           "query": "",
           "launchMode": "default",
           "scene": null

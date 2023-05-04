@@ -32,6 +32,7 @@ const Index: React.FC = () => {
 
 	return (
 		<>
+			<View className="title">V2EX</View>
 			<ScrollView scrollX enhanced enableFlex className="tabs" scrollWithAnimation scrollIntoView={scrillIntoViewId}>
 				{tabs.map((item, index) => {
 					return (
@@ -53,8 +54,8 @@ const Index: React.FC = () => {
 				className="tab-swpier"
 				current={currentTab}
 				autoplay={false}
-				cache-extent={1}
-				cacheExtent={1}
+				// cache-extent={1}
+				// cacheExtent={1}
 				onChange={(e) => {
 					if (e.detail.source === 'touch') {
 						setScrillIntoViewId('id' + e.detail.current);

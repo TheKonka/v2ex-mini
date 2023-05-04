@@ -1,6 +1,5 @@
 export default definePageConfig({
-	navigationBarTitleText: '首页'
-	// disableScroll: true,
-	// navigationStyle: 'custom',
-	// renderer: 'skyline'
+	navigationBarTitleText: '首页',
+	disableScroll: true,
+	navigationStyle: 'custom'
 });

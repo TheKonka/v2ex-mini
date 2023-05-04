@@ -4,6 +4,12 @@ page {
 	flex-direction: column;
 	height: 100vh;
 }
+.title {
+	height: 180px;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+}
 .tabs {
 	height: 100px;
 	align-items: center;
@@ -51,4 +57,6 @@ page {
 
 .tab-swpier {
 	flex: 1;
+	width: 100%;
+	overflow: hidden;
 }

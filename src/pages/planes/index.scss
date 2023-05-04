@@ -105,14 +105,20 @@
 }
 
 .nodes {
+	// height: 40vh;
 	height: calc(100vh - 480px);
 	display: flex;
+	flex-direction: row;
 	flex-wrap: wrap;
 	width: stretch;
 	border-radius: 30px;
 	background: #ffffff;
 	margin: 0 20px;
 	padding: 0 10px;
+
+	scroll-view {
+		height: 100%;
+	}
 
 	&-item {
 		margin: 10px;
@@ -122,5 +128,6 @@
 		border-radius: 32px;
 		background: #deebff;
 		overflow: hidden;
+		width: fit-content;
 	}
 }
