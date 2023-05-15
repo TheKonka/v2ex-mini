@@ -25,7 +25,8 @@ const TabsItem: React.FC<Props> = ({ id, currentId }) => {
 				const t = res.replace(/\n/g, '').match(/<table cellpadding="0" cellspacing="0" border="0" width="100%">(.*?)<\/table>/g);
 				const r = t.map((i: any) => {
 					const node = i.match(/<a class="node" href="\/go\/(\w+)">(.+?)<\/a>/);
-					const topic = i.match(/<a href="\/t\/(\d+).*?" class="topic-link">(.+?)<\/a>/);
+					const topic = i.match(/<a href="\/t\/(\d+).*?" class="topic-link".*?>(.+?)<\/a>/);
+
 					return {
 						username: i.match(/<a href="\/member\/(\w+)">/)[1],
 						avatar: i.match(/<img src="([^"]*)"/)[1],
