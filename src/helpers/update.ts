@@ -4,10 +4,10 @@ export function checkUpdate(auto?: boolean) {
 	const updateManager = Taro.getUpdateManager();
 	updateManager.onCheckForUpdate((res) => {
 		if (!res.hasUpdate && !auto) {
-			Taro.showToast({
-				title: '当前已经是最新版本',
-				icon: 'none'
-			});
+			// Taro.showToast({
+			// 	title: '当前已经是最新版本',
+			// 	icon: 'none'
+			// });
 		}
 	});
 	updateManager.onUpdateReady(() => {

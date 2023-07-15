@@ -9,14 +9,15 @@
 		"css": "sass"
 	},
 	"scripts": {
+		"preinstall": "npx only-allow pnpm",
+		"prepare": "husky install",
 		"build:weapp": "taro build --type weapp",
 		"build:alipay": "taro build --type alipay",
 		"dev:weapp": "npm run build:weapp -- --watch",
 		"dev:alipay": "npm run build:alipay -- --watch",
 		"lint": "npx eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
-		"lint:style": "npx stylelint --fix \"src/**/*.scss\" --syntax scss",
-		"format": "npx prettier --write src",
-		"prepare": "husky install"
+		"lint:style": "npx stylelint \"**/*.scss\" --fix",
+		"format": "npx prettier --write src"
 	},
 	"browserslist": [
 		"last 3 versions",
@@ -24,38 +25,54 @@
 		"ios >= 8"
 	],
 	"author": "konka",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TheKonka/v2ex-mini.git"
+	},
 	"license": "MIT",
 	"dependencies": {
-		"@babel/runtime": "^7.21.0",
-		"@tarojs/components": "3.6.6",
-		"@tarojs/plugin-framework-react": "3.6.6",
-		"@tarojs/plugin-platform-weapp": "3.6.6",
-		"@tarojs/react": "3.6.6",
-		"@tarojs/taro": "3.6.6",
+		"@babel/runtime": "^7.22.6",
+		"@tarojs/components": "3.6.7",
+		"@tarojs/plugin-framework-react": "3.6.7",
+		"@tarojs/plugin-platform-weapp": "3.6.7",
+		"@tarojs/react": "3.6.7",
+		"@tarojs/taro": "3.6.7",
 		"classnames": "^2.3.2",
-		"dayjs": "^1.11.7",
+		"dayjs": "^1.11.9",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
+		"remark-gfm": "^3.0.1",
+		"remark-parse": "^10.0.2",
+		"unified": "^10.1.2",
 		"use-debounce": "^9.0.4"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.21.4",
+		"@babel/core": "^7.22.9",
 		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
-		"@tarojs/webpack5-runner": "3.6.6",
-		"@trivago/prettier-plugin-sort-imports": "^4.1.1",
-		"@types/react": "^18.0.35",
-		"@types/webpack-env": "^1.18.0",
-		"@typescript-eslint/eslint-plugin": "^5.58.0",
-		"@typescript-eslint/parser": "^5.58.0",
-		"babel-preset-taro": "3.6.6",
-		"eslint": "^8.38.0",
+		"@tarojs/webpack5-runner": "3.6.7",
+		"@types/react": "^18.2.15",
+		"@types/webpack-env": "^1.18.1",
+		"@typescript-eslint/eslint-plugin": "^5.62.0",
+		"@typescript-eslint/parser": "^5.62.0",
+		"babel-preset-taro": "3.6.7",
+		"eslint": "^8.45.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-react": "^7.32.2",
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"husky": "^8.0.3",
-		"prettier": "^2.8.7",
+		"lint-staged": "^13.2.3",
+		"postcss-preset-env": "^9.0.0",
+		"prettier": "^2.8.8",
 		"react-refresh": "^0.11.0",
-		"stylelint": "^14.16.1",
-		"typescript": "^5.0.4"
+		"stylelint": "^15.7.0",
+		"stylelint-config-standard-scss": "^8.0.0",
+		"typescript": "^5.1.6"
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx}": [
+			"prettier --write",
+			"eslint --cache --fix"
+		],
+		"*.scss": "stylelint --fix"
 	}
 }

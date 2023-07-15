@@ -11,4 +11,4 @@ yarn-error.log
 .swc
 yarn.lock
 package-lock.json
-
+.env

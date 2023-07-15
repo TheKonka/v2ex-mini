@@ -12,6 +12,25 @@
 		background: #a2e64c;
 	}
 
+	&.github {
+		background: #ac9ffe;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		> image {
+			height: 100px;
+			width: 100px;
+		}
+
+		> text {
+			margin-left: 40px;
+			font-size: 32px;
+			color: #222;
+			font-weight: 500;
+		}
+	}
+
 	&-t {
 		color: #000;
 		width: 100px;

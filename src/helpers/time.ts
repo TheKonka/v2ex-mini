@@ -1,3 +1,5 @@
+import dayjs from 'dayjs';
+
 /**
  * 获取目标时间与当前的相对时间
  * @param time
@@ -10,6 +12,10 @@ export function getTimeFromNow(time: number) {
 	const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 	const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+	if (days > 365) {
+		return dayjs(target).format('YYYY-MM-DD');
+	}
 
 	if (days === 0) {
 		if (hours === 0) {

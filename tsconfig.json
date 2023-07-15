@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"target": "es2017",
 		"module": "commonjs",
-		"lib": ["ES2018", "dom"],
+		"lib": ["ESNext", "dom"],
 		"removeComments": false,
 		"preserveConstEnums": true,
 		"moduleResolution": "node",
@@ -21,10 +21,7 @@
 		"allowJs": true,
 		"resolveJsonModule": true,
 		"paths": {
-			"@/components/*": ["src/components/*"],
-			"@/assets/*": ["src/assets/*"],
-			"@/services/*": ["src/services/*"],
-			"@/helpers/*": ["src/helpers/*"]
+			"@/*": ["./src/*"],
 		},
 		"typeRoots": ["node_modules/@types"]
 	},

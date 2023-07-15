@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { CustomWrapper, ScrollView, View, Text } from '@tarojs/components';
 import Loading from '@/components/loading';
-import { getTechTab } from '@/services/api';
+import { getHomeTab } from '@/services/api';
 import TopicItem from '../TopicsItem';
 import './index.scss';
 
@@ -21,7 +21,7 @@ const TabsItem: React.FC<Props> = ({ id, currentId }) => {
 
 	useEffect(() => {
 		if (show) {
-			getTechTab(id).then((res) => {
+			getHomeTab(id).then((res) => {
 				const t = res.replace(/\n/g, '').match(/<table cellpadding="0" cellspacing="0" border="0" width="100%">(.*?)<\/table>/g);
 				const r = t.map((i: any) => {
 					const node = i.match(/<a class="node" href="\/go\/(\w+)">(.+?)<\/a>/);

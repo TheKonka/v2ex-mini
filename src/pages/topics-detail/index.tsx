@@ -101,7 +101,7 @@ const Index: React.FC = () => {
 								{topics.node.title}
 							</View>
 						</View>
-						<MarkDown nodes={topics.content_rendered} />
+						<MarkDown nodes={topics.content} />
 
 						{topics.supplements.map((item, index) => {
 							return (
@@ -111,7 +111,7 @@ const Index: React.FC = () => {
 										<View className="time">{getTimeFromNow(item.created * 1000)}</View>
 									</View>
 
-									<MarkDown nodes={item.content_rendered} />
+									<MarkDown nodes={item.content} />
 								</>
 							);
 						})}
@@ -121,7 +121,7 @@ const Index: React.FC = () => {
 						return (
 							<View key={item.id} className="replies-item">
 								<View className="author">
-									<Text>#{index + 1}</Text>
+									<Text className="floor">#{index + 1}</Text>
 									<Image
 										src={getProxyImage(item.member.avatar)}
 										className="avatar"
@@ -139,7 +139,7 @@ const Index: React.FC = () => {
 									</View>
 								</View>
 
-								<MarkDown nodes={item.content_rendered} className={item.member.id === topics.member.id ? '' : 'bg-main'} />
+								<MarkDown nodes={item.content} className={item.member.id === topics.member.id ? '' : 'bg-main'} />
 							</View>
 						);
 					})}

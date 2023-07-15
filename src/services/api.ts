@@ -74,6 +74,6 @@ export function getMemberByUsername(username: string) {
 /**
  * https://www.v2ex.com/?tab=tech
  */
-export function getTechTab(id) {
+export function getHomeTab(id: string) {
 	return RequestManager.get(`?tab=${id}`);
 }

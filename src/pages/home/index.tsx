@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
-import { View, Image, Text, Swiper, SwiperItem, ScrollView } from '@tarojs/components';
-import Taro, { useLoad, useShareAppMessage } from '@tarojs/taro';
+import { View, Swiper, SwiperItem, ScrollView } from '@tarojs/components';
+import { useShareAppMessage } from '@tarojs/taro';
 import TabsItem from './components/TabsItem';
 import './index.scss';
 

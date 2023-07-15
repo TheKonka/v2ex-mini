@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, Input, Button } from '@tarojs/components';
+import { View, Input, Button, Image, Text } from '@tarojs/components';
 import Taro, { useShareAppMessage } from '@tarojs/taro';
+import githubImg from '@/assets/github-mark.png';
 import './index.scss';
 
 const Index: React.FC = () => {
@@ -56,6 +57,24 @@ const Index: React.FC = () => {
 				<Button className="to-btn" size="mini" onClick={handleMember}>
 					直达会员
 				</Button>
+			</View>
+
+			<View
+				className="to github"
+				onClick={() => {
+					Taro.setClipboardData({
+						data: 'https://github.com/TheKonka/v2ex-mini',
+						success: () => {
+							Taro.showToast({
+								title: '复制成功',
+								icon: 'success'
+							});
+						}
+					});
+				}}
+			>
+				<Image src={githubImg} mode="aspectFit" />
+				<Text>Find Me On GitHub</Text>
 			</View>
 		</>
 	);

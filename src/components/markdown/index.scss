@@ -9,17 +9,7 @@
 	word-break: break-all;
 }
 
-.language-shell,
-.hljs {
-	overflow-x: auto;
-	display: block;
-}
-
-.embedded_image {
-	max-width: 100%;
-}
-
-.pre {
+.code {
 	background: #f6f8fa;
 	padding: 32px;
 	overflow: auto;
@@ -27,15 +17,67 @@
 	word-break: normal;
 	word-wrap: normal;
 }
-.code {
-	white-space: pre;
-}
 .link {
 	color: #0969da;
 	text-decoration: underline;
 }
-.ul-li {
-	list-style-type: disc;
-	display: list-item;
-	transform: translateX(20px);
+.list {
+	margin: 16px 0;
+	padding: 0 40px;
+
+	&-item {
+		list-style-type: disc;
+		display: list-item;
+	}
+}
+
+.heading {
+	font-size: 32px;
+	font-weight: 700;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.strong {
+	font-weight: 500;
+}
+
+.table {
+	display: table;
+	width: 100%;
+	border-collapse: collapse;
+	border: 2px solid #e5e6ed;
+	background: #fff;
+
+	&-row {
+		display: table-row;
+		&:nth-child(even) {
+			background: #f8f8f8;
+		}
+	}
+
+	&-cell {
+		display: table-cell;
+		border: 2px solid #e5e6ed;
+	}
+}
+
+.paragraph {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.thematicBreak {
+	height: 2px;
+	background: #999;
+	width: 100%;
+	margin: 16px 0;
+}
+
+.emphasis {
+	font-style: italic;
+}
+
+.break {
+	width: 100%;
 }

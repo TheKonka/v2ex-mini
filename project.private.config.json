@@ -3,7 +3,7 @@
   "projectname": "v2ex-mini",
   "setting": {
     "compileHotReLoad": false,
-    "urlCheck": false,
+    "urlCheck": true,
     "bigPackageSizeSupport": true,
     "lazyloadPlaceholderEnable": false,
     "preloadBackgroundData": false
@@ -15,7 +15,7 @@
         {
           "name": "主题详情",
           "pathName": "pages/topics-detail/index",
-          "query": "id=929128",
+          "query": "id=672954",
           "launchMode": "default",
           "scene": null
         },

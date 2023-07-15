@@ -9,7 +9,7 @@ interface IProps {
 
 const App: React.FC<IProps> = ({ children }) => {
 	useLaunch(() => {
-		checkUpdate(true);
+		checkUpdate();
 	});
 
 	return <>{children}</>;
