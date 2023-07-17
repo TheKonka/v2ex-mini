@@ -73,8 +73,8 @@ function render(node: any): React.ReactNode {
 							data: node.url,
 							success() {
 								Taro.showToast({
-									title: '链接复制成功',
-									icon: 'success'
+									title: '链接已复制',
+									icon: 'none'
 								});
 							}
 						});

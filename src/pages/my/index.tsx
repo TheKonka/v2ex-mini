@@ -66,15 +66,15 @@ const Index: React.FC = () => {
 						data: 'https://github.com/TheKonka/v2ex-mini',
 						success: () => {
 							Taro.showToast({
-								title: '复制成功',
-								icon: 'success'
+								title: '地址已复制',
+								icon: 'none'
 							});
 						}
 					});
 				}}
 			>
 				<Image src={githubImg} mode="aspectFit" />
-				<Text>Find Me On GitHub</Text>
+				<Text>Find Me On GitHub🌟</Text>
 			</View>
 		</>
 	);

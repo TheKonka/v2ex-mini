@@ -4,6 +4,9 @@
  * @returns
  */
 export function getProxyImage(url: string) {
+	if (url.startsWith('https://imgur.com/')) {
+		url = url.replace('https://imgur.com/', 'https://i.imgur.com/');
+	}
 	if (url.startsWith('https://i.imgur.com/')) {
 		return 'https://images.weserv.nl/?url=' + 'https://search.pstatic.net/common?src=' + url;
 	}
