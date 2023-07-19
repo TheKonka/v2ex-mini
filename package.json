@@ -11,10 +11,8 @@
 	"scripts": {
 		"preinstall": "npx only-allow pnpm",
 		"prepare": "husky install",
-		"build:weapp": "taro build --type weapp",
-		"build:alipay": "taro build --type alipay",
-		"dev:weapp": "npm run build:weapp -- --watch",
-		"dev:alipay": "npm run build:alipay -- --watch",
+		"build": "taro build --type weapp",
+		"dev": "npm run build -- --watch",
 		"lint": "npx eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
 		"lint:style": "npx stylelint \"**/*.scss\" --fix",
 		"format": "npx prettier --write src"
