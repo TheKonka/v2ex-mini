@@ -31,7 +31,7 @@ const TopicItem: React.FC<TabTopic> = (item) => {
 					/>
 					<View>
 						<View className="topics-item-meta-username">{item.username}</View>
-						<View className="time">
+						<View className="time" style={{ display: 'flex', flexDirection: 'row' }}>
 							<Text>{item.update_time}</Text>
 							<Text> · </Text>
 							<Text>{`${item.replay_num}条回复`}</Text>

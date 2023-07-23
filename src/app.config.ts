@@ -1,5 +1,10 @@
 export default defineAppConfig({
 	// renderer: 'skyline',
+	rendererOptions: {
+		skyline: {
+			defaultDisplayBlock: false
+		}
+	},
 	lazyCodeLoading: 'requiredComponents',
 	darkmode: false,
 	style: 'v2',

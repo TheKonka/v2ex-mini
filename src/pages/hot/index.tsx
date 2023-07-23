@@ -80,7 +80,7 @@ const Index: React.FC = () => {
 				);
 			})}
 			{todayHotTopics.length > 0 && (
-				<View className="no-more">
+				<View className="no-more" style={{ textAlign: 'center' }}>
 					<Text>—— 我是有底线的 ——</Text>
 				</View>
 			)}

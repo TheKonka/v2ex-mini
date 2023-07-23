@@ -1,5 +1,6 @@
 page {
 	background: #f4f5f7;
+	height: 100%;
 }
 
 .bg-main {
@@ -35,14 +36,18 @@ text navigator {
 	font-weight: 400;
 	line-height: 24px;
 	color: #7a869a;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
+
 .no-more {
 	text-align: center;
 	font-size: 28px;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: 28px;
 	color: #7a869a;
-	padding: 40px 0;
+	padding: 30px 0;
 }
 
 button {

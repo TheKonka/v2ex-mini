@@ -6,7 +6,7 @@ const Loading: React.FC = () => {
 	return (
 		<>
 			<View className="loading-container">
-				<View className="loading" />
+				<View className="loader" />
 			</View>
 		</>
 	);

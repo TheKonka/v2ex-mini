@@ -108,7 +108,7 @@ const Index: React.FC = () => {
 			})}
 
 			{topics.length > 0 && currentPage >= pageCount ? (
-				<View className="no-more">
+				<View className="no-more" style={{ textAlign: 'center' }}>
 					<Text>—— 没有更多主题了 ——</Text>
 				</View>
 			) : null}

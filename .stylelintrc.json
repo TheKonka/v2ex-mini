@@ -1,12 +1,23 @@
 {
-	"extends": ["stylelint-config-standard-scss"],
+	"extends": [
+		"stylelint-config-standard-scss"
+	],
 	"rules": {
 		"at-rule-no-unknown": null,
 		"no-descending-specificity": null,
 		"selector-type-no-unknown": [
 			true,
 			{
-				"ignoreTypes": ["page", "swiper-item", "picker-view", "picker-view-column", "lottie", "scroll-view"]
+				"ignoreTypes": [
+					"page",
+					"swiper",
+					"swiper-item",
+					"picker-view",
+					"picker-view-column",
+					"lottie",
+					"scroll-view",
+					"navigator"
+				]
 			}
 		]
 	}

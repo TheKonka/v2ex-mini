@@ -5,17 +5,18 @@
     "compileHotReLoad": false,
     "urlCheck": true,
     "bigPackageSizeSupport": true,
-    "lazyloadPlaceholderEnable": false,
-    "preloadBackgroundData": false
+    "lazyloadPlaceholderEnable": true,
+    "preloadBackgroundData": false,
+    "skylineRenderEnable": true
   },
-  "libVersion": "2.30.0",
+  "libVersion": "2.33.0",
   "condition": {
     "miniprogram": {
       "list": [
         {
           "name": "主题详情",
           "pathName": "pages/topics-detail/index",
-          "query": "id=672954",
+          "query": "id=958992",
           "launchMode": "default",
           "scene": null
         },

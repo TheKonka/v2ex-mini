@@ -5,6 +5,8 @@ import { useShareAppMessage } from '@tarojs/taro';
 import TabsItem from './components/TabsItem';
 import './index.scss';
 
+import NavigationBar from '@/components/navigation-bar';
+
 const Index: React.FC = () => {
 	const [currentTab, setCurrentTab] = useState(0);
 	const [scrillIntoViewId, setScrillIntoViewId] = useState('');
@@ -32,10 +34,21 @@ const Index: React.FC = () => {
 
 	return (
 		<>
-			<ScrollView scrollX enhanced enableFlex className="tabs" scrollWithAnimation scrollIntoView={scrillIntoViewId}>
+			<NavigationBar title="V2EX" showBackIcon={false} />
+			<ScrollView
+				scrollX
+				enhanced
+				enableFlex
+				className="tabs"
+				scrollWithAnimation
+				scrollIntoView={scrillIntoViewId}
+				showScrollbar={false}
+				type="list"
+				style={{ display: 'flex' }}
+			>
 				{tabs.map((item, index) => {
 					return (
-						<View className="tabs-wrapper" key={item.id} id={'id' + index}>
+						<View className="tabs-wrapper" key={item.id} id={'id' + index} style={{ display: 'flex', alignItems: 'center' }}>
 							<View
 								className={classNames('tabs-item', { active: currentTab === index })}
 								onClick={() => {

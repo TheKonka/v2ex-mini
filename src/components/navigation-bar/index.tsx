@@ -8,15 +8,15 @@ import './index.scss';
 
 interface Props {
 	title?: string;
+	color?: string;
 	backdropFilter?: boolean;
 	showBackIcon?: boolean;
 	onInit?: (res: any) => void;
-	fillHeight?: boolean;
-	autoBackground?: boolean;
+	className?: string;
 }
 
 const NavigationBar: React.FC<Props> = (props) => {
-	const showBackIcon = process.env.TARO_ENV === 'alipay' ? false : !!props.showBackIcon;
+	const { showBackIcon = true } = props;
 
 	const { current: menuButtonBoundingClient } = useRef<Taro.getMenuButtonBoundingClientRect.Rect>(Taro.getMenuButtonBoundingClientRect());
 	const { current: systemInfo } = useRef<Taro.getSystemInfoSync.Result>(Taro.getSystemInfoSync());
@@ -38,9 +38,7 @@ const NavigationBar: React.FC<Props> = (props) => {
 	}, 100);
 
 	usePageScroll((res) => {
-		//	if (process.env.TARO_ENV === 'weapp') {
 		handleScroll(res.scrollTop);
-		//	}
 	});
 
 	const navbarHeight = useMemo(() => {
@@ -69,41 +67,24 @@ const NavigationBar: React.FC<Props> = (props) => {
 	return (
 		<>
 			<View
-				className={classNames('czt-navbar', { 'czt-navbar-drop': props.backdropFilter })}
+				className={classNames('czt-navbar', { 'czt-navbar-drop': props.backdropFilter }, props.className)}
 				style={{
-					height: navbarHeight,
-					background: props.autoBackground ? `rgba(255,255,255,${opacity})` : 'transparent'
+					height: navbarHeight
+					// background: `rgba(255,255,255,${opacity})`
 				}}
 			>
-				{showBackIcon && (
-					<View
-						style={{ height: menuButtonBoundingClient.height, top: menuButtonBoundingClient.top }}
-						className="czt-navbar-back"
-						onClick={handleBack}
-					>
-						<Image src={backImg} />
-					</View>
-				)}
-				{props.title && (
-					<View className="czt-navbar-title" style={{ height: menuButtonBoundingClient.height, top: menuButtonBoundingClient.top }}>
-						{props.title}
-					</View>
-				)}
+				<View className="wrapper" style={{ height: menuButtonBoundingClient.height, top: menuButtonBoundingClient.top }}>
+					{!!showBackIcon && (
+						<View className="czt-navbar-back" onClick={handleBack}>
+							<Image src={backImg} />
+						</View>
+					)}
+
+					<View className="czt-navbar-title">{props.title}</View>
+				</View>
 			</View>
-			{props.fillHeight && (
-				<View
-					style={{
-						height: navbarHeight
-					}}
-				/>
-			)}
 		</>
 	);
-};
-
-NavigationBar.defaultProps = {
-	showBackIcon: true,
-	autoBackground: true
 };
 
 export default React.memo(NavigationBar);

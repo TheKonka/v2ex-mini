@@ -3,7 +3,7 @@ import { Image, View, Text } from '@tarojs/components';
 import { getProxyImage } from '@/helpers/img';
 import Taro from '@tarojs/taro';
 import './index.scss';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
@@ -14,8 +14,26 @@ interface Props {
 	className?: string;
 }
 
-function renderImage(url: string) {
-	return (
+function RenderImage({ url, alt }: any) {
+	const [error, setError] = useState(false);
+	return error ? (
+		<View
+			className="link"
+			onClick={() => {
+				Taro.setClipboardData({
+					data: url,
+					success() {
+						Taro.showToast({
+							title: '链接已复制',
+							icon: 'none'
+						});
+					}
+				});
+			}}
+		>
+			{alt || '图片地址'}
+		</View>
+	) : (
 		<Image
 			className="image"
 			src={getProxyImage(url)}
@@ -30,6 +48,9 @@ function renderImage(url: string) {
 							current: getProxyImage(url)
 						});
 					});
+			}}
+			onError={() => {
+				setError(true);
 			}}
 		/>
 	);
@@ -50,14 +71,14 @@ function render(node: any): React.ReactNode {
 		case 'text':
 			return <Text userSelect>{node.value}</Text>;
 		case 'image':
-			return renderImage(node.url);
+			return <>{<RenderImage url={node.url} alt={node.alt} />}</>;
 		case 'code':
 			return <View className="code">{node.value}</View>;
 		case 'paragraph':
 			return <View className="paragraph">{renderArray(node.children)}</View>;
 		case 'link':
-			if (node.url.endsWith('.jpg') || node.url.endsWith('.png')) {
-				return renderImage(node.url);
+			if (node.url.endsWith('.jpg') || node.url.endsWith('.png') || node.url.endsWith('.jpeg')) {
+				return <RenderImage url={node.url} />;
 			}
 			return (
 				<View
@@ -112,9 +133,7 @@ function render(node: any): React.ReactNode {
 
 const MarkDown: React.FC<Props> = ({ nodes, className }) => {
 	const renderNode = useMemo(() => {
-		const t = parser.parse(nodes);
-
-		return render(t);
+		return render(parser.parse(nodes));
 	}, [nodes]);
 
 	return <View className={classNames('markdown_body', className)}>{renderNode}</View>;

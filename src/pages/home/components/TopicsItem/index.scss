@@ -1,16 +1,17 @@
 .topics-item {
 	background: #fff;
-	width: stretch;
+	width: 100%;
 	border-radius: 30px;
 	overflow: hidden;
 	padding: 32px 40px;
-	margin: 0 20px 16px;
-	box-shadow: -2px 4px 4px rgba(140, 140, 140, 0.15);
+	margin-bottom: 16px;
+	box-shadow: -2px 4px 4px rgb(140 140 140 / 15%);
 
 	&-meta {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+
 		&-avatar {
 			width: 64px;
 			height: 64px;

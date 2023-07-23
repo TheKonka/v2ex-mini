@@ -1,10 +1,10 @@
 .czt-navbar-title {
 	width: 100vw;
 	display: flex;
+	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	position: fixed;
-	color: #222222;
+	color: #222;
 	font-size: 34px;
 	font-weight: 700;
 }
@@ -13,7 +13,7 @@
 	display: flex;
 	align-items: center;
 	z-index: 100;
-	position: fixed;
+	position: absolute;
 
 	image {
 		width: 40px;
@@ -23,15 +23,17 @@
 }
 
 .czt-navbar {
-	z-index: 100;
 	width: 100vw;
-	// transition: opacity 0.3s;
-	position: fixed;
-	top: 0;
-	left: 0;
-	background: transparent;
+	background: #fff;
 
 	&-drop {
 		backdrop-filter: blur(15px);
+	}
+
+	.wrapper {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		flex-direction: row;
 	}
 }

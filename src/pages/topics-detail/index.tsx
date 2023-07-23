@@ -145,7 +145,7 @@ const Index: React.FC = () => {
 					})}
 
 					{replies.length > 0 && currentPage >= pageCount ? (
-						<View className="no-more">
+						<View className="no-more" style={{ textAlign: 'center' }}>
 							<Text>—— 没有更多回复了 ——</Text>
 						</View>
 					) : null}
