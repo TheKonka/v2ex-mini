@@ -1,5 +1,11 @@
 page {
-	padding-bottom: env(safe-area-inset-bottom);
+	display: flex;
+	flex-direction: column;
+}
+
+.scroll-view {
+	flex: 1;
+	overflow: hidden;
 }
 
 .node {
@@ -15,6 +21,7 @@ page {
 		border-radius: 16px;
 		overflow: hidden;
 	}
+
 	&-title {
 		font-size: 28px;
 		font-weight: 500;
@@ -22,6 +29,7 @@ page {
 		color: #172b4d;
 		margin-top: 32px;
 	}
+
 	&-header {
 		font-size: 24px;
 		font-weight: 400;
@@ -29,6 +37,7 @@ page {
 		color: #7a869a;
 		margin: 4px auto;
 	}
+
 	&-topics {
 		font-size: 24px;
 		font-weight: 400;
@@ -36,6 +45,7 @@ page {
 		color: #0052cc;
 	}
 }
+
 .topics-item {
 	background: #fff;
 	width: stretch;
@@ -48,6 +58,7 @@ page {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+
 		&-avatar {
 			width: 64px;
 			height: 64px;

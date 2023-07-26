@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useThrottledCallback } from 'use-debounce';
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Image, View } from '@tarojs/components';
 import Taro, { usePageScroll } from '@tarojs/taro';
 import backImg from '@/assets/back.png';
@@ -21,12 +21,6 @@ const NavigationBar: React.FC<Props> = (props) => {
 	const { current: menuButtonBoundingClient } = useRef<Taro.getMenuButtonBoundingClientRect.Rect>(Taro.getMenuButtonBoundingClientRect());
 	const { current: systemInfo } = useRef<Taro.getSystemInfoSync.Result>(Taro.getSystemInfoSync());
 	const [opacity, setOpacity] = useState(0);
-
-	const handleBack = useCallback(() => {
-		Taro.navigateBack({ delta: 1 }).catch(() => {
-			Taro.switchTab({ url: `/pages/home/index` });
-		});
-	}, []);
 
 	const handleScroll = useThrottledCallback((scrollTop) => {
 		if (scrollTop > 20) {
@@ -75,8 +69,15 @@ const NavigationBar: React.FC<Props> = (props) => {
 			>
 				<View className="wrapper" style={{ height: menuButtonBoundingClient.height, top: menuButtonBoundingClient.top }}>
 					{!!showBackIcon && (
-						<View className="czt-navbar-back" onClick={handleBack}>
-							<Image src={backImg} />
+						<View
+							className="czt-navbar-back"
+							onClick={() => {
+								Taro.navigateBack({ delta: 1 }).catch(() => {
+									Taro.switchTab({ url: `/pages/home/index` });
+								});
+							}}
+						>
+							<Image src={backImg} mode={'aspectFit'} />
 						</View>
 					)}
 

@@ -1,6 +1,12 @@
 page {
-	padding-bottom: env(safe-area-inset-bottom);
 	background: #fff;
+	display: flex;
+	flex-direction: column;
+}
+
+.scroll-view {
+	flex: 1;
+	overflow: hidden;
 }
 
 .avatar {
@@ -13,6 +19,7 @@ page {
 
 .author {
 	display: flex;
+	flex-direction: row;
 	align-items: center;
 	margin: 26px 0;
 
@@ -25,7 +32,7 @@ page {
 }
 
 .top {
-	padding: 40px 40px;
+	padding: 40px;
 	box-sizing: border-box;
 
 	.title {
@@ -43,7 +50,6 @@ page {
 		margin-left: auto;
 		display: grid;
 		place-content: center;
-
 		font-size: 24px;
 		font-weight: 500;
 		line-height: 24px;
@@ -52,6 +58,7 @@ page {
 
 	.supplements {
 		display: flex;
+		flex-direction: row;
 		align-items: center;
 		color: #7a869a;
 		margin: 20px 0;

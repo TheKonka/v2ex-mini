@@ -1,5 +1,7 @@
 export default definePageConfig({
-	navigationBarTitleText: '会员信息'
-	// disableScroll: true,
-	// navigationStyle: 'custom'
+	navigationBarTitleText: '',
+	disableScroll: true,
+	navigationStyle: 'custom',
+	renderer: 'skyline',
+	componentFramework: 'glass-easel'
 });

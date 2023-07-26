@@ -16,7 +16,7 @@
         {
           "name": "主题详情",
           "pathName": "pages/topics-detail/index",
-          "query": "id=958992",
+          "query": "id=959093",
           "launchMode": "default",
           "scene": null
         },
@@ -44,6 +44,13 @@
         {
           "name": "我的",
           "pathName": "pages/my/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "今日热议主题",
+          "pathName": "pages/hot/index",
           "query": "",
           "launchMode": "default",
           "scene": null

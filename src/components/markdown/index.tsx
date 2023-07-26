@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { Image, View, Text } from '@tarojs/components';
+import { Image, Text, View } from '@tarojs/components';
 import { getProxyImage } from '@/helpers/img';
 import Taro from '@tarojs/taro';
 import './index.scss';
@@ -9,6 +9,7 @@ import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
 
 const parser = unified().use(remarkParse).use(remarkGfm);
+
 interface Props {
 	nodes: string;
 	className?: string;
@@ -123,7 +124,7 @@ function render(node: any): React.ReactNode {
 		case 'blockquote':
 			return <View>{render(node.children[0])}</View>;
 		case 'thematicBreak':
-			return <View className="thematicBreak" />;
+			return <View className="thematic-break" />;
 		case 'break':
 			return <View className="break" />;
 		case 'emphasis':
@@ -136,7 +137,7 @@ const MarkDown: React.FC<Props> = ({ nodes, className }) => {
 		return render(parser.parse(nodes));
 	}, [nodes]);
 
-	return <View className={classNames('markdown_body', className)}>{renderNode}</View>;
+	return <View className={classNames('markdown-body', className)}>{renderNode}</View>;
 };
 
 export default MarkDown;

@@ -1,3 +1,14 @@
+page {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.scrollview {
+	flex: 1;
+	overflow: hidden;
+}
+
 .topics-item {
 	background: #fff;
 	width: stretch;
@@ -5,12 +16,13 @@
 	overflow: hidden;
 	padding: 32px 40px;
 	margin: 16px 20px;
-	box-shadow: -2px 4px 4px rgba(140, 140, 140, 0.15);
+	box-shadow: -2px 4px 4px rgb(140 140 140 / 15%);
 
 	&-meta {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+
 		&-avatar {
 			width: 64px;
 			height: 64px;

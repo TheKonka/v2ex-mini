@@ -4,12 +4,11 @@ import { View, Swiper, SwiperItem, ScrollView } from '@tarojs/components';
 import { useShareAppMessage } from '@tarojs/taro';
 import TabsItem from './components/TabsItem';
 import './index.scss';
-
 import NavigationBar from '@/components/navigation-bar';
 
 const Index: React.FC = () => {
 	const [currentTab, setCurrentTab] = useState(0);
-	const [scrillIntoViewId, setScrillIntoViewId] = useState('');
+	const [scrollIntoViewId, setScrollIntoViewId] = useState('');
 
 	const tabs = [
 		{ name: '技术', id: 'tech' },
@@ -41,7 +40,7 @@ const Index: React.FC = () => {
 				enableFlex
 				className="tabs"
 				scrollWithAnimation
-				scrollIntoView={scrillIntoViewId}
+				scrollIntoView={scrollIntoViewId}
 				showScrollbar={false}
 				type="list"
 				style={{ display: 'flex' }}
@@ -70,7 +69,7 @@ const Index: React.FC = () => {
 				cacheExtent={1}
 				onChange={(e) => {
 					if (e.detail.source === 'touch') {
-						setScrillIntoViewId('id' + e.detail.current);
+						setScrollIntoViewId('id' + e.detail.current);
 						setCurrentTab(e.detail.current);
 					}
 				}}
