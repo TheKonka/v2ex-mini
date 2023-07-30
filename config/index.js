@@ -11,10 +11,7 @@ const config = {
 	sourceRoot: 'src',
 	outputRoot: `dist/${process.env.TARO_ENV}`,
 	plugins: [],
-	defineConstants: {
-		__API_URL__: JSON.stringify('https://v2ex.com/'),
-		__PERSONAL_ACCESS_TOKEN__: JSON.stringify('6c35d4a6')
-	},
+	defineConstants: {},
 	copy: {
 		patterns: [],
 		options: {}

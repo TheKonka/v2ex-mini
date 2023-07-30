@@ -1,0 +1,16 @@
+.replies-item {
+	width: stretch;
+	margin: 0 20px;
+
+	&:not(:last-child) {
+		margin-bottom: 24px;
+	}
+
+	.floor {
+		font-size: 26px;
+		font-weight: 400;
+		line-height: 26px;
+		color: #7a869a;
+		margin-right: 16px;
+	}
+}

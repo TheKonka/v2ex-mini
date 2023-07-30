@@ -5,9 +5,10 @@ import { useShareAppMessage } from '@tarojs/taro';
 import TabsItem from './components/TabsItem';
 import './index.scss';
 import NavigationBar from '@/components/navigation-bar';
+import Taro from '@tarojs/taro';
 
 const Index: React.FC = () => {
-	const [currentTab, setCurrentTab] = useState(0);
+	const [currentTab, setCurrentTab] = useState<string>(() => Taro.getStorageSync('home_tab') || 'tech');
 	const [scrollIntoViewId, setScrollIntoViewId] = useState('');
 
 	const tabs = [
@@ -49,9 +50,13 @@ const Index: React.FC = () => {
 					return (
 						<View className="tabs-wrapper" key={item.id} id={'id' + index} style={{ display: 'flex', alignItems: 'center' }}>
 							<View
-								className={classNames('tabs-item', { active: currentTab === index })}
+								className={classNames('tabs-item', { active: currentTab === item.id })}
 								onClick={() => {
-									setCurrentTab(index);
+									setCurrentTab(item.id);
+									Taro.setStorage({
+										key: 'home_tab',
+										data: item.id
+									});
 								}}
 							>
 								<View>{item.name}</View>
@@ -63,21 +68,21 @@ const Index: React.FC = () => {
 
 			<Swiper
 				className="tab-swpier"
-				current={currentTab}
+				current={tabs.findIndex((i) => i.id === currentTab)}
 				autoplay={false}
 				cache-extent={1}
 				cacheExtent={1}
 				onChange={(e) => {
 					if (e.detail.source === 'touch') {
 						setScrollIntoViewId('id' + e.detail.current);
-						setCurrentTab(e.detail.current);
+						setCurrentTab(tabs[e.detail.current].id);
 					}
 				}}
 			>
 				{tabs.map((i) => {
 					return (
 						<SwiperItem key={i.id} skipHiddenItemLayout>
-							<TabsItem id={i.id} currentId={tabs[currentTab].id} />
+							<TabsItem id={i.id} currentId={currentTab} />
 						</SwiperItem>
 					);
 				})}

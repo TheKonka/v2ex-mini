@@ -16,7 +16,7 @@
         {
           "name": "主题详情",
           "pathName": "pages/topics-detail/index",
-          "query": "id=959093",
+          "query": "id=960888",
           "launchMode": "default",
           "scene": null
         },

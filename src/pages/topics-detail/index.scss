@@ -21,7 +21,7 @@ page {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	margin: 26px 0;
+	margin-bottom: 16px;
 
 	&-username {
 		font-size: 32px;
@@ -37,9 +37,10 @@ page {
 
 	.title {
 		font-size: 36px;
-		font-weight: 500;
+		font-weight: 700;
 		line-height: 48px;
 		color: #222;
+		margin-bottom: 30px;
 	}
 
 	.node {
@@ -61,25 +62,12 @@ page {
 		flex-direction: row;
 		align-items: center;
 		color: #7a869a;
-		margin: 20px 0;
+		margin: 12px 0;
 
 		&-index {
 			font-size: 28px;
 			font-weight: 400;
 			margin-right: 20px;
 		}
-	}
-}
-
-.replies-item {
-	width: stretch;
-	margin: 0 20px;
-
-	.floor {
-		font-size: 26px;
-		font-weight: 400;
-		line-height: 26px;
-		color: #7a869a;
-		margin-right: 16px;
 	}
 }

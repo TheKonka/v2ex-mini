@@ -12,6 +12,7 @@
 		max-width: 100%;
 		flex-grow: 1;
 		flex-shrink: 0;
+		word-break: break-word;
 	}
 }
 
@@ -92,4 +93,13 @@
 
 .break {
 	width: 100%;
+}
+
+.at {
+	color: #778087;
+	text-decoration: underline;
+}
+
+.rich-text {
+	overflow: scroll;
 }

@@ -9,10 +9,10 @@ export default class RequestManager {
 			'content-type': 'application/json'
 		};
 		if (url.startsWith('api/v2/')) {
-			Reflect.set(header, 'authorization', `Bearer ${__PERSONAL_ACCESS_TOKEN__}`);
+			Reflect.set(header, 'authorization', `Bearer ${process.env.TARO_APP_PERSONAL_ACCESS_TOKEN}`);
 		}
 		return Taro.request({
-			url: url.startsWith('http') ? url : __API_URL__ + url,
+			url: url.startsWith('http') ? url : process.env.TARO_APP_API_URL + url,
 			method,
 			header
 		});

@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import { Image, Text, View } from '@tarojs/components';
+import { Image, RichText, Text, View } from '@tarojs/components';
 import { getProxyImage } from '@/helpers/img';
 import Taro from '@tarojs/taro';
 import './index.scss';
-import { useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
@@ -70,6 +70,31 @@ function render(node: any): React.ReactNode {
 		case 'root':
 			return renderArray(node.children);
 		case 'text':
+			const atPeople = node.value.match(/@([^\s]+)(?:[ \r\n]|$)/g);
+			if (atPeople) {
+				const parts = node.value.split(/(@[^\s]+)(?:[ \r\n]|$)/).map((part: string) => {
+					if (atPeople.map((i: string) => i.trim()).includes(part)) {
+						return [
+							React.createElement(
+								'Text',
+								{
+									'className': 'at',
+									'data-name': part.slice(1),
+									'onClick': (e: any) => {
+										const name = e.target.dataset.name.trim();
+										Taro.eventCenter.trigger('replyBySomeone', { name, topic_id: Taro.getCurrentInstance()!.router!.params.id });
+									}
+								},
+								part.trim()
+							),
+							React.createElement('Text', {}, ' ')
+						];
+					} else {
+						return React.createElement('Text', {}, part);
+					}
+				});
+				return <View>{parts}</View>;
+			}
 			return <Text userSelect>{node.value}</Text>;
 		case 'image':
 			return <>{<RenderImage url={node.url} alt={node.alt} />}</>;
@@ -129,6 +154,8 @@ function render(node: any): React.ReactNode {
 			return <View className="break" />;
 		case 'emphasis':
 			return <View className="emphasis">{render(node.children[0])}</View>;
+		case 'html':
+			return <RichText nodes={node.value} userSelect className="rich-text" />;
 	}
 }
 

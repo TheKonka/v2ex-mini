@@ -4,6 +4,7 @@ import Loading from '@/components/loading';
 import { getHomeTab } from '@/services/api';
 import TopicItem from '../TopicsItem';
 import './index.scss';
+import Taro from '@tarojs/taro';
 
 interface Props {
 	id: string;
@@ -22,12 +23,13 @@ const TabsItem: React.FC<Props> = ({ id, currentId }) => {
 
 	useEffect(() => {
 		if (show) {
+			const list: Map<string, TabTopic[]> = new Map(Taro.getStorageSync('home_tab_list'));
+			setTopicList(list.get(id) || []);
 			getHomeTab(id).then((res) => {
 				const t = res.replace(/\n/g, '').match(/<table cellpadding="0" cellspacing="0" border="0" width="100%">(.*?)<\/table>/g);
 				const r = t.map((i: any) => {
 					const node = i.match(/<a class="node" href="\/go\/(\w+)">(.+?)<\/a>/);
 					const topic = i.match(/<a href="\/t\/(\d+).*?" class="topic-link".*?>(.+?)<\/a>/);
-
 					return {
 						username: i.match(/<a href="\/member\/(\w+)">/)[1],
 						avatar: i.match(/<img src="([^"]*)"/)[1],
@@ -39,8 +41,12 @@ const TabsItem: React.FC<Props> = ({ id, currentId }) => {
 						replay_num: i.match(/class="count_livid">(\d+)<\/a>/)?.[1] || 0
 					};
 				});
-
 				setTopicList(r);
+				list.set(id, r);
+				Taro.setStorage({
+					key: 'home_tab_list',
+					data: [...list]
+				});
 			});
 		}
 	}, [id, show]);

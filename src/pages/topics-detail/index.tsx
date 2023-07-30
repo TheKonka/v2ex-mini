@@ -7,8 +7,9 @@ import { getProxyImage } from '@/helpers/img';
 import { getTimeFromNow } from '@/helpers/time';
 import { getTpoicsById, getTpoicsRepliesById } from '@/services/api';
 import './index.scss';
-import NavigationBar from '@/components/navigation-bar';
 import useBoolean from '@/hooks/useBoolean';
+import RepliesBySomeone from './components/RepliesBySomeone';
+import RepliesItem from './components/RepliesItem';
 
 const Index: React.FC = () => {
 	const router = useRouter();
@@ -22,6 +23,9 @@ const Index: React.FC = () => {
 
 	useLoad(() => {
 		if (id) {
+			Taro.setNavigationBarTitle({
+				title: 't/' + id
+			});
 			getTpoicsById(id)
 				.then((res) => {
 					setTopics(res.result);
@@ -53,7 +57,7 @@ const Index: React.FC = () => {
 
 	return (
 		<>
-			<NavigationBar title={'t/' + id} showBackIcon={true} />
+			{/* <NavigationBar title={'t/' + id} showBackIcon={true} /> */}
 			<ScrollView
 				scrollY
 				enableFlex
@@ -124,30 +128,7 @@ const Index: React.FC = () => {
 						</View>
 
 						{replies.map((item, index) => {
-							return (
-								<View key={item.id} className="replies-item">
-									<View className="author">
-										<Text className="floor">#{index + 1}</Text>
-										<Image
-											src={getProxyImage(item.member.avatar)}
-											className="avatar"
-											lazyLoad
-											onClick={(e) => {
-												e.stopPropagation();
-												Taro.navigateTo({
-													url: `/pages/member/index?username=${item.member.username}`
-												});
-											}}
-										/>
-										<View>
-											<View className="author-username">{item.member.username}</View>
-											<View className="time">{getTimeFromNow(item.created * 1000)}</View>
-										</View>
-									</View>
-
-									<MarkDown nodes={item.content} className={item.member.id === topics.member.id ? '' : 'bg-main'} />
-								</View>
-							);
+							return <RepliesItem item={item} index={index} key={item.id} op={item.member.id === topics.member.id} />;
 						})}
 
 						{isFetching && <Loading />}
@@ -162,6 +143,8 @@ const Index: React.FC = () => {
 					<Loading />
 				)}
 			</ScrollView>
+
+			{topics && <RepliesBySomeone replies={replies} opId={topics.member.id} />}
 		</>
 	);
 };
