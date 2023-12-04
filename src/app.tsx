@@ -7,12 +7,12 @@ interface IProps {
 	children: React.ReactNode;
 }
 
-const App: React.FC<IProps> = ({ children }) => {
+function App({ children }: IProps) {
 	useLaunch(() => {
 		checkUpdate();
 	});
 
-	return <>{children}</>;
-};
+	return children;
+}
 
 export default App;

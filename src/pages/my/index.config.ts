@@ -1,3 +1,7 @@
 export default definePageConfig({
-	navigationBarTitleText: ''
+	navigationBarTitleText: '',
+	disableScroll: true,
+	navigationStyle: 'custom',
+	renderer: 'skyline',
+	componentFramework: 'glass-easel'
 });

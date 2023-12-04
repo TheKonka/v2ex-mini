@@ -9,14 +9,14 @@
     "preloadBackgroundData": false,
     "skylineRenderEnable": true
   },
-  "libVersion": "2.33.0",
+  "libVersion": "3.0.1",
   "condition": {
     "miniprogram": {
       "list": [
         {
           "name": "主题详情",
           "pathName": "pages/topics-detail/index",
-          "query": "id=960888",
+          "query": "id=972054",
           "launchMode": "default",
           "scene": null
         },

@@ -34,6 +34,9 @@ const config = {
 			'postcss-preset-env': {
 				enable: true
 			},
+			'autoprefixer': {
+				enable: false
+			},
 			'pxtransform': {
 				enable: true,
 				config: {}

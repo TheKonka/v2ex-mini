@@ -1,6 +1,12 @@
+page {
+	background: repeating-linear-gradient(-45deg, #fff 0 20px, #f9f9f9 0 40px);
+	padding-top: 180px;
+}
+
 .to {
 	display: flex;
 	align-items: center;
+	flex-direction: row;
 	padding: 40px;
 	overflow: hidden;
 	width: stretch;
@@ -14,8 +20,6 @@
 
 	&.github {
 		background: #ac9ffe;
-		display: flex;
-		align-items: center;
 		justify-content: center;
 
 		> image {
@@ -45,12 +49,12 @@
 		border-radius: 25px;
 		height: 100px;
 		padding: 0 20px;
+		margin-right: 20px;
 	}
 
 	&-btn {
 		background: #101426;
 		color: #fff;
-		margin-left: 20px;
 		border-radius: 20px;
 	}
 }

@@ -4,7 +4,12 @@
  * @returns
  */
 export function getProxyImage(url: string) {
-	if (url.startsWith('https://i.328888.xyz/') || url.startsWith('https://i.niupic.com/')) {
+	if (
+		url.startsWith('https://i.328888.xyz/') ||
+		url.startsWith('https://i.niupic.com/') ||
+		url.includes('.myqcloud.com') ||
+		url.includes('duelpeak.com')
+	) {
 		return url;
 	}
 	if (url.startsWith('https://imgur.com/')) {

@@ -110,6 +110,12 @@ function render(node: any): React.ReactNode {
 				<View
 					className="link"
 					onClick={() => {
+						if (node.url.match(/\/t\/(\d+)/)) {
+							Taro.navigateTo({
+								url: `/pages/topics-detail/index?id=${node.url.match(/\/t\/(\d+)/)[1]}`
+							});
+							return;
+						}
 						if (node.url.includes('v2ex.com/t/')) {
 							Taro.navigateTo({
 								url: `/pages/topics-detail/index?id=${node.url.split('v2ex.com/t/')[1].split('#')[0]}`
