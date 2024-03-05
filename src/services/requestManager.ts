@@ -4,7 +4,7 @@ import interceptors from './interceptors';
 interceptors.forEach((interceptorItem) => Taro.addInterceptor(interceptorItem));
 
 export default class RequestManager {
-	private static _requset(url: string, method: keyof Taro.request.Method = 'GET'): Promise<any> {
+	private static _requset<T>(url: string, method: keyof Taro.request.Method = 'GET') {
 		const header = {
 			'content-type': 'application/json'
 		};
@@ -15,14 +15,14 @@ export default class RequestManager {
 			url: url.startsWith('http') ? url : process.env.TARO_APP_API_URL + url,
 			method,
 			header
-		});
+		}) as unknown as Promise<T>;
 	}
 
-	public static get(url: string): Promise<any> {
-		return RequestManager._requset(url, 'GET');
+	public static get<T>(url: string) {
+		return RequestManager._requset<T>(url, 'GET');
 	}
 
-	public static post(url: string): Promise<any> {
-		return RequestManager._requset(url, 'POST');
+	public static post<T>(url: string) {
+		return RequestManager._requset<T>(url, 'POST');
 	}
 }
