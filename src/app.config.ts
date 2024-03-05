@@ -18,6 +18,7 @@ export default defineAppConfig({
 		'pages/topics-of-node/index',
 		'pages/member/index',
 		'pages/my/index',
+		'pages/my/search/index',
 		'pages/hot/index'
 	],
 	tabBar: {

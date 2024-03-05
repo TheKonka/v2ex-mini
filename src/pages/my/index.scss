@@ -3,6 +3,41 @@ page {
 	padding-top: 180px;
 }
 
+.search {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	border-radius: 25px;
+	background-color: #ff0081;
+	color: #fff;
+	box-shadow: 0 2px 25px rgb(255 0 130 / 50%);
+	border: none;
+	width: 200px;
+	padding: 0 40px;
+
+	image {
+		width: 32px;
+		height: 32px;
+		filter: brightness(100);
+		color: #fff;
+	}
+
+	view {
+		mask: url("~lucide-static/icons/search.svg") no-repeat;
+		mask-size: 100% 100%;
+		background-color: #fff;
+		width: 32px;
+		height: 32px;
+		flex: 0 0 32px;
+	}
+
+	text {
+		font-size: 28px;
+		color: #fff;
+		margin-left: 20px;
+	}
+}
+
 .to {
 	display: flex;
 	align-items: center;
@@ -56,5 +91,65 @@ page {
 		background: #101426;
 		color: #fff;
 		border-radius: 20px;
+	}
+}
+
+.search-wrapper {
+	margin: 180px 40px 12px;
+	border-radius: 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	border: 1px solid #dcdcdc;
+	padding: 20px 40px;
+}
+
+.search-history {
+	background: rgb(0 0 250 / 10%);
+	box-shadow: 0 35px 50px -30px rgb(0 0 0 / 20%);
+	border-radius: 20px;
+	margin: 0 20px;
+	width: stretch;
+	overflow-y: scroll;
+	max-height: calc(100vh - 350px);
+
+	&-item {
+		height: 100px;
+		display: flex;
+		align-items: center;
+		padding: 0 20px;
+		font-size: 26px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		&:not(:last-child) {
+			border-bottom: 6px solid #d2f1fb;
+		}
+
+		image {
+			width: 32px;
+			height: 32px;
+			border: 20px solid transparent;
+			box-sizing: content-box;
+		}
+
+		.arrow {
+			margin-left: auto;
+		}
+	}
+}
+
+.close {
+	position: absolute;
+	left: 40px;
+	aspect-ratio: 1;
+	max-width: 80px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: -20px;
 	}
 }

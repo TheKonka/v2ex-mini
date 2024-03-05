@@ -1,0 +1,66 @@
+page {
+	background-color: #ffd8d8;
+	display: flex;
+	flex-direction: column;
+	padding-top: 200px;
+}
+
+.search {
+	position: fixed;
+	left: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 0 40px;
+	background-color: #ff7575;
+	border-radius: 20px;
+	box-shadow:
+		0 10px 40px #ff7c7c,
+		0 0 0 20px #ffffffeb;
+	transform: scale(0.9);
+
+	input {
+		font-size: 32px;
+		flex: 1;
+	}
+
+	view {
+		mask: url("~lucide-static/icons/search.svg") no-repeat;
+		mask-size: 100% 100%;
+		background-color: #fff;
+		aspect-ratio: 1;
+		flex: 0 0 36px;
+		margin-left: 20px;
+	}
+}
+
+.search-result {
+	flex: 1;
+	overflow: hidden;
+
+	&-item {
+		padding: 20px 30px;
+		background: #fff;
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+
+		&-title {
+			color: blue;
+			font-size: 32px;
+			margin-bottom: 20px;
+		}
+
+		&-content {
+			color: #4f4f4f;
+			font-size: 28px;
+		}
+
+		&-meta {
+			font-size: 24px;
+			color: #828282;
+			margin-top: 8px;
+		}
+	}
+}

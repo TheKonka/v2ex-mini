@@ -7,12 +7,19 @@
     "bigPackageSizeSupport": true,
     "lazyloadPlaceholderEnable": true,
     "preloadBackgroundData": false,
-    "skylineRenderEnable": true
+    "skylineRenderEnable": false
   },
   "libVersion": "3.0.1",
   "condition": {
     "miniprogram": {
       "list": [
+        {
+          "name": "搜索结果",
+          "pathName": "pages/my/search/index",
+          "query": "query=索尼",
+          "launchMode": "default",
+          "scene": null
+        },
         {
           "name": "主题详情",
           "pathName": "pages/topics-detail/index",

@@ -110,3 +110,38 @@ declare namespace Api {
 		last_modified: string;
 	};
 }
+
+declare namespace SOV2EX {
+	export interface Root {
+		took: number;
+		timed_out: boolean;
+		total: number;
+		hits: Hit[];
+	}
+
+	export interface Hit {
+		_index: string;
+		_type: string;
+		_id: string;
+		_score: number;
+		_source: Source;
+		highlight: Highlight;
+	}
+
+	export interface Source {
+		node: number;
+		replies: number;
+		created: string;
+		member: string;
+		id: number;
+		title: string;
+		content: string;
+	}
+
+	export interface Highlight {
+		'reply_list.content': string[];
+		'title': string[];
+		'postscript_list.content': string[];
+		'content': string[];
+	}
+}

@@ -77,3 +77,7 @@ export function getMemberByUsername(username: string) {
 export function getHomeTab(id: string) {
 	return RequestManager.get(`?tab=${id}`);
 }
+
+export function sov2ex(paramsObj: { q: string; from?: number; size?: number }) {
+	return RequestManager.get<SOV2EX.Root>(`https://www.sov2ex.com/api/search?${new URLSearchParams(paramsObj).toString()}`);
+}
