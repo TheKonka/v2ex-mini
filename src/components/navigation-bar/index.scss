@@ -1,42 +1,42 @@
 .czt-navbar-title {
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  color: #222;
-  font-size: 34px;
-  font-weight: 700;
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	color: #222;
+	font-size: 34px;
+	font-weight: 700;
 }
 
 .czt-navbar-back {
-  display: flex;
-  align-items: center;
-  z-index: 100;
-  position: absolute;
+	display: flex;
+	align-items: center;
+	z-index: 100;
+	position: absolute;
 
-  image {
-    width: 40px;
-    height: 40px;
-    border: 20px solid transparent;
-    box-sizing: content-box;
-  }
+	image {
+		width: 40px;
+		height: 40px;
+		border: 20px solid transparent;
+		box-sizing: content-box;
+	}
 }
 
 .czt-navbar {
-  width: 100vw;
-  background: #fff;
-  flex-grow: 0;
-  flex-shrink: 0;
+	width: 100vw;
+	background: #fff;
+	flex-grow: 0;
+	flex-shrink: 0;
 
-  &-drop {
-    backdrop-filter: blur(15px);
-  }
+	&-drop {
+		backdrop-filter: blur(15px);
+	}
 
-  .wrapper {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-  }
+	.wrapper {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+	}
 }

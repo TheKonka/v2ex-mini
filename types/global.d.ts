@@ -1,4 +1,4 @@
-/// <reference types="@tarojs/taro" />
+// / <reference types="@tarojs/taro" />
 
 declare module '*.png';
 declare module '*.gif';

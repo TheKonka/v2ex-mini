@@ -82,15 +82,11 @@ declare namespace Api {
 		last_modified: number;
 		last_touched: number;
 		member: Pick<Member, 'id' | 'username' | 'bio' | 'website' | 'github' | 'url' | 'created'> & { avatar: string };
-		node: Pick<Node, 'id' | 'url' | 'name' | 'title' | 'header' | 'footer' | 'topics'> & {
-			avatar: string;
-			created: number;
-			last_modified: number;
-		};
+		node: NodeInfo;
 		supplements: Supplement[];
 	}
 
-	interface TopicsOfNode {
+	export interface TopicsOfNode {
 		id: number;
 		title: string;
 		content: string;
@@ -104,11 +100,25 @@ declare namespace Api {
 		last_touched: number;
 	}
 
-	type NodeInfo = Pick<Node, 'id' | 'url' | 'name' | 'title' | 'header' | 'footer' | 'topics'> & {
+	export interface NodeInfo {
+		id: number;
+		url: string;
+		name: string;
+		title: string;
+		header: string;
+		footer: string;
 		avatar: string;
-		created: string;
-		last_modified: string;
-	};
+		topics: number;
+		created: number;
+		last_modified: number;
+	}
+
+	export interface NodeListItem {
+		topics: number;
+		name: string;
+		avatar_normal: string;
+		title: string;
+	}
 }
 
 declare namespace SOV2EX {

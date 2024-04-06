@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
 import { View, Swiper, SwiperItem, ScrollView } from '@tarojs/components';
-import { useShareAppMessage } from '@tarojs/taro';
+import { useReady, useShareAppMessage } from '@tarojs/taro';
 import TabsItem from './components/TabsItem';
 import './index.scss';
 import NavigationBar from '@/components/navigation-bar';
@@ -30,6 +30,10 @@ const Index: React.FC = () => {
 			title: 'v2ex',
 			path: '/pages/home/index'
 		};
+	});
+
+	useReady(() => {
+		setScrollIntoViewId('id' + tabs.findIndex((i) => i.id === currentTab));
 	});
 
 	return (
@@ -75,7 +79,7 @@ const Index: React.FC = () => {
 				onChange={(e) => {
 					if (e.detail.source === 'touch') {
 						setScrollIntoViewId('id' + e.detail.current);
-						setCurrentTab(tabs[e.detail.current].id);
+						setCurrentTab((p) => tabs[e.detail.current]?.id || p);
 					}
 				}}
 			>

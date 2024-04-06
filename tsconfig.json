@@ -1,16 +1,16 @@
 {
 	"compilerOptions": {
-		"target": "es2017",
-		"module": "commonjs",
-		"lib": ["ESNext", "dom"],
+		"target": "es2022",
+		"module": "preserve",
+		"noEmit": true,
+		"noUncheckedIndexedAccess": true,
+		"lib": ["ESNext", "DOM"],
 		"removeComments": false,
 		"preserveConstEnums": true,
-		"moduleResolution": "node",
 		"experimentalDecorators": true,
 		"strict": true,
 		"skipLibCheck": true,
 		"allowSyntheticDefaultImports": true,
-		"outDir": "./dist",
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true,
@@ -19,9 +19,8 @@
 		"rootDir": ".",
 		"jsx": "react-jsx",
 		"allowJs": true,
-		"resolveJsonModule": true,
 		"paths": {
-			"@/*": ["./src/*"],
+			"@/*": ["./src/*"]
 		},
 		"typeRoots": ["node_modules/@types"]
 	},

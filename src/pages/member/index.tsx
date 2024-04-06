@@ -14,7 +14,7 @@ const Index: React.FC = () => {
 	const { username } = router.params;
 
 	const [memberInfo, setMemberInfo] = useState<Api.Member>();
-	const [topics, setTopics] = useState<Api.TopicsOfNode[]>([]);
+	const [topics, setTopics] = useState<Api.TodayHotTopics[]>([]);
 
 	useLoad(() => {
 		if (username) {

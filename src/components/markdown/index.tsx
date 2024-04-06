@@ -57,7 +57,7 @@ function RenderImage({ url, alt }: any) {
 	);
 }
 
-function render(node: any): React.ReactNode {
+function render(node: Record<string, any>): React.ReactNode {
 	function renderArray(children: any[]) {
 		const res = [];
 		for (const item of children) {

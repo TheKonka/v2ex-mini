@@ -1,6 +1,7 @@
 # v2ex-mini
 
-使用 [Taro](https://github.com/nervjs/taro) + React 开发的 [V2EX](https://www.v2ex.com/) 小程序
+使用 [Taro](https://github.com/nervjs/taro) + [React](https://github.com/facebook/react)
+开发的 [V2EX](https://www.v2ex.com/) 小程序
 
 ### 小程序码
 

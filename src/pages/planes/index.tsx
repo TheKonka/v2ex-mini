@@ -19,12 +19,10 @@ interface IPlanes {
 	nodes: INode[];
 }
 
-type NodeList = Pick<Api.Node, 'avatar_normal' | 'name' | 'title'>;
-
 const Index: React.FC = () => {
 	const [planes, setPlanes] = useState<IPlanes[]>(() => Taro.getStorageSync('planes') || []);
-	const [nodeList, setNodeList] = useState<NodeList[]>(() => Taro.getStorageSync('nodes_list') || []);
-	const [searchResult, setSearchResult] = useState<NodeList[]>([]);
+	const [nodeList, setNodeList] = useState<Api.NodeListItem[]>(() => Taro.getStorageSync('nodes_list') || []);
+	const [searchResult, setSearchResult] = useState<Api.NodeListItem[]>([]);
 	const [searchValue, setSearchValue] = useState<string>('');
 	const [scrollIntoViewId, setScrollIntoViewId] = useState<string>('tab0');
 

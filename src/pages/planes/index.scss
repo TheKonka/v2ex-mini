@@ -4,6 +4,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
 	// position: sticky;
 	// top: 0;
 
@@ -73,18 +74,22 @@
 			background-color: #3d637f;
 			color: #8bd3ff;
 		}
+
 		&:nth-child(2) > view {
 			background-color: #323030;
 			color: #ffcb89;
 		}
+
 		&:nth-child(3) > view {
 			background-color: #cbcbcb;
 			color: #858585;
 		}
+
 		&:nth-child(4) > view {
 			background-color: #ffeca6;
 			color: #ee837d;
 		}
+
 		&:nth-child(5) > view {
 			background-color: #5b8865;
 			color: #7de594;
@@ -110,7 +115,7 @@
 	flex-wrap: wrap;
 	width: stretch;
 	border-radius: 30px;
-	background: #ffffff;
+	background: #fff;
 	margin: 0 20px;
 	padding: 0 10px;
 

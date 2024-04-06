@@ -1,79 +1,79 @@
 {
-	"name": "v2ex-mini",
-	"version": "1.0.0",
-	"private": true,
-	"description": "unofficial mini app for v2ex.com",
-	"templateInfo": {
-		"name": "default",
-		"typescript": true,
-		"css": "sass"
-	},
-	"scripts": {
-		"preinstall": "npx only-allow pnpm",
-		"prepare": "husky install",
-		"build": "taro build --type weapp",
-		"dev": "npm run build -- --watch",
-		"lint": "npx eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
-		"lint:style": "npx stylelint \"**/*.scss\" --fix",
-		"format": "npx prettier --write src"
-	},
-	"browserslist": [
-		"last 3 versions",
-		"Android >= 4.1",
-		"ios >= 8"
-	],
-	"author": "konka",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/TheKonka/v2ex-mini.git"
-	},
-	"license": "MIT",
-	"dependencies": {
-		"@babel/runtime": "^7.24.0",
-		"@tarojs/components": "3.6.24",
-		"@tarojs/plugin-framework-react": "3.6.24",
-		"@tarojs/plugin-platform-weapp": "3.6.24",
-		"@tarojs/react": "3.6.24",
-		"@tarojs/runtime": "3.6.24",
-		"@tarojs/taro": "3.6.24",
-		"classnames": "^2.5.1",
-		"dayjs": "^1.11.10",
-		"lucide-static": "^0.341.0",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"remark-gfm": "^3.0.1",
-		"remark-parse": "^10.0.2",
-		"unified": "^10.1.2",
-		"use-debounce": "^9.0.4"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.24.0",
-		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
-		"@tarojs/webpack5-runner": "3.6.24",
-		"@types/react": "^18.2.63",
-		"@types/react-dom": "^18.2.19",
-		"@types/webpack-env": "^1.18.4",
-		"@typescript-eslint/eslint-plugin": "^7.1.1",
-		"@typescript-eslint/parser": "^7.1.1",
-		"babel-preset-taro": "3.6.24",
-		"eslint": "9.0.0-beta.1",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-react": "^7.34.0",
-		"eslint-plugin-react-hooks": "^4.6.0",
-		"husky": "^8.0.3",
-		"lint-staged": "^13.3.0",
-		"postcss-preset-env": "^9.4.0",
-		"prettier": "^3.2.5",
-		"react-refresh": "^0.11.0",
-		"stylelint": "^15.11.0",
-		"stylelint-config-standard-scss": "^8.0.0",
-		"typescript": "^5.3.3"
-	},
-	"lint-staged": {
-		"*.{js,jsx,ts,tsx}": [
-			"prettier --write",
-			"eslint --cache --fix"
-		],
-		"*.scss": "stylelint --fix"
-	}
+  "name": "v2ex-mini",
+  "version": "1.0.0",
+  "private": true,
+  "description": "unofficial mini app for v2ex.com",
+  "templateInfo": {
+    "name": "default",
+    "typescript": true,
+    "css": "sass"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install",
+    "build": "taro build --type weapp",
+    "dev": "npm run build -- --watch",
+    "lint": "npx eslint --fix",
+    "lint:style": "npx stylelint \"**/*.scss\" --fix",
+    "format": "npx prettier --write src"
+  },
+  "browserslist": [
+    "last 3 versions",
+    "Android >= 4.1",
+    "ios >= 8"
+  ],
+  "author": "konka",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheKonka/v2ex-mini.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.24.4",
+    "@tarojs/components": "3.6.25",
+    "@tarojs/plugin-framework-react": "3.6.25",
+    "@tarojs/plugin-platform-weapp": "3.6.25",
+    "@tarojs/react": "3.6.25",
+    "@tarojs/runtime": "3.6.25",
+    "@tarojs/taro": "3.6.25",
+    "classnames": "^2.5.1",
+    "dayjs": "^1.11.10",
+    "lucide-static": "^0.341.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.4",
+    "use-debounce": "^9.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
+    "@tarojs/webpack5-runner": "3.6.25",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "@types/webpack-env": "^1.18.4",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
+    "babel-preset-taro": "3.6.25",
+    "eslint": "9.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.3.0",
+    "postcss-preset-env": "^9.5.4",
+    "prettier": "^3.2.5",
+    "react-refresh": "^0.11.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard-scss": "^8.0.0",
+    "typescript": "^5.4.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --cache --fix"
+    ],
+    "*.scss": "stylelint --fix"
+  }
 }

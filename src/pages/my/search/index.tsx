@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Input, Text, RichText, ScrollView } from '@tarojs/components';
 import Taro, { useRouter, useShareAppMessage } from '@tarojs/taro';
 import './index.scss';
@@ -16,8 +16,6 @@ const Index: React.FC = () => {
 	const [isFetching, setIsFetching] = useBoolean(false);
 	const [pageIndex, setPageIndex] = useState(0);
 	const [total, setTotal] = useState(0);
-
-	const { current: menuButtonBoundingClient } = useRef<Taro.getMenuButtonBoundingClientRect.Rect>(Taro.getMenuButtonBoundingClientRect());
 
 	useShareAppMessage(() => {
 		return {
@@ -53,15 +51,9 @@ const Index: React.FC = () => {
 
 	return (
 		<>
-			<View
-				className="search"
-				style={{
-					height: menuButtonBoundingClient.height + 10,
-					top: menuButtonBoundingClient.top - 5,
-					right: `calc(100vw - ${menuButtonBoundingClient.left}px)`
-				}}
-			>
+			<View className="search">
 				<Input
+					focus
 					value={inputValue}
 					placeholder="搜索"
 					onInput={(e) => {

@@ -1,12 +1,18 @@
 import RequestManager from './requestManager';
 
+type WrapperResult<T> = {
+	success: boolean;
+	message: string;
+	result: T;
+};
+
 /**
  * 获取指定节点
  * @param node_name
  * @returns
  */
 export function getNodeByName(node_name: string) {
-	return RequestManager.get(`api/v2/nodes/${node_name}`);
+	return RequestManager.get<WrapperResult<Api.NodeInfo>>(`api/v2/nodes/${node_name}`);
 }
 
 /**
@@ -16,14 +22,14 @@ export function getNodeByName(node_name: string) {
  * @returns
  */
 export function getTopicsByNode(node_name: string, p = 1) {
-	return RequestManager.get(`api/v2/nodes/${node_name}/topics?p=${p}`);
+	return RequestManager.get<WrapperResult<Api.TopicsOfNode[]>>(`api/v2/nodes/${node_name}/topics?p=${p}`);
 }
 
 /**
  * 获取指定主题
  */
 export function getTpoicsById(topic_id: string) {
-	return RequestManager.get(`api/v2/topics/${topic_id}`);
+	return RequestManager.get<WrapperResult<Api.TopicsDetail>>(`api/v2/topics/${topic_id}`);
 }
 
 /**
@@ -32,7 +38,7 @@ export function getTpoicsById(topic_id: string) {
  * @param p  - 分页页码，默认为 1
  */
 export function getTpoicsRepliesById(topic_id: string, p = 1) {
-	return RequestManager.get(`api/v2/topics/${topic_id}/replies?p=${p}`);
+	return RequestManager.get<WrapperResult<Api.Replies[]>>(`api/v2/topics/${topic_id}/replies?p=${p}`);
 }
 
 /**
@@ -40,42 +46,42 @@ export function getTpoicsRepliesById(topic_id: string, p = 1) {
  * 相当于首页右侧的 大约每天10条的内容
  */
 export function getTodayHotTopics() {
-	return RequestManager.get(`api/topics/hot.json`);
+	return RequestManager.get<Api.TodayHotTopics[]>(`api/topics/hot.json`);
 }
 
 /**
  * https://www.v2ex.com/planes
  */
 export function getPlanes() {
-	return RequestManager.get(`planes`);
+	return RequestManager.get<any>(`planes`);
 }
 
 /**
  * 节点list
  */
 export function getNodesList() {
-	return RequestManager.get(`api/nodes/list.json?fields=name,title,topics,avatar_normal&sort_by=topics&reverse=1`);
+	return RequestManager.get<Api.NodeListItem[]>(`api/nodes/list.json?fields=name,title,topics,avatar_normal&sort_by=topics&reverse=1`);
 }
 
 /**
  * 根据username获取主题
  */
 export function getTpoicsByUsername(username: string) {
-	return RequestManager.get(`api/topics/show.json?username=${username}`);
+	return RequestManager.get<Api.TodayHotTopics[]>(`api/topics/show.json?username=${username}`);
 }
 
 /**
  * 根据username获取用户信息
  */
 export function getMemberByUsername(username: string) {
-	return RequestManager.get(`api/members/show.json?username=${username}`);
+	return RequestManager.get<Api.Member>(`api/members/show.json?username=${username}`);
 }
 
 /**
  * https://www.v2ex.com/?tab=tech
  */
 export function getHomeTab(id: string) {
-	return RequestManager.get(`?tab=${id}`);
+	return RequestManager.get<any>(`?tab=${id}`);
 }
 
 export function sov2ex(paramsObj: { q: string; from?: number; size?: number }) {
