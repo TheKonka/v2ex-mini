@@ -13,6 +13,7 @@
 		flex-grow: 1;
 		flex-shrink: 0;
 		word-break: break-word;
+		display: inline-flex;
 	}
 }
 
@@ -38,6 +39,10 @@
 	&-item {
 		list-style-type: disc;
 		display: list-item;
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
 	}
 }
 
@@ -102,4 +107,12 @@
 
 .rich-text {
 	overflow: scroll;
+
+	&.hide {
+		display: none;
+
+		+ text {
+			font-weight: 500;
+		}
+	}
 }

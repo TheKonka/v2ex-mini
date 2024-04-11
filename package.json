@@ -50,11 +50,11 @@
     "@babel/core": "^7.24.4",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@tarojs/webpack5-runner": "3.6.25",
-    "@types/react": "^18.2.74",
+    "@types/react": "^18.2.75",
     "@types/react-dom": "^18.2.24",
     "@types/webpack-env": "^1.18.4",
-    "@typescript-eslint/eslint-plugin": "^7.5.0",
-    "@typescript-eslint/parser": "^7.5.0",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.6.0",
     "babel-preset-taro": "3.6.25",
     "eslint": "9.0.0",
     "eslint-config-prettier": "^9.1.0",
@@ -67,7 +67,7 @@
     "react-refresh": "^0.11.0",
     "stylelint": "^15.11.0",
     "stylelint-config-standard-scss": "^8.0.0",
-    "typescript": "^5.4.4"
+    "typescript": "^5.4.5"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -75,5 +75,8 @@
       "eslint --cache --fix"
     ],
     "*.scss": "stylelint --fix"
+  },
+  "engines": {
+    "node": ">=18.20.1"
   }
 }

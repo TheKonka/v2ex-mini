@@ -161,7 +161,7 @@ function render(node: Record<string, any>): React.ReactNode {
 		case 'emphasis':
 			return <View className="emphasis">{render(node.children[0])}</View>;
 		case 'html':
-			return <RichText nodes={node.value} userSelect className="rich-text" />;
+			return <RichText nodes={node.value} userSelect className={classNames('rich-text', { hide: node.value === '<b>' })} />;
 	}
 }
 

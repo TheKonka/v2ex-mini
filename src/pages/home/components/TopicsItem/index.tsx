@@ -50,7 +50,9 @@ const TopicItem: React.FC<TabTopic> = (item) => {
 					</View>
 				</View>
 
-				<View className="topics-item-title">{item.title}</View>
+				<Text className="topics-item-title" decode>
+					{item.title}
+				</Text>
 			</View>
 		</>
 	);

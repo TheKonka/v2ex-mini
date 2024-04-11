@@ -16,7 +16,8 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "condition": false
+    "condition": true,
+    "swc": true
   },
   "compileType": "miniprogram",
   "libVersion": "latest",
