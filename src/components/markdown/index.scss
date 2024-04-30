@@ -7,6 +7,7 @@
 	padding: 20px;
 	border-radius: 20px;
 	word-break: break-all;
+	overflow: hidden;
 
 	text {
 		max-width: 100%;
@@ -14,6 +15,10 @@
 		flex-shrink: 0;
 		word-break: break-word;
 		display: inline-flex;
+	}
+
+	.image {
+		width: 100%;
 	}
 }
 

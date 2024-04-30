@@ -71,6 +71,7 @@ const Index: React.FC = () => {
 				{nodeInfo && (
 					<View className="node">
 						<Image
+							showMenuByLongpress
 							src={getProxyImage(nodeInfo.avatar)}
 							mode="aspectFit"
 							className="node-avatar"

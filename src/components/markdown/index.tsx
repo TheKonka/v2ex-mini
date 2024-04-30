@@ -1,60 +1,19 @@
 import classNames from 'classnames';
-import { Image, RichText, Text, View } from '@tarojs/components';
-import { getProxyImage } from '@/helpers/img';
+import { RichText, Text, View } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import './index.scss';
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
+
+import RenderImage from './image';
 
 const parser = unified().use(remarkParse).use(remarkGfm);
 
 interface Props {
 	nodes: string;
 	className?: string;
-}
-
-function RenderImage({ url, alt }: any) {
-	const [error, setError] = useState(false);
-	return error ? (
-		<View
-			className="link"
-			onClick={() => {
-				Taro.setClipboardData({
-					data: url,
-					success() {
-						Taro.showToast({
-							title: '链接已复制',
-							icon: 'none'
-						});
-					}
-				});
-			}}
-		>
-			{alt || '图片地址'}
-		</View>
-	) : (
-		<Image
-			className="image"
-			src={getProxyImage(url)}
-			mode="aspectFit"
-			onClick={() => {
-				Taro.createSelectorQuery()
-					.selectAll('.image')
-					.fields({ properties: ['src'] })
-					.exec((res) => {
-						Taro.previewImage({
-							urls: res[0].map((i: { src: string }) => i.src),
-							current: getProxyImage(url)
-						});
-					});
-			}}
-			onError={() => {
-				setError(true);
-			}}
-		/>
-	);
 }
 
 function render(node: Record<string, any>): React.ReactNode {
@@ -95,11 +54,19 @@ function render(node: Record<string, any>): React.ReactNode {
 				});
 				return <View>{parts}</View>;
 			}
-			return <Text userSelect>{node.value}</Text>;
+			return (
+				<Text userSelect decode>
+					{node.value}
+				</Text>
+			);
 		case 'image':
-			return <>{<RenderImage url={node.url} alt={node.alt} />}</>;
+			return <RenderImage url={node.url} alt={node.alt} />;
 		case 'code':
-			return <View className="code">{node.value}</View>;
+			return (
+				<Text className="code" userSelect>
+					{node.value}
+				</Text>
+			);
 		case 'paragraph':
 			return <View className="paragraph">{renderArray(node.children)}</View>;
 		case 'link':
@@ -149,9 +116,13 @@ function render(node: Record<string, any>): React.ReactNode {
 		case 'tableCell':
 			return <View className="table-cell">{render(node.children[0])}</View>;
 		case 'inlineCode':
-			return <Text className="inline-code">{node.value}</Text>;
+			return (
+				<Text className="inline-code" userSelect>
+					{node.value}
+				</Text>
+			);
 		case 'strong':
-			return <Text className="strong">{render(node.children[0])}</Text>;
+			return <View className="strong">{renderArray(node.children)}</View>;
 		case 'blockquote':
 			return <View>{render(node.children[0])}</View>;
 		case 'thematicBreak':
@@ -161,7 +132,11 @@ function render(node: Record<string, any>): React.ReactNode {
 		case 'emphasis':
 			return <View className="emphasis">{render(node.children[0])}</View>;
 		case 'html':
-			return <RichText nodes={node.value} userSelect className={classNames('rich-text', { hide: node.value === '<b>' })} />;
+			return (
+				<View className={classNames('rich-text', { hide: node.value === '<b>' })}>
+					<RichText nodes={node.value} userSelect />
+				</View>
+			);
 	}
 }
 

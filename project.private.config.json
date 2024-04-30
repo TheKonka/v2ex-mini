@@ -7,7 +7,7 @@
     "bigPackageSizeSupport": true,
     "lazyloadPlaceholderEnable": true,
     "preloadBackgroundData": false,
-    "skylineRenderEnable": true
+    "skylineRenderEnable": false
   },
   "libVersion": "3.4.1",
   "condition": {
@@ -16,7 +16,7 @@
         {
           "name": "主题详情",
           "pathName": "pages/topics-detail/index",
-          "query": "id=1031655",
+          "query": "id=1032778",
           "launchMode": "default",
           "scene": null
         },
