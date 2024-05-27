@@ -16,7 +16,8 @@
 					"picker-view-column",
 					"lottie",
 					"scroll-view",
-					"navigator"
+					"navigator",
+					"rich-text"
 				]
 			}
 		]

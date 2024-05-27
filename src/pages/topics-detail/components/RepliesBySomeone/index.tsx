@@ -3,7 +3,7 @@ import Taro, { useRouter } from '@tarojs/taro';
 import React, { useEffect, useRef, useState } from 'react';
 import RepliesItem from '../RepliesItem';
 import './index.scss';
-import SafeArea from '@/components/safe-area';
+import SafeArea from '@/components/SafeArea';
 
 interface Props {
 	replies: Api.Replies[];

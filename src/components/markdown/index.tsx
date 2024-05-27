@@ -49,7 +49,7 @@ function render(node: Record<string, any>): React.ReactNode {
 							React.createElement('Text', {}, ' ')
 						];
 					} else {
-						return React.createElement('Text', {}, part);
+						return React.createElement('Text', { userSelect: true, decode: true }, part);
 					}
 				});
 				return <View>{parts}</View>;
@@ -132,11 +132,8 @@ function render(node: Record<string, any>): React.ReactNode {
 		case 'emphasis':
 			return <View className="emphasis">{render(node.children[0])}</View>;
 		case 'html':
-			return (
-				<View className={classNames('rich-text', { hide: node.value === '<b>' })}>
-					<RichText nodes={node.value} userSelect />
-				</View>
-			);
+			const data = node.value.replace(/<img/g, '<img style="width:100%;height:auto"');
+			return <RichText nodes={data} userSelect />;
 	}
 }
 

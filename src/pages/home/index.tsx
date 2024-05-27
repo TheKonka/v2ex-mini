@@ -4,7 +4,7 @@ import { View, Swiper, SwiperItem, ScrollView } from '@tarojs/components';
 import { useReady, useShareAppMessage } from '@tarojs/taro';
 import TabsItem from './components/TabsItem';
 import './index.scss';
-import NavigationBar from '@/components/navigation-bar';
+import NavigationBar from '@/components/Navigationbar';
 import Taro from '@tarojs/taro';
 
 const Index: React.FC = () => {

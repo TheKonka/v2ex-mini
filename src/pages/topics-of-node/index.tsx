@@ -5,9 +5,9 @@ import { getProxyImage } from '@/helpers/img';
 import { getTimeFromNow } from '@/helpers/time';
 import { getNodeByName, getTopicsByNode } from '@/services/api';
 import './index.scss';
-import NavigationBar from '@/components/navigation-bar';
+import NavigationBar from '@/components/Navigationbar';
 import useBoolean from '@/hooks/useBoolean';
-import Loading from '@/components/loading';
+import Loading from '@/components/Loading';
 
 const Index: React.FC = () => {
 	const router = useRouter();

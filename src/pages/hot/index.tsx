@@ -5,7 +5,7 @@ import { getProxyImage } from '@/helpers/img';
 import { getTimeFromNow } from '@/helpers/time';
 import { getTodayHotTopics } from '@/services/api';
 import './index.scss';
-import NavigationBar from '@/components/navigation-bar';
+import NavigationBar from '@/components/Navigationbar';
 
 const Index: React.FC = () => {
 	const [todayHotTopics, setTodayHotTopics] = useState<Api.TodayHotTopics[]>(() => Taro.getStorageSync('hot_list') || []);

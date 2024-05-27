@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Image, ScrollView, Text, View } from '@tarojs/components';
 import Taro, { useLoad, useRouter, useShareAppMessage } from '@tarojs/taro';
-import Loading from '@/components/loading';
-import MarkDown from '@/components/markdown';
+import Loading from '@/components/Loading';
+import MarkDown from '@/components/Markdown';
 import { getProxyImage } from '@/helpers/img';
 import { getTimeFromNow } from '@/helpers/time';
 import { getTpoicsById, getTpoicsRepliesById } from '@/services/api';
@@ -80,7 +80,9 @@ const Index: React.FC = () => {
 				{topics ? (
 					<>
 						<View className="top">
-							<View className="title">{topics.title}</View>
+							<Text className="title" userSelect decode>
+								{topics.title}
+							</Text>
 							<View className="author">
 								<Image
 									src={getProxyImage(topics.member.avatar)}

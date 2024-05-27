@@ -1,5 +1,5 @@
 import React from 'react';
-import MarkDown from '@/components/markdown';
+import MarkDown from '@/components/Markdown';
 import { View, Image, Text } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import { getProxyImage } from '@/helpers/img';

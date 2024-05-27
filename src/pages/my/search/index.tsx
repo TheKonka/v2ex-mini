@@ -5,7 +5,7 @@ import './index.scss';
 import { sov2ex } from '@/services/api';
 import dayjs from 'dayjs';
 import useBoolean from '@/hooks/useBoolean';
-import Loading from '@/components/loading';
+import Loading from '@/components/Loading';
 
 const Index: React.FC = () => {
 	const router = useRouter();

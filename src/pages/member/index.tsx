@@ -5,9 +5,9 @@ import { getProxyImage } from '@/helpers/img';
 import { getTimeFromNow } from '@/helpers/time';
 import { getMemberByUsername, getTpoicsByUsername } from '@/services/api';
 import './index.scss';
-import NavigationBar from '@/components/navigation-bar';
-import SafeArea from '@/components/safe-area';
-import Loading from '@/components/loading';
+import NavigationBar from '@/components/Navigationbar';
+import SafeArea from '@/components/SafeArea';
+import Loading from '@/components/Loading';
 
 const Index: React.FC = () => {
 	const router = useRouter();

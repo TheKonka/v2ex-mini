@@ -1,25 +1,25 @@
 import classNames from 'classnames';
 import { useThrottledCallback } from 'use-debounce';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Image, View } from '@tarojs/components';
 import Taro, { usePageScroll } from '@tarojs/taro';
 import backImg from '@/assets/back.png';
 import './index.scss';
+import useNavBarHeight from '@/hooks/useNavBarHeight';
 
 interface Props {
 	title?: string;
 	color?: string;
 	backdropFilter?: boolean;
 	showBackIcon?: boolean;
-	onInit?: (res: any) => void;
 	className?: string;
 }
 
 const NavigationBar: React.FC<Props> = (props) => {
 	const { showBackIcon = true } = props;
 
-	const { current: menuButtonBoundingClient } = useRef<Taro.getMenuButtonBoundingClientRect.Rect>(Taro.getMenuButtonBoundingClientRect());
-	const { current: systemInfo } = useRef<Taro.getSystemInfoSync.Result>(Taro.getSystemInfoSync());
+	const { navbarHeight, menuButtonBoundingClient, systemInfo } = useNavBarHeight();
+
 	const [opacity, setOpacity] = useState(0);
 
 	const handleScroll = useThrottledCallback((scrollTop) => {
@@ -34,29 +34,6 @@ const NavigationBar: React.FC<Props> = (props) => {
 	usePageScroll((res) => {
 		handleScroll(res.scrollTop);
 	});
-
-	const navbarHeight = useMemo(() => {
-		if (menuButtonBoundingClient.top && menuButtonBoundingClient.height) {
-			if (systemInfo.statusBarHeight) {
-				return (
-					systemInfo.statusBarHeight +
-					Math.abs(menuButtonBoundingClient.top - systemInfo.statusBarHeight) * 2 +
-					menuButtonBoundingClient.height
-				);
-			} else {
-				return menuButtonBoundingClient.top + menuButtonBoundingClient.height + 8;
-			}
-		} else {
-			return (systemInfo.statusBarHeight ?? 0) + 44;
-		}
-	}, [menuButtonBoundingClient.height, menuButtonBoundingClient.top, systemInfo.statusBarHeight]);
-
-	useEffect(() => {
-		props.onInit?.({
-			height: navbarHeight,
-			statusBarHeight: systemInfo.statusBarHeight
-		});
-	}, [navbarHeight, props, systemInfo.statusBarHeight]);
 
 	return (
 		<>

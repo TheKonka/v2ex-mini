@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { ScrollView, Text, View } from '@tarojs/components';
-import Loading from '@/components/loading';
+import Loading from '@/components/Loading';
 import { getHomeTab } from '@/services/api';
 import TopicItem from '../TopicsItem';
 import './index.scss';

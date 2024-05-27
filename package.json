@@ -6,7 +6,8 @@
 	"templateInfo": {
 		"name": "default",
 		"typescript": true,
-		"css": "sass"
+		"css": "Sass",
+		"framework": "React"
 	},
 	"scripts": {
 		"preinstall": "npx only-allow pnpm",
@@ -29,7 +30,7 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"@babel/runtime": "^7.24.5",
+		"@babel/runtime": "^7.24.6",
 		"@tarojs/components": "3.6.27",
 		"@tarojs/plugin-framework-react": "3.6.27",
 		"@tarojs/plugin-platform-weapp": "3.6.27",
@@ -47,27 +48,28 @@
 		"use-debounce": "^9.0.4"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.24.5",
+		"@babel/core": "^7.24.6",
+		"@eslint/js": "^9.3.0",
 		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.13",
 		"@tarojs/webpack5-runner": "3.6.27",
-		"@types/react": "^18.3.1",
+		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
-		"@types/webpack-env": "^1.18.4",
-		"@typescript-eslint/eslint-plugin": "^7.8.0",
-		"@typescript-eslint/parser": "^7.8.0",
+		"@types/webpack-env": "^1.18.5",
 		"babel-preset-taro": "3.6.27",
-		"eslint": "9.0.0",
+		"eslint": "^9.3.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-react": "^7.34.1",
 		"eslint-plugin-react-hooks": "^4.6.2",
-		"husky": "^8.0.3",
+		"globals": "^15.3.0",
+		"husky": "^9.0.11",
 		"lint-staged": "^13.3.0",
-		"postcss-preset-env": "^9.5.9",
+		"postcss-preset-env": "^9.5.14",
 		"prettier": "^3.2.5",
 		"react-refresh": "^0.11.0",
-		"stylelint": "^15.11.0",
-		"stylelint-config-standard-scss": "^8.0.0",
-		"typescript": "^5.4.5"
+		"stylelint": "^16.6.0",
+		"stylelint-config-standard-scss": "^13.1.0",
+		"typescript": "^5.4.5",
+		"typescript-eslint": "^7.10.0"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": [

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Image, Input, ScrollView, Button } from '@tarojs/components';
 import Taro, { useLoad, useShareAppMessage } from '@tarojs/taro';
 import searchImg from '@/assets/search.png';
-import Loading from '@/components/loading';
+import Loading from '@/components/Loading';
 import { getProxyImage } from '@/helpers/img';
 import { getNodesList, getPlanes } from '@/services/api';
 import './index.scss';

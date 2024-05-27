@@ -20,6 +20,12 @@
 	.image {
 		width: 100%;
 	}
+
+	rich-text {
+		line-height: 200%;
+		font-size: 24px;
+		font-weight: 500;
+	}
 }
 
 .code {
@@ -108,16 +114,4 @@
 .at {
 	color: #778087;
 	text-decoration: underline;
-}
-
-.rich-text {
-	overflow: scroll;
-
-	&.hide {
-		display: none;
-
-		+ text {
-			font-weight: 500;
-		}
-	}
 }
