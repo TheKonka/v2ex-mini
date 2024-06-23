@@ -2,10 +2,11 @@ import classNames from 'classnames';
 import { useThrottledCallback } from 'use-debounce';
 import React, { useState } from 'react';
 import { Image, View } from '@tarojs/components';
-import Taro, { usePageScroll } from '@tarojs/taro';
+import { usePageScroll } from '@tarojs/taro';
 import backImg from '@/assets/back.png';
 import './index.scss';
 import useNavBarHeight from '@/hooks/useNavBarHeight';
+import { safeNavigateBack } from '@/helpers/route';
 
 interface Props {
 	title?: string;
@@ -38,7 +39,7 @@ const NavigationBar: React.FC<Props> = (props) => {
 	return (
 		<>
 			<View
-				className={classNames('czt-navbar', { 'czt-navbar-drop': props.backdropFilter }, props.className)}
+				className={classNames('navbar', { 'navbar-drop': props.backdropFilter }, props.className)}
 				style={{
 					height: navbarHeight
 					// background: `rgba(255,255,255,${opacity})`
@@ -47,18 +48,16 @@ const NavigationBar: React.FC<Props> = (props) => {
 				<View className="wrapper" style={{ height: menuButtonBoundingClient.height, top: menuButtonBoundingClient.top }}>
 					{!!showBackIcon && (
 						<View
-							className="czt-navbar-back"
+							className="navbar-back"
 							onClick={() => {
-								Taro.navigateBack({ delta: 1 }).catch(() => {
-									Taro.switchTab({ url: `/pages/home/index` });
-								});
+								safeNavigateBack();
 							}}
 						>
 							<Image src={backImg} mode={'aspectFit'} />
 						</View>
 					)}
 
-					<View className="czt-navbar-title">{props.title}</View>
+					<View className="navbar-title">{props.title}</View>
 				</View>
 			</View>
 		</>

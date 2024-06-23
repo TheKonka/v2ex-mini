@@ -14,6 +14,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "会员信息",
+          "pathName": "pages/member/index",
+          "query": "username=Livid",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "主题详情",
           "pathName": "pages/topics-detail/index",
           "query": "id=1032778",
@@ -38,13 +45,6 @@
           "name": "V2EX 位面列表",
           "pathName": "pages/planes/index",
           "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "会员信息",
-          "pathName": "pages/member/index",
-          "query": "username=rzdCG",
           "launchMode": "default",
           "scene": null
         },

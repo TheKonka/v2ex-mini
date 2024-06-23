@@ -5,7 +5,9 @@ export default function useSetTimeout(fn: () => void, timeout = 1500) {
 
 	useEffect(() => {
 		return () => {
-			timer.current && clearTimeout(timer.current);
+			if (timer.current) {
+				clearTimeout(timer.current);
+			}
 		};
 	}, []);
 

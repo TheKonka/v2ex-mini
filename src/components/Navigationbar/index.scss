@@ -1,4 +1,4 @@
-.czt-navbar-title {
+.navbar-title {
 	width: 100vw;
 	display: flex;
 	flex-direction: row;
@@ -9,7 +9,7 @@
 	font-weight: 700;
 }
 
-.czt-navbar-back {
+.navbar-back {
 	display: flex;
 	align-items: center;
 	z-index: 100;
@@ -23,7 +23,7 @@
 	}
 }
 
-.czt-navbar {
+.navbar {
 	width: 100vw;
 	background: #fff;
 	flex-grow: 0;

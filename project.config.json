@@ -17,7 +17,7 @@
       "outputPath": ""
     },
     "condition": true,
-    "swc": true
+    "swc": false
   },
   "compileType": "miniprogram",
   "libVersion": "latest",

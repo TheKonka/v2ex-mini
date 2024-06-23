@@ -5,7 +5,7 @@ import './index.scss';
 const SafeArea: React.FC = () => {
 	return (
 		<>
-			<View className={'czt-safe-area'} />
+			<View className={'safe-area'} />
 		</>
 	);
 };

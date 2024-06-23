@@ -60,7 +60,7 @@ const Index: React.FC = () => {
 									<View>
 										<View className="topics-item-meta-username">{item.member.username}</View>
 										<View className="time">
-											<Text>{'发布于 ' + getTimeFromNow(item.created * 1000)}</Text>
+											<Text>{'发布于 ' + getTimeFromNow(item.created)}</Text>
 											<Text> · </Text>
 											<Text>{`${item.replies}条回复`}</Text>
 										</View>

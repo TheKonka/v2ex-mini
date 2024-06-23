@@ -8,6 +8,11 @@ import './index.scss';
 import NavigationBar from '@/components/Navigationbar';
 import SafeArea from '@/components/SafeArea';
 import Loading from '@/components/Loading';
+import twitterImg from 'lucide-static/icons/twitter.svg';
+import githubImg from 'lucide-static/icons/github.svg';
+import locationImg from 'lucide-static/icons/map-pin.svg';
+import linkImg from 'lucide-static/icons/link.svg';
+import dayjs from 'dayjs';
 
 const Index: React.FC = () => {
 	const router = useRouter();
@@ -54,19 +59,93 @@ const Index: React.FC = () => {
 			<ScrollView scrollY enableFlex enhanced scrollWithAnimation type="custom" className="scroll-view">
 				{memberInfo ? (
 					<View className="node">
-						<Image
-							showMenuByLongpress
-							src={getProxyImage(memberInfo.avatar_xlarge || memberInfo.avatar_large)}
-							mode="aspectFit"
-							className="node-avatar"
-							onClick={() => {
-								Taro.previewImage({
-									urls: [getProxyImage(memberInfo.avatar_xlarge || memberInfo.avatar_large)],
-									showmenu: true
-								});
-							}}
-						/>
-						<View className="node-title">{memberInfo.username}</View>
+						<View className="top">
+							<View className="avatar">
+								<Image
+									showMenuByLongpress
+									src={getProxyImage(memberInfo.avatar_xlarge || memberInfo.avatar_large)}
+									mode="aspectFit"
+									onClick={() => {
+										Taro.previewImage({
+											urls: [getProxyImage(memberInfo.avatar_xlarge || memberInfo.avatar_large)],
+											showmenu: true
+										});
+									}}
+								/>
+							</View>
+
+							<View className="top-right">
+								<View className="username">{memberInfo.username}</View>
+								<View className="info">
+									V2EX 第 {memberInfo.id} 号会员，加入于 {dayjs.unix(memberInfo.created).format()}
+								</View>
+							</View>
+						</View>
+
+						{memberInfo.tagline && <View className="tagline">{memberInfo.tagline}</View>}
+
+						<View className="widgets">
+							{memberInfo.twitter && (
+								<View
+									onClick={() => {
+										Taro.setClipboardData({
+											data: 'https://x.com/' + memberInfo.twitter,
+											success() {
+												Taro.showToast({
+													title: '链接已复制',
+													icon: 'none'
+												});
+											}
+										});
+									}}
+								>
+									<Image src={twitterImg} mode="aspectFit" />
+									<Text>{memberInfo.twitter}</Text>
+								</View>
+							)}
+							{memberInfo.website && (
+								<View
+									onClick={() => {
+										Taro.setClipboardData({
+											data: memberInfo.website!,
+											success() {
+												Taro.showToast({
+													title: '链接已复制',
+													icon: 'none'
+												});
+											}
+										});
+									}}
+								>
+									<Image src={linkImg} mode="aspectFit" />
+									<Text>{memberInfo.website}</Text>
+								</View>
+							)}
+							{memberInfo.location && (
+								<View>
+									<Image src={locationImg} mode="aspectFit" />
+									<Text>{memberInfo.location}</Text>
+								</View>
+							)}
+							{memberInfo.github && (
+								<View
+									onClick={() => {
+										Taro.setClipboardData({
+											data: 'https://github.com/' + memberInfo.github,
+											success() {
+												Taro.showToast({
+													title: '链接已复制',
+													icon: 'none'
+												});
+											}
+										});
+									}}
+								>
+									<Image src={githubImg} mode="aspectFit" />
+									<Text>{memberInfo.github}</Text>
+								</View>
+							)}
+						</View>
 					</View>
 				) : (
 					<Loading />
@@ -90,7 +169,7 @@ const Index: React.FC = () => {
 									<View>
 										{/* <View className="topics-item-member-username">{item.member.username}</View> */}
 										<View className="time">
-											<Text>{getTimeFromNow(item.created * 1000)}</Text>
+											<Text>{getTimeFromNow(item.created)}</Text>
 											<Text> · </Text>
 											<Text>{`${item.replies}条回复`}</Text>
 										</View>

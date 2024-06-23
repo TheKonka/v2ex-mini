@@ -98,7 +98,7 @@ const Index: React.FC = () => {
 								<View>
 									<View className="author-username">{topics.member.username}</View>
 									<View className="time">
-										<Text>{getTimeFromNow(topics.created * 1000)}</Text>
+										<Text>{getTimeFromNow(topics.created)}</Text>
 										<Text> · </Text>
 										<Text>{`${topics.replies}条回复`}</Text>
 									</View>
@@ -121,7 +121,7 @@ const Index: React.FC = () => {
 									<>
 										<View className="supplements">
 											<View className="supplements-index">{`第${index + 1}条附言`}</View>
-											<View className="time">{getTimeFromNow(item.created * 1000)}</View>
+											<View className="time">{getTimeFromNow(item.created)}</View>
 										</View>
 
 										<MarkDown nodes={item.content} />

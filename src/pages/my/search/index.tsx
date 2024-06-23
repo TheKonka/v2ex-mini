@@ -45,7 +45,7 @@ const Index: React.FC = () => {
 		return () => {
 			ignore = true;
 		};
-	}, [inputValue]);
+	}, [inputValue, setIsFetching]);
 
 	const reachEnd = (pageIndex + 1) * 10 >= total;
 

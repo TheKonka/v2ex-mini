@@ -108,7 +108,7 @@ const Index: React.FC = () => {
 									<View>
 										{/* <View className="topics-item-member-username">{item.member.username}</View> */}
 										<View className="time">
-											<Text>{getTimeFromNow(item.created * 1000)}</Text>
+											<Text>{getTimeFromNow(item.created)}</Text>
 											<Text> · </Text>
 											<Text>{`${item.replies}条回复`}</Text>
 										</View>

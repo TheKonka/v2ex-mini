@@ -30,7 +30,7 @@ const RepliesItem: React.FC<Props> = ({ item, index, op }) => {
 					/>
 					<View>
 						<View className="author-username">{item.member.username}</View>
-						<View className="time">{getTimeFromNow(item.created * 1000)}</View>
+						<View className="time">{getTimeFromNow(item.created)}</View>
 					</View>
 				</View>
 

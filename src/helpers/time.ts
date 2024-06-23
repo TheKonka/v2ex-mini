@@ -1,10 +1,15 @@
 import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+
+dayjs.extend(relativeTime);
 
 /**
  * 获取目标时间与当前的相对时间
  * @param time
  */
 export function getTimeFromNow(time: number) {
+	return dayjs.unix(time).fromNow();
+
 	const now = new Date();
 	const target = new Date(time);
 	const diff = now.getTime() - target.getTime();

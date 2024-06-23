@@ -10,7 +10,7 @@ export default defineAppConfig({
 	style: 'v2',
 	debug: process.env.NODE_ENV !== 'production',
 	entryPagePath: 'pages/home/index',
-	resizable: true,
+	resizable: false,
 	pages: [
 		'pages/home/index',
 		'pages/planes/index',
