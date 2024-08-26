@@ -10,7 +10,6 @@ import './index.scss';
 import useBoolean from '@/hooks/useBoolean';
 import RepliesBySomeone from './components/RepliesBySomeone';
 import RepliesItem from './components/RepliesItem';
-import { safeNavigateBack } from '@/helpers/route';
 
 const Index: React.FC = () => {
 	const router = useRouter();
@@ -33,11 +32,9 @@ const Index: React.FC = () => {
 					setPageCount(Math.ceil(res.result.replies / 20));
 				})
 				.catch(() => {
-					Taro.showModal({
-						content: '获取主题详情失败',
-						showCancel: false
-					}).then(() => {
-						safeNavigateBack();
+					Taro.showToast({
+						title: '获取主题详情失败',
+						icon: 'none'
 					});
 				});
 

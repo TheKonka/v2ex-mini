@@ -100,7 +100,7 @@ function render(node: Record<string, any>): React.ReactNode {
 						});
 					}}
 				>
-					{render(node.children[0])}
+					{renderArray(node.children)}
 				</View>
 			);
 		case 'heading':
@@ -108,13 +108,13 @@ function render(node: Record<string, any>): React.ReactNode {
 		case 'list':
 			return <View className="list">{renderArray(node.children)}</View>;
 		case 'listItem':
-			return <View className="list-item">{render(node.children[0])}</View>;
+			return <View className="list-item">{renderArray(node.children)}</View>;
 		case 'table':
 			return <View className="table">{renderArray(node.children)}</View>;
 		case 'tableRow':
 			return <View className="table-row">{renderArray(node.children)}</View>;
 		case 'tableCell':
-			return <View className="table-cell">{render(node.children[0])}</View>;
+			return <View className="table-cell">{renderArray(node.children)}</View>;
 		case 'inlineCode':
 			return (
 				<Text className="inline-code" userSelect>
@@ -124,13 +124,13 @@ function render(node: Record<string, any>): React.ReactNode {
 		case 'strong':
 			return <View className="strong">{renderArray(node.children)}</View>;
 		case 'blockquote':
-			return <View>{render(node.children[0])}</View>;
+			return <View>{renderArray(node.children)}</View>;
 		case 'thematicBreak':
 			return <View className="thematic-break" />;
 		case 'break':
 			return <View className="break" />;
 		case 'emphasis':
-			return <View className="emphasis">{render(node.children[0])}</View>;
+			return <View className="emphasis">{renderArray(node.children)}</View>;
 		case 'html':
 			const data = node.value.replace(/<img/g, '<img style="width:100%;height:auto"');
 			return <RichText nodes={data} userSelect />;

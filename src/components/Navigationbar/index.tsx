@@ -1,8 +1,6 @@
 import classNames from 'classnames';
-import { useThrottledCallback } from 'use-debounce';
-import React, { useState } from 'react';
+import React from 'react';
 import { Image, View } from '@tarojs/components';
-import { usePageScroll } from '@tarojs/taro';
 import backImg from '@/assets/back.png';
 import './index.scss';
 import useNavBarHeight from '@/hooks/useNavBarHeight';
@@ -21,20 +19,20 @@ const NavigationBar: React.FC<Props> = (props) => {
 
 	const { navbarHeight, menuButtonBoundingClient, systemInfo } = useNavBarHeight();
 
-	const [opacity, setOpacity] = useState(0);
+	// const [opacity, setOpacity] = useState(0);
 
-	const handleScroll = useThrottledCallback((scrollTop) => {
-		if (scrollTop > 20) {
-			const o = scrollTop / (systemInfo.windowWidth * 0.3);
-			setOpacity(Math.min(Math.abs(o), 1));
-		} else {
-			setOpacity(0);
-		}
-	}, 100);
+	// const handleScroll = useThrottledCallback((scrollTop) => {
+	// 	if (scrollTop > 20) {
+	// 		const o = scrollTop / (systemInfo.windowWidth * 0.3);
+	// 		setOpacity(Math.min(Math.abs(o), 1));
+	// 	} else {
+	// 		setOpacity(0);
+	// 	}
+	// }, 100);
 
-	usePageScroll((res) => {
-		handleScroll(res.scrollTop);
-	});
+	// usePageScroll((res) => {
+	// 	handleScroll(res.scrollTop);
+	// });
 
 	return (
 		<>

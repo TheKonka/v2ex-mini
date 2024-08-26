@@ -4,26 +4,26 @@
   "setting": {
     "compileHotReLoad": false,
     "urlCheck": true,
-    "bigPackageSizeSupport": true,
+    "bigPackageSizeSupport": false,
     "lazyloadPlaceholderEnable": true,
     "preloadBackgroundData": false,
     "skylineRenderEnable": false
   },
-  "libVersion": "3.4.1",
+  "libVersion": "3.5.4",
   "condition": {
     "miniprogram": {
       "list": [
         {
-          "name": "会员信息",
-          "pathName": "pages/member/index",
-          "query": "username=Livid",
+          "name": "主题详情",
+          "pathName": "pages/topics-detail/index",
+          "query": "id=1064930",
           "launchMode": "default",
           "scene": null
         },
         {
-          "name": "主题详情",
-          "pathName": "pages/topics-detail/index",
-          "query": "id=1032778",
+          "name": "会员信息",
+          "pathName": "pages/member/index",
+          "query": "username=Livid",
           "launchMode": "default",
           "scene": null
         },

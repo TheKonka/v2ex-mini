@@ -23,7 +23,7 @@
 
 	rich-text {
 		line-height: 200%;
-		font-size: 24px;
+		font-size: 16px;
 		font-weight: 500;
 	}
 }
@@ -53,6 +53,12 @@
 
 		&:not(:last-child) {
 			margin-bottom: 20px;
+		}
+
+		.list {
+			> .list-item {
+				list-style-type: circle;
+			}
 		}
 	}
 }
