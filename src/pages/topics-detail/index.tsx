@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Image, ScrollView, Text, View } from '@tarojs/components';
-import Taro, { useLoad, useRouter, useShareAppMessage } from '@tarojs/taro';
+import Taro, { useLoad, useRouter, useShareAppMessage, useShareTimeline } from '@tarojs/taro';
 import Loading from '@/components/Loading';
 import MarkDown from '@/components/Markdown';
 import { getProxyImage } from '@/helpers/img';
@@ -50,6 +50,13 @@ const Index: React.FC = () => {
 		return {
 			title: topics?.title || '主题详情',
 			path: `/pages/topics-detail/index?id=${id}`
+		};
+	});
+
+	useShareTimeline(() => {
+		return {
+			title: topics?.title || '主题详情',
+			query: `id=${id}`
 		};
 	});
 

@@ -20,3 +20,5 @@ declare namespace NodeJS {
 interface Window {
 	__taroAppConfig: Taro.AppConfig;
 }
+
+declare const wx: any;

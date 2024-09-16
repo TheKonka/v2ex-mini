@@ -97,7 +97,7 @@
 	}
 
 	&-item {
-		margin: 0 20px;
+		margin: 0 8px;
 		padding: 20px 30px;
 		border-radius: 40px;
 		word-break: keep-all;
@@ -112,12 +112,13 @@
 .nodes {
 	height: calc(100vh - 480px);
 	display: flex;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
 	width: stretch;
-	border-radius: 30px;
+	border-radius: 48px;
 	background: #fff;
 	margin: 0 20px;
-	padding: 0 10px;
+	padding: 0 8px;
+	justify-content: center;
 
 	&-item {
 		margin: 10px;

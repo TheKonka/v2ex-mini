@@ -26,7 +26,9 @@ const TabsItem: React.FC<Props> = ({ id, currentId }) => {
 			const list: Map<string, TabTopic[]> = new Map(Taro.getStorageSync('home_tab_list'));
 			setTopicList(list.get(id) || []);
 			getHomeTab(id).then((res) => {
-				const t = res.replace(/\n/g, '').match(/<table cellpadding="0" cellspacing="0" border="0" width="100%">(.*?)<\/table>/g);
+				const t = res
+					.replace(/\n/g, '')
+					.match(/<table cellpadding="0" cellspacing="0" border="0" width="100%">(?:((?!<\/table).)*?(?:class="node").*?)<\/table>/g);
 				const r = t.map((i: any) => {
 					const node = i.match(/<a class="node" href="\/go\/(\w+)">(.+?)<\/a>/);
 					const topic = i.match(/<a href="\/t\/(\d+).*?" class="topic-link".*?>(.+?)<\/a>/);
@@ -37,7 +39,7 @@ const TabsItem: React.FC<Props> = ({ id, currentId }) => {
 						node_id: node[1],
 						title: topic[2],
 						topic_id: topic[1],
-						update_time: i.match(/<span class="small fade">([\d\u4e00-\u9fa5]+?[^&]+).*<\/span>/)[1],
+						update_time: i.match(/<span (?:[^>]*)>([\d\u4e00-\u9fa5]+?[^&<]+).*<\/span>/)[1],
 						replay_num: i.match(/class="count_livid">(\d+)<\/a>/)?.[1] || 0
 					};
 				});

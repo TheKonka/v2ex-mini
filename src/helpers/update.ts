@@ -2,6 +2,7 @@ import Taro from '@tarojs/taro';
 
 export function checkUpdate(auto?: boolean) {
 	const updateManager = Taro.getUpdateManager();
+	if (!updateManager) return; // 分享到朋友圈的单页模式不可用
 	updateManager.onCheckForUpdate((res) => {
 		if (!res.hasUpdate && !auto) {
 			// Taro.showToast({

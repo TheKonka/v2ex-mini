@@ -9,7 +9,7 @@
     "preloadBackgroundData": false,
     "skylineRenderEnable": false
   },
-  "libVersion": "3.5.4",
+  "libVersion": "3.5.6",
   "condition": {
     "miniprogram": {
       "list": [

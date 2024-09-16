@@ -5,6 +5,7 @@ import backImg from '@/assets/back.png';
 import './index.scss';
 import useNavBarHeight from '@/hooks/useNavBarHeight';
 import { safeNavigateBack } from '@/helpers/route';
+import { isPC } from '@/helpers/system';
 
 interface Props {
 	title?: string;
@@ -17,7 +18,9 @@ interface Props {
 const NavigationBar: React.FC<Props> = (props) => {
 	const { showBackIcon = true } = props;
 
-	const { navbarHeight, menuButtonBoundingClient, systemInfo } = useNavBarHeight();
+	const { navbarHeight, menuButtonBoundingClient } = useNavBarHeight();
+
+	if (isPC()) return null;
 
 	// const [opacity, setOpacity] = useState(0);
 

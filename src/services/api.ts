@@ -1,3 +1,7 @@
+/**
+ * https://v2ex.com/help/api
+ */
+
 import RequestManager from './requestManager';
 
 type WrapperResult<T> = {
@@ -86,4 +90,11 @@ export function getHomeTab(id: string) {
 
 export function sov2ex(paramsObj: { q: string; from?: number; size?: number }) {
 	return RequestManager.get<SOV2EX.Root>(`https://www.sov2ex.com/api/search?${new URLSearchParams(paramsObj).toString()}`);
+}
+
+/**
+ * v2ex的token有效期最长180天，这里是自己实现的一个访问接口，可以刷新token
+ */
+export function refreshToken() {
+	return RequestManager.get<string>(`refreshtoken`);
 }

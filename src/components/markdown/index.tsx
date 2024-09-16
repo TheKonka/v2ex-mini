@@ -31,25 +31,27 @@ function render(node: Record<string, any>): React.ReactNode {
 		case 'text':
 			const atPeople = node.value.match(/@([^\s]+)(?:[ \r\n]|$)/g);
 			if (atPeople) {
-				const parts = node.value.split(/(@[^\s]+)(?:[ \r\n]|$)/).map((part: string) => {
+				const parts = node.value.split(/(@[^\s]+)(?:[ \r\n]|$)/).map((part: string, idx: number) => {
 					if (atPeople.map((i: string) => i.trim()).includes(part)) {
-						return [
-							React.createElement(
-								'Text',
-								{
-									'className': 'at',
-									'data-name': part.slice(1),
-									'onClick': (e: any) => {
-										const name = e.target.dataset.name.trim();
-										Taro.eventCenter.trigger('replyBySomeone', { name, topic_id: Taro.getCurrentInstance()!.router!.params.id });
-									}
-								},
-								part.trim()
-							),
-							React.createElement('Text', {}, ' ')
-						];
+						return (
+							<Text
+								key={idx + part}
+								className="at"
+								data-name={part.slice(1)}
+								onClick={(e) => {
+									const name = e.target.dataset.name.trim();
+									Taro.eventCenter.trigger('replyBySomeone', { name, topic_id: Taro.getCurrentInstance()!.router!.params.id });
+								}}
+							>
+								{part.trim()}
+							</Text>
+						);
 					} else {
-						return React.createElement('Text', { userSelect: true, decode: true }, part);
+						return (
+							<Text userSelect decode key={idx + part}>
+								{part}
+							</Text>
+						);
 					}
 				});
 				return <View>{parts}</View>;
@@ -86,6 +88,23 @@ function render(node: Record<string, any>): React.ReactNode {
 						if (node.url.includes('v2ex.com/t/')) {
 							Taro.navigateTo({
 								url: `/pages/topics-detail/index?id=${node.url.split('v2ex.com/t/')[1].split('#')[0]}`
+							});
+							return;
+						}
+						if (node.url.startsWith('https://mp.weixin.qq.com/s') && wx.openOfficialAccountArticle) {
+							wx.openOfficialAccountArticle({
+								url: node.url,
+								fail() {
+									Taro.setClipboardData({
+										data: node.url,
+										success() {
+											Taro.showToast({
+												title: '链接已复制',
+												icon: 'none'
+											});
+										}
+									});
+								}
 							});
 							return;
 						}

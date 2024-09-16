@@ -30,8 +30,8 @@ const Index: React.FC = () => {
 		getPlanes().then((res) => {
 			// res.match(/(?<=<div class="header">).+?(?=<)/g)
 			const categoryArr = res
-				.match(/<div class="header">.*<\/div>/g)
-				.map((i: string) => i.match(/<div[^>]+>([\s\S]+)<span[^>]+>([\s\S]+)<span[^>]+>([\s\S]+)<\/span><\/div>/))
+				.match(/<div class="header".*>.*<\/div>/g)
+				.map((i: string) => i.match(/<div[^>]+>(?:<img .*nbsp; |)([\s\S]+)<span[^>]+>([\s\S]+)<span[^>]+>([\s\S]+)<\/span><\/div>/))
 				.filter(Boolean)
 				.map((i: any) => {
 					return {
@@ -91,6 +91,7 @@ const Index: React.FC = () => {
 				<View className="search-input">
 					<Image src={searchImg} mode="aspectFit" className="search-img" />
 					<Input
+						confirmType="search"
 						placeholder="搜索节点"
 						onInput={(e) => {
 							const value = e.detail.value;
@@ -100,28 +101,36 @@ const Index: React.FC = () => {
 					/>
 				</View>
 
-				<ScrollView scrollX enhanced enableFlex className="search-hot" scrollWithAnimation>
-					<>
-						{(searchValue ? searchResult : nodeList.slice(0, 10)).map((item) => {
-							return (
-								<View className="search-hot-item-wrapper" key={item.name}>
-									<View
-										className="search-hot-item"
-										onClick={() => {
-											handleNodeDetail(item.name);
-										}}
-									>
-										<Image src={getProxyImage(item.avatar_normal)} mode="aspectFit" className="search-hot-item-img" lazyLoad />
-										<View>{item.title}</View>
-									</View>
+				<ScrollView scrollX enhanced enableFlex className="search-hot" scrollWithAnimation showScrollbar={false}>
+					{(searchValue ? searchResult : nodeList.slice(0, 10)).map((item) => {
+						return (
+							<View className="search-hot-item-wrapper" key={item.name}>
+								<View
+									className="search-hot-item"
+									onClick={() => {
+										handleNodeDetail(item.name);
+									}}
+								>
+									<Image src={getProxyImage(item.avatar_normal)} mode="aspectFit" className="search-hot-item-img" lazyLoad />
+									<View>{item.title}</View>
 								</View>
-							);
-						})}
-					</>
+							</View>
+						);
+					})}
 				</ScrollView>
 			</View>
 
-			<ScrollView scrollX enhanced enableFlex className="planes-tab" scrollIntoView={scrollIntoViewId} scrollWithAnimation>
+			<ScrollView
+				type="list"
+				scrollX
+				enhanced
+				enableFlex
+				className="planes-tab"
+				scrollIntoView={scrollIntoViewId}
+				scrollIntoViewAlignment="center"
+				scrollWithAnimation
+				showScrollbar={false}
+			>
 				{planes.map((item, index) => {
 					return (
 						<View key={item.name} className="planes-tab-item-wrapper" id={'tab' + index}>
@@ -140,7 +149,7 @@ const Index: React.FC = () => {
 				})}
 			</ScrollView>
 
-			<ScrollView scrollY enableFlex enhanced className="nodes" scrollWithAnimation>
+			<ScrollView scrollY enableFlex enhanced className="nodes" scrollWithAnimation showScrollbar={true} type="list">
 				{currentPlanes ? (
 					currentPlanes.nodes.map((item) => {
 						return (
@@ -152,7 +161,7 @@ const Index: React.FC = () => {
 									handleNodeDetail(item.name);
 								}}
 							>
-								<View>{item.title}</View>
+								{item.title}
 							</Button>
 						);
 					})

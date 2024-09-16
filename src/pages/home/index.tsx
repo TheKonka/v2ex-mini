@@ -11,7 +11,7 @@ const Index: React.FC = () => {
 	const [currentTab, setCurrentTab] = useState<string>(() => Taro.getStorageSync('home_tab') || 'tech');
 	const [scrollIntoViewId, setScrollIntoViewId] = useState('');
 
-	const tabs = [
+	const tabList = [
 		{ name: '技术', id: 'tech' },
 		{ name: '创意', id: 'creative' },
 		{ name: '好玩', id: 'play' },
@@ -33,7 +33,7 @@ const Index: React.FC = () => {
 	});
 
 	useReady(() => {
-		setScrollIntoViewId('id' + tabs.findIndex((i) => i.id === currentTab));
+		setScrollIntoViewId('id' + tabList.findIndex((i) => i.id === currentTab));
 	});
 
 	return (
@@ -46,11 +46,12 @@ const Index: React.FC = () => {
 				className="tabs"
 				scrollWithAnimation
 				scrollIntoView={scrollIntoViewId}
+				scrollIntoViewAlignment="center"
 				showScrollbar={false}
 				type="list"
 				style={{ display: 'flex' }}
 			>
-				{tabs.map((item, index) => {
+				{tabList.map((item, index) => {
 					return (
 						<View className="tabs-wrapper" key={item.id} id={'id' + index} style={{ display: 'flex', alignItems: 'center' }}>
 							<View
@@ -63,7 +64,7 @@ const Index: React.FC = () => {
 									});
 								}}
 							>
-								<View>{item.name}</View>
+								{item.name}
 							</View>
 						</View>
 					);
@@ -72,18 +73,17 @@ const Index: React.FC = () => {
 
 			<Swiper
 				className="tab-swpier"
-				current={tabs.findIndex((i) => i.id === currentTab)}
+				current={tabList.findIndex((i) => i.id === currentTab)}
 				autoplay={false}
-				cache-extent={1}
 				cacheExtent={1}
 				onChange={(e) => {
 					if (e.detail.source === 'touch') {
 						setScrollIntoViewId('id' + e.detail.current);
-						setCurrentTab((p) => tabs[e.detail.current]?.id || p);
+						setCurrentTab((p) => tabList[e.detail.current]?.id || p);
 					}
 				}}
 			>
-				{tabs.map((i) => {
+				{tabList.map((i) => {
 					return (
 						<SwiperItem key={i.id} skipHiddenItemLayout>
 							<TabsItem id={i.id} currentId={currentTab} />

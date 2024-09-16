@@ -53,6 +53,7 @@ const Index: React.FC = () => {
 		<>
 			<View className="search">
 				<Input
+					confirmType="search"
 					focus
 					value={inputValue}
 					placeholder="搜索"

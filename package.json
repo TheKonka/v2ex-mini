@@ -11,7 +11,7 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "prepare": "husky install",
+    "prepare": "husky",
     "build": "taro build --type weapp",
     "dev": "npm run build -- --watch",
     "lint": "npx eslint --fix",
@@ -30,12 +30,13 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.25.4",
+    "@babel/runtime": "^7.25.6",
     "@tarojs/components": "3.6.27",
     "@tarojs/plugin-framework-react": "3.6.27",
     "@tarojs/plugin-platform-weapp": "3.6.27",
     "@tarojs/react": "3.6.27",
     "@tarojs/runtime": "3.6.27",
+    "@tarojs/shared": "3.6.27",
     "@tarojs/taro": "3.6.27",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
@@ -50,27 +51,28 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@eslint/compat": "^1.1.1",
-    "@eslint/js": "^9.9.1",
+    "@eslint/js": "^9.10.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "@tarojs/cli": "3.6.27",
     "@tarojs/webpack5-runner": "3.6.27",
-    "@types/react": "^18.3.4",
+    "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@types/webpack-env": "^1.18.5",
     "babel-preset-taro": "3.6.27",
-    "eslint": "^9.9.1",
+    "eslint": "^9.10.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react": "^7.36.1",
     "eslint-plugin-react-hooks": "5.1.0-beta-26f2496093-20240514",
     "globals": "^15.9.0",
-    "husky": "^9.1.5",
-    "lint-staged": "^15.2.9",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "postcss-preset-env": "^9.6.0",
     "prettier": "^3.3.3",
     "react-refresh": "^0.11.0",
-    "stylelint": "^16.8.2",
+    "stylelint": "^16.9.0",
     "stylelint-config-standard-scss": "^13.1.0",
-    "typescript": "^5.5.4",
+    "taro-plugin-remove": "^0.0.2",
+    "typescript": "^5.6.2",
     "typescript-eslint": "8.2.0",
     "webpack": "^5.94.0"
   },
@@ -83,5 +85,11 @@
   },
   "engines": {
     "node": ">=18"
-  }
+  },
+  "pnpm": {
+    "overrides": {
+      "mdast-util-gfm-autolink-literal": "2.0.0"
+    }
+  },
+  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1"
 }

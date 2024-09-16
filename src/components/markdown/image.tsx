@@ -3,21 +3,44 @@ import { View, Image } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import React, { useState } from 'react';
 
-interface CommonImageProps {
-	show: boolean;
+interface ImageItemProps {
+	selfIndex: number;
 	url: string;
-	onLoad: () => void;
+	loadIdx: number;
+	onLoad: (v: number) => void;
 }
 
-const CommonImage: React.FC<CommonImageProps> = ({ url, show, onLoad }) => {
+const WrapperImage: React.FC<ImageItemProps> = ({ selfIndex, url, loadIdx, onLoad }) => {
+	if (loadIdx > 0 && loadIdx !== selfIndex) return null;
+	let wrapperUrl = url;
+	switch (selfIndex) {
+		case 1:
+			wrapperUrl = url;
+			break;
+		case 2:
+			wrapperUrl = getProxyImage(url);
+			break;
+		case 3:
+			wrapperUrl = 'https://search.pstatic.net/common/?src=' + url;
+			break;
+		case 4:
+			if (url.startsWith('https://i.imgur.com/')) {
+				wrapperUrl = url.replace('https://i.imgur.com/', 'https://i.vps404.com/');
+			} else {
+				return null;
+			}
+			break;
+	}
 	return (
 		<Image
-			style={{ display: show ? 'block' : 'none' }}
+			style={{ display: loadIdx === selfIndex ? 'block' : 'none' }}
 			showMenuByLongpress
 			className="image"
-			src={url}
+			src={wrapperUrl}
 			mode="widthFix"
-			onLoad={onLoad}
+			onLoad={() => {
+				onLoad(selfIndex);
+			}}
 			onClick={() => {
 				Taro.createSelectorQuery()
 					.selectAll('.image')
@@ -25,37 +48,12 @@ const CommonImage: React.FC<CommonImageProps> = ({ url, show, onLoad }) => {
 					.exec((res) => {
 						Taro.previewImage({
 							urls: res[0].map((i: { src: string }) => i.src),
-							current: url
+							current: wrapperUrl
 						});
 					});
 			}}
 		/>
 	);
-};
-
-interface ImageItemProps {
-	url: string;
-	loadIdx: number;
-	onLoad: (v: number) => void;
-}
-
-const Image1: React.FC<ImageItemProps> = ({ url, loadIdx, onLoad }) => {
-	if (loadIdx > 0 && loadIdx !== 1) return null;
-	return <CommonImage show={loadIdx === 1} url={url} onLoad={() => onLoad(1)} />;
-};
-
-const Image2: React.FC<ImageItemProps> = ({ url, loadIdx, onLoad }) => {
-	if (loadIdx > 0 && loadIdx !== 2) return null;
-	return <CommonImage show={loadIdx === 2} url={getProxyImage(url)} onLoad={() => onLoad(2)} />;
-};
-const Image3: React.FC<ImageItemProps> = ({ url, loadIdx, onLoad }) => {
-	if (loadIdx > 0 && loadIdx !== 3) return null;
-	return <CommonImage show={loadIdx === 3} url={'https://search.pstatic.net/common/?src=' + url} onLoad={() => onLoad(3)} />;
-};
-const Image4: React.FC<ImageItemProps> = ({ url, loadIdx, onLoad }) => {
-	if (!url.startsWith('https://i.imgur.com/')) return null;
-	if (loadIdx > 0 && loadIdx !== 4) return null;
-	return <CommonImage show={loadIdx === 4} url={url.replace('https://i.imgur.com/', 'https://i.vps404.com/')} onLoad={() => onLoad(4)} />;
 };
 
 export default function RenderImage({ url, alt }: { url: string; alt?: string }) {
@@ -88,10 +86,10 @@ export default function RenderImage({ url, alt }: { url: string; alt?: string })
 				</View>
 			)}
 
-			<Image1 url={url} onLoad={setLoad} loadIdx={loadIdx} />
-			<Image2 url={url} onLoad={setLoad} loadIdx={loadIdx} />
-			<Image3 url={url} onLoad={setLoad} loadIdx={loadIdx} />
-			<Image4 url={url} onLoad={setLoad} loadIdx={loadIdx} />
+			<WrapperImage url={url} onLoad={setLoad} loadIdx={loadIdx} selfIndex={1} />
+			<WrapperImage url={url} onLoad={setLoad} loadIdx={loadIdx} selfIndex={2} />
+			<WrapperImage url={url} onLoad={setLoad} loadIdx={loadIdx} selfIndex={3} />
+			<WrapperImage url={url} onLoad={setLoad} loadIdx={loadIdx} selfIndex={4} />
 		</>
 	);
 }

@@ -1,15 +1,49 @@
 import Taro from '@tarojs/taro';
+import { refreshToken } from './api';
+
+const queue: any[] = [];
+let isTokenRefreshing = false;
 
 const customInterceptor = (chain: Taro.Chain) => {
 	const { requestParams } = chain;
 	return chain
 		.proceed(requestParams)
 		.then((res: Taro.request.SuccessCallbackResult) => {
-			if (res.statusCode === 200) {
-				return Promise.resolve(res.data);
-			} else {
-				return Promise.reject(res);
-			}
+			return new Promise((resolve, reject) => {
+				switch (res.statusCode) {
+					case 200:
+						resolve(res.data);
+						break;
+					case 401:
+						queue.push({ resolve, reject, requestParams });
+						if (!isTokenRefreshing) {
+							isTokenRefreshing = true;
+							refreshToken().then((token) => {
+								Taro.setStorageSync('token', token);
+								while (queue.length) {
+									const req = queue.shift();
+									const newParam = req.requestParams;
+									req.resolve(
+										Taro.request({
+											url: newParam.url,
+											data: newParam.data,
+											method: newParam.method,
+											header: {
+												'content-type': newParam?.headers?.['content-type'] || 'application/json',
+												'authorization': `Bearer ${token}`
+											}
+										})
+									);
+								}
+								isTokenRefreshing = false;
+							});
+						}
+						break;
+					default:
+						reject(res);
+						break;
+				}
+			});
 		})
 		.catch((e: any) => {
 			// Taro.showToast({
